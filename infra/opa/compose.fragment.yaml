@@ -1,0 +1,23 @@
+# Merge this service into the host Compose. The publisher generates its command
+# in compose.opa-loads.json. All docker compose invocations must include both.
+services:
+  opa:
+    image: ${OPA_IMAGE:?Set exact OPA image with digest}
+    user: "10001:10001"
+    restart: unless-stopped
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    env_file: [../secrets/opa.env]
+    volumes:
+      - ../config/opa:/config:ro
+      - ../policies/releases:/releases:ro
+    networks: [rules]
+    logging:
+      driver: json-file
+      options: {max-size: "10m", max-file: "3"}
+    # No ports, Docker socket, shell command, healthcheck binary, or decision logs.
+networks:
+  rules:
+    name: hsbc_rules
+    internal: true

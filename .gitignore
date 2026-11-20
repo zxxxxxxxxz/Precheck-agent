@@ -1,0 +1,24 @@
+.env
+.env.*
+!.env.example
+secrets/
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+infra/**/artifacts/
+infra/**/logs/
+infra/**/.venv/
+infra/dev/.run/
+
+
+.local/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Local package caches and generated review artifacts
+.pnpm-store/
+outputs/
+output/
+tmp/

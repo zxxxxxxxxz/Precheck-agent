@@ -1,0 +1,71 @@
+{
+  "recorded_at_utc": "2026-10-13T05:17:40.106397+00:00",
+  "server": "autodl-3090",
+  "data_target": "/root/autodl-tmp",
+  "environment": {
+    "ocr": {
+      "prefix": "/data/hsbc/envs/ocr",
+      "python": "Python 3.12.15",
+      "packages": {
+        "paddlepaddle-gpu": "3.2.1",
+        "paddleocr": "3.7.0",
+        "paddlex": "3.7.2",
+        "fastapi": "0.143.0",
+        "uvicorn": "0.54.0"
+      },
+      "requirements_lock": "/data/hsbc/deploy/ocr-requirements.lock.txt",
+      "conda_explicit_lock": "/data/hsbc/deploy/ocr-conda-explicit.lock.txt"
+    },
+    "ner": {
+      "prefix": "/data/hsbc/envs/ner",
+      "python": "Python 3.12.15",
+      "packages": {
+        "gliner2": "2.1.0",
+        "torch": "2.14.1",
+        "transformers": "5.19.0",
+        "fastapi": "0.143.0",
+        "uvicorn": "0.54.0"
+      },
+      "requirements_lock": "/data/hsbc/deploy/ner-requirements.lock.txt",
+      "conda_explicit_lock": "/data/hsbc/deploy/ner-conda-explicit.lock.txt"
+    }
+  },
+  "gpu": "NVIDIA GeForce RTX 3090, 580.105.08, 24576 MiB",
+  "nginx": "nginx version: nginx/1.18.0 (Ubuntu)",
+  "supervisor": "v0.6.8",
+  "ner_model": {
+    "repository": "fastino/gliner2.5-multi-v1",
+    "revision": "cf5593a5d45e3bbf204b9df621b13b1c0cf25ee3",
+    "local_path": "/data/hsbc/models/gliner2.5-multi-v1"
+  },
+  "ocr_models": {
+    "pipeline": "PaddleOCR-VL 1.6 + optional PP-OCRv6 medium word localization",
+    "source": "official Paddle BOS inference archives",
+    "upstream_snapshot_in_archive_metadata": "676e2aad67375fec9c7dcc9740babec7a0d0d110",
+    "local_paths": [
+      "/data/hsbc/models/PP-DocLayoutV3",
+      "/data/hsbc/models/PaddleOCR-VL-1.6",
+      "/data/hsbc/models/PP-OCRv6_medium_det",
+      "/data/hsbc/models/PP-OCRv6_medium_rec"
+    ],
+    "identity": "Exact per-file SHA256 values in ocr-model-artifacts.lock.json and ppocr-model-artifacts.lock.json are authoritative."
+  },
+  "sha256": {
+    "/data/hsbc/app/gpu3090/service.py": "e30a629ee1cf80072ded39fc3428fc68ed45c10abdfa8158757afc6ca72d1936",
+    "/data/hsbc/app/gpu3090/ocr_contract.py": "7f42da6ee4dd28f9fa3d035d7a1460eefe831388e9096fa8f93f334da9c8cdf3",
+    "/data/hsbc/config/nginx/gpu3090.conf": "1cfd75b6002777b991d5accec742e202814c333c7770b142cef15d504df63db9",
+    "/data/hsbc/config/supervisor/gpu3090.conf": "7bd1e45381eaba18a4371b11a213bf55bec5c6f050bd2e0cacfb42b17c967bdb",
+    "/data/hsbc/scripts/start-gpu3090.sh": "b6b1b0ed2fe4b760dfebe9d7b1110469487f9c2dd902b8d59265091c56abbb2e",
+    "/data/hsbc/scripts/tunnel-bootstrap.sh": "2012d3f8f70b1d47a380dc064ed25f6e9c9eb9a8561ddce10e75b8b88241526d",
+    "/data/hsbc/scripts/install-system-gpu3090.sh": "269db32f23d6100b19705c1aef542ea27bd44798aec482c614e8660487f43802",
+    "/data/hsbc/deploy/ocr-requirements.lock.txt": "154fa1d6c111bea46a732edc512a4420c297db2ebb302c146bc664fd666d65e6",
+    "/data/hsbc/deploy/ocr-conda-explicit.lock.txt": "be3d52f823bfc1c205f116d4772f25adcda0949f0fb25efb9c24ff94bac3307f",
+    "/data/hsbc/deploy/ner-requirements.lock.txt": "be18da544872e6efaa2cdab87a864b7af6c49a8bceb6f489ab33c75f22c65b6f",
+    "/data/hsbc/deploy/ner-conda-explicit.lock.txt": "be3d52f823bfc1c205f116d4772f25adcda0949f0fb25efb9c24ff94bac3307f",
+    "/data/hsbc/deploy/ocr-model-artifacts.lock.json": "8f3948ed87621ca1958a289c49b3fd2c144c76d256930d7c34bce9d26b3c8114",
+    "/data/hsbc/deploy/ppocr-model-artifacts.lock.json": "60bf4ec1b62dd0277b476b40978f200d32c099316d67c9457ee0404a29725ca9",
+    "/data/hsbc/scripts/download_ppocr.py": "b1f43f879ac3a5fb969db6c02a43b2b000cbe2de5bc9162cc352f7b400ee390e",
+    "/data/hsbc/models/gliner2.5-multi-v1/download-manifest.json": "91f543627bc0cf6b8c0dc276ac655465c262e970de9ee1480b58137770c4c2b4"
+  },
+  "os_upgrade_evidence": "/data/hsbc/deploy/os-upgrade-20261012T112733Z"
+}

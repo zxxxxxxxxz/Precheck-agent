@@ -1,0 +1,28 @@
+{
+  "source": "https://raw.githubusercontent.com/moby/profiles/6fe7deb1b9fb7c0397a4593480d7d22b9ee8caef/apparmor/template.go",
+  "sourceSha256": "cce1c730656ad73cb04b19bf25caa2351732a00e04a06eeaf3010105e1ba6a57",
+  "derivedSha256": "d388a9a23df33b60729b07f1eb9585b164f4a8b1f23a20d1b619673b7b5b4d62",
+  "profiles": [
+    "hsbc-docx-worker"
+  ],
+  "status": "passed_same_image_uid10001_nnp_cap_drop_all",
+  "changes": [
+    "Default deny mount replaced by mount and pivot_root; all other default deny rules retained.",
+    "No Px subdomain: kernel denied broader-domain transition under no-new-privileges.",
+    "UID10001, no host capabilities, no-new-privileges, seccomp NEWUSER-only namespace clone remain required.",
+    "Actual converter filesystem, environment, PID and network isolation is enforced and probed by bubblewrap."
+  ],
+  "validation": {
+    "date": "2026-10-15",
+    "runtimeManifestSha256": "475ac04da21ebf798aafbdf7c9072f3ca91c8441a81cf0a741a51456c8f7d54c",
+    "privatePidNamespace": true,
+    "procTree": "empty_unmounted",
+    "network": "private_namespace_no_external_interface",
+    "rootFilesystem": "read_only",
+    "temporaryFilesystem": "private_job_directory_on_256MiB_tmpfs",
+    "hostCapabilities": [],
+    "noNewPrivileges": true,
+    "separateAppArmorChildDomain": false,
+    "profile": "hsbc-docx-worker"
+  }
+}

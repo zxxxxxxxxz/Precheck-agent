@@ -1,0 +1,10 @@
+.submission-findings {margin: 16px 0; padding: 16px; background: var(--bg); border-left: 3px solid var(--warning); line-height: 1.6}
+.submission-findings p {margin: 8px 0; color: var(--muted)}
+.submission-findings summary {cursor: pointer; width: fit-content; text-decoration: underline; text-underline-offset: 3px}
+.submission-findings summary:focus-visible {outline: 2px solid var(--focus); outline-offset: 4px}
+.submission-findings ul {max-height: 220px; overflow-y: auto; padding-left: 24px; margin-bottom: 0; overflow-wrap: anywhere}
+.submission-prerequisites {list-style: none; padding: 0; margin: 16px 0}
+.submission-prerequisites li {display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border)}
+.submission-prerequisites span {overflow-wrap: anywhere}
+.submission-prerequisites a {flex-shrink: 0; text-decoration: underline; text-underline-offset: 3px}
+@media(max-width: 600px) {.submission-prerequisites li {align-items: flex-start; flex-direction: column; gap: 8px}}

@@ -1,0 +1,185 @@
+/* The form and requirements follow the document; only the assistant owns a scroll pane. */
+.intake-mode {position: relative; min-height: 100dvh}
+.intake-mode .shell-main {min-height: 100dvh; display: flex; flex-direction: column}
+.intake-mode .topbar {flex-shrink: 0; position: relative}
+.intake-mode.workspace-mode .content {max-width: none; width: 100%; flex: 1; padding: 0}
+.intake-page {width: 100%; min-width: 0}
+.intake-page input[type="file"][hidden] {display: none}
+.intake-draftbar {display: flex; align-items: center; gap: 16px; justify-content: space-between; padding: 4px clamp(24px, 3.35vw, 48px); border-bottom: 1px solid var(--border); background: var(--bg)}
+.intake-draft-identity {display: flex; align-items: center; gap: 16px; min-width: 0; flex: 1}
+.intake-entry-title {display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 500; white-space: nowrap}
+.intake-entry-title::before {content: ''; width: 6px; height: 6px; background: var(--primary); flex-shrink: 0}
+.intake-saved {font-size: 12px; color: var(--muted); overflow-wrap: anywhere}
+.intake-draft-actions {display: flex; align-items: center; gap: 4px; flex-shrink: 0}
+.intake-draft-actions .ant-btn {font-size: 13px}
+.intake-assistant-icon {display: block; width: 20px; height: 20px; flex-shrink: 0}
+.intake-draft-actions .intake-assistant-toggle {height: 44px; margin-right: 8px; padding-inline: 16px; border-color: var(--ink); border-radius: 0; color: var(--surface); background: var(--ink); font-weight: 400; box-shadow: none}
+.intake-assistant-toggle .intake-assistant-icon {width: 18px; height: 18px}
+.intake-draft-actions .intake-assistant-toggle:not(:disabled):hover, .intake-draft-actions .intake-assistant-toggle:not(:disabled):active {color: var(--surface); border-color: var(--ink); background: #000000}
+.intake-draft-actions .intake-assistant-toggle[aria-expanded="true"] {color: var(--ink); border-color: var(--ink); background: var(--surface)}
+.intake-draft-actions .intake-assistant-toggle[aria-expanded="true"]:not(:disabled):hover, .intake-draft-actions .intake-assistant-toggle[aria-expanded="true"]:not(:disabled):active {color: var(--ink); border-color: var(--ink); background: var(--bg)}
+.intake-draft-actions .intake-assistant-toggle:focus-visible {outline: 2px solid var(--focus); outline-offset: 3px}
+.intake-draft-actions .intake-assistant-toggle:disabled {color: var(--muted); border-color: var(--border); background: var(--bg); box-shadow: none}
+.intake-assistant-tab {display: inline-flex; align-items: center; gap: 8px; font-weight: 500}
+.intake-assistant-tab .intake-assistant-icon {color: var(--primary)}
+.intake-mode.workspace-mode .intake-workspace {display: grid; grid-template-columns: minmax(0, 1fr) 360px; min-height: 720px; background: var(--surface)}
+.intake-workspace > div {min-width: 0; min-height: 0}
+.intake-workspace > div[hidden] {display: none}
+.intake-form-pane {padding: 32px clamp(24px, 3.35vw, 56px) 40px}
+.intake-workspace > .intake-support-pane.is-chat {padding: 0; contain: size; min-height: 520px}
+.intake-support-pane.is-chat > .intake-chat-pane {position: relative; flex: 1; height: 0; min-height: 520px; border-left: 0}
+.intake-chat-pane {position: sticky; top: 0; height: min(900px, var(--intake-viewport-height, 100dvh)); min-height: 480px; background: var(--bg); border-left: 1px solid var(--border)}
+.intake-chat-pane[hidden] {display: none}
+.intake-form {min-width: 0}
+.intake-chat {height: 100%; min-height: 0; display: flex; flex-direction: column}
+.case-intake-heading {display: flex; align-items: flex-start; gap: 16px}
+.case-intake-heading > div {min-width: 0}
+.case-intake-number {margin-left: auto; flex-shrink: 0; padding-top: 4px; text-align: right}
+.case-intake-number span {display: block; color: var(--muted); font-size: 12px}
+.case-intake-number strong {font-size: 13px; font-weight: 400; line-height: 24px}
+.case-intake-step {display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 24px; flex-shrink: 0; color: var(--primary); border-top: 2px solid var(--primary); font-size: 12px; font-weight: 500}
+.case-intake-context {display: block; margin-bottom: 5px; color: var(--muted); font-size: 12px}
+.case-intake-heading h1 {margin: 0; font-size: 22px; line-height: 1.3; font-weight: 400}
+.case-intake-heading p {margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.6; max-width: 68ch}
+.intake-section-heading {display: flex; align-items: center; gap: 12px; justify-content: space-between; min-height: 88px; padding: 20px 24px; border-bottom: 1px solid var(--border); flex-shrink: 0}
+.intake-section-heading h2 {font-size: 18px; line-height: 1.5; font-weight: 500; margin: 0}
+.intake-section-heading > span {font-size: 13px; color: var(--muted)}
+.intake-assistant-heading {display: flex; align-items: flex-start; gap: 10px; min-width: 0}
+.intake-assistant-heading > .intake-assistant-icon {margin-top: 3px; color: var(--primary)}
+.intake-assistant-heading p {margin: 4px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5}
+.intake-section-heading > .ant-btn {padding-inline: 4px; font-size: 12px; flex-shrink: 0}
+.intake-form-layout {margin-top: 24px}
+.intake-form-scroll {position: relative; min-width: 0}
+.case-intake-details {margin-bottom: 24px; border-top: 1px solid var(--border)}
+.case-intake-details-heading {display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 16px 0 12px}
+.case-intake-details-heading h2 {margin: 0; font-size: 14px; font-weight: 500}
+.case-intake-details-heading > span {font-size: 12px; color: var(--muted)}
+.case-intake-details-grid {display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.6fr); gap: 20px 24px; padding: 20px; background: var(--bg); border-block: 1px solid var(--border)}
+.intake-form .case-intake-details-grid .ant-form-item {min-width: 0; margin-bottom: 0}
+.case-intake-money {display: grid; grid-template-columns: 108px minmax(0, 1fr); gap: 12px; min-width: 0}
+.case-intake-details-grid .ant-form-item-label > label {height: auto; font-size: 13px; color: var(--muted)}
+.case-intake-details-grid .ant-input, .case-intake-details-grid .ant-select, .case-intake-details-grid .ant-input-number {border-radius: 0; font-size: 13px}
+.case-intake-details-grid .ant-input-number {width: 100%}
+.case-intake-amount .ant-input-number-input {text-align: right; font-variant-numeric: tabular-nums}
+@media (max-width: 767px) {.case-intake-details-grid {grid-template-columns: minmax(0, 1fr); gap: 20px; padding: 16px}}
+.case-intake-fields {border-top: 1px solid var(--border); padding-top: 20px; margin-top: 12px}
+.intake-resume-list {display: flex; flex-direction: column; gap: 8px}
+.intake-resume-list .ant-btn {height: auto; min-height: 48px; text-align: left}
+.intake-resume-list .ant-btn > span {display: flex; flex-direction: column; align-items: flex-start; width: 100%; white-space: normal; overflow-wrap: anywhere}
+.intake-resume-list .ant-btn > span > span:last-child {color: var(--muted); font-size: 12px}
+.intake-messages {min-height: 0; flex: 1; padding: 20px 24px; overflow: hidden; overscroll-behavior: contain}
+.intake-messages .ant-bubble-list-scroll-box {overscroll-behavior: contain}
+.intake-message-text {white-space: pre-wrap; overflow-wrap: anywhere; margin: 0}
+.intake-message-attachment {font-size: 13px; margin: 8px 0 0; overflow-wrap: anywhere; color: var(--muted)}
+.intake-chat-empty {flex: 1; min-height: 0; overflow: auto; padding: 28px 24px; width: 100%; max-width: 470px; margin: 0 auto}
+.intake-chat-empty h3 {font-size: 14px; line-height: 1.5; font-weight: 500; margin: 0 0 12px}
+.intake-chat-empty p {font-size: 13px; line-height: 1.8; color: var(--muted); margin: 0}
+.intake-chat-empty .intake-chat-reminder {margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 12px; line-height: 1.7}
+.intake-sender {position: relative; flex-shrink: 0; padding: 16px 24px 12px; background: var(--surface); border-top: 1px solid var(--border); max-height: 55%; overflow: auto; overscroll-behavior: contain}
+.intake-sender.is-dragging {outline: 2px solid var(--primary); outline-offset: -3px; background: var(--selection-fill)}
+.intake-sender .ant-sender {background: var(--surface); box-shadow: none; border-radius: 0}
+.intake-composer-actions {display: flex; align-items: center; justify-content: space-between; gap: 12px}
+.intake-sender .ant-sender-input {font-size: 13px; line-height: 1.6}
+.intake-messages .ant-bubble-content {border-radius: 0; padding: 16px; font-size: 13px; line-height: 1.7}
+.intake-add-icon {font-size: 22px; line-height: 1}
+.intake-sender-footer {font-size: 12px; color: var(--muted); display: flex; justify-content: space-between; gap: 12px; padding-top: 8px}
+.intake-sender-footer > :last-child {white-space: nowrap}
+.intake-footnote {font-size: 13px; color: var(--muted); line-height: 1.5; margin: 8px 0 0}
+.intake-source {display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; margin-top: 28px}
+.intake-source > .ant-form-item {min-width: 0}
+.intake-maker {display: flex; gap: 16px; margin: 20px 0; font-size: 13px}
+.intake-maker dt, .intake-maker dd > span {color: var(--muted)}
+.intake-maker dd {margin: 0; overflow-wrap: anywhere}
+.intake-submit {display: flex; align-items: center; justify-content: flex-end; gap: 12px; padding: 20px 0 0; background: var(--surface); border-top: 1px solid var(--border)}
+.intake-submit > span {font-size: 12px; color: var(--muted); flex: 1; min-width: 0}
+.intake-form .ant-form-item {margin-bottom: 22px}
+.intake-suggestions {border-top: 1px solid var(--border); margin-top: 16px; padding-top: 16px}
+.intake-suggestions p {font-size: 13px}
+.intake-suggestion-label {color: var(--muted); margin-bottom: 8px}
+.intake-suggestions > .ant-checkbox-group {display: flex; flex-direction: column; gap: 12px; width: 100%; margin-bottom: 16px}
+.intake-candidate {display: flex; gap: 10px; align-items: flex-start; min-width: 0}
+.intake-candidate .ant-checkbox-wrapper {align-items: flex-start}
+.intake-candidate strong {display: block; font-size: 14px; font-weight: 500; margin-bottom: 4px}
+.intake-candidate span {overflow-wrap: anywhere; min-width: 0}
+.intake-candidate .intake-footnote {display: block}
+.intake-chat-note, .intake-conflict {font-size: 13px; color: var(--warning); background: var(--warning-bg); padding: 10px 12px; border-left: 2px solid var(--warning); margin: 0 0 12px; flex-shrink: 0}
+.intake-chat > .intake-chat-note, .intake-chat > .notice {margin-inline: 24px}
+.intake-status {font-size: 13px; margin: 0 0 12px; color: var(--ink); flex-shrink: 0}
+.intake-page > .intake-status, .intake-page > .intake-conflict, .intake-page > .notice {display: block; margin: 0; padding: 12px clamp(16px, 3.35vw, 48px)}
+.intake-pending {display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 13px; padding: 0 0 12px}
+.intake-process {margin-top: 12px; font-size: 13px}
+.intake-process > summary {cursor: pointer; color: var(--muted); min-height: 32px; line-height: 32px}
+.intake-process > summary:focus-visible {outline: 2px solid var(--focus); outline-offset: 2px}
+.intake-process > .ant-thought-chain {margin-top: 8px}
+.intake-applied {border-top: 1px solid var(--border); margin-top: 12px; padding-top: 12px; font-size: 13px}
+.intake-applied p {margin-bottom: 4px}
+.intake-applied .ant-btn {padding-inline: 0}
+.intake-questions {margin-top: 12px}
+.intake-questions p {margin-bottom: 8px}
+.intake-materials {min-width: 0}
+.intake-materials-heading {display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--ink)}
+.intake-materials h2 {margin: 0; font-size: 14px; font-weight: 500}
+.intake-materials-heading > span {font-size: 12px; color: var(--muted)}
+.case-attachment-dropzone.ant-btn {height: auto; min-height: 148px; padding: 24px; border-radius: 0; background: var(--bg); white-space: normal}
+.case-attachment-dropzone.ant-btn:not(:disabled):hover {border-color: var(--primary); background: var(--selection-fill)}
+.case-attachment-dropzone.ant-btn.is-dragging {border-color: var(--primary); background: var(--selection-fill); outline: 2px solid var(--primary); outline-offset: 2px}
+.case-attachment-dropzone-content {display: flex; flex-direction: column; align-items: center; gap: 4px}
+.case-attachment-dropzone-content strong {font-size: 14px; font-weight: 500}
+.case-attachment-dropzone-content > span:last-child {font-size: 13px}
+.case-attachment-plus {font-size: 22px; line-height: 1.4; color: var(--muted)}
+.intake-attachments {margin-top: 8px}
+.intake-attachments-compact {max-height: 120px; overflow: auto; margin: 0 0 8px}
+.intake-attachment {display: flex; align-items: center; gap: 8px; padding: 10px 0; border-bottom: 1px solid var(--border)}
+.intake-attachment:last-child {border-bottom: 0}
+.intake-attachment-info {min-width: 0; flex: 1}
+.intake-attachment-name {display: block; font-size: 13px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis}
+.intake-attachment-meta {display: block; font-size: 12px; color: var(--muted)}
+.intake-attachment-actions {display: flex; align-items: center; gap: 4px; flex-wrap: wrap; justify-content: flex-end; max-width: 52%; font-size: 13px}
+.intake-attachment-actions a {padding: 8px 4px}
+.intake-attachment-error {font-size: 13px; color: var(--error); overflow-wrap: anywhere; margin-bottom: 8px}
+.intake-attachment-empty {font-size: 13px; color: var(--muted); padding: 16px 0; margin: 0}
+@media (min-width: 992px) {
+  .intake-workspace > .intake-support-pane.is-chat {background: var(--surface); border-left: 0}
+  .intake-support-pane.is-chat > .intake-chat-pane {position: sticky; top: var(--topbar-h); flex: none; height: max(320px, calc(var(--intake-viewport-height, 100dvh) - var(--topbar-h) - 72px)); min-height: 0; border-left: 1px solid var(--border); border-bottom: 1px solid var(--border)}
+}
+@media (max-width: 1199px) {
+  .intake-draft-identity {flex-direction: column; align-items: flex-start; gap: 0}
+}
+@media (max-width: 991px) {
+  .intake-mode.workspace-mode .intake-workspace {display: block; min-height: 0}
+  .intake-workspace > .intake-support-pane.is-chat {padding: 0; contain: none; min-height: 0}
+  .intake-support-pane.is-chat > .intake-chat-pane {flex: none; height: max(520px, calc(var(--intake-viewport-height, 100dvh) - 160px)); border-left: 0}
+  .intake-chat-pane {position: relative; height: calc(var(--intake-viewport-height, 100dvh) - 160px); border-left: 0}
+  .intake-mobile-tabs {background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 24px}
+  .intake-mobile-tabs .ant-tabs-nav {margin: 0}
+  .intake-mobile-tabs .ant-tabs-content-holder {display: none}
+}
+@media (max-width: 600px) {
+  .intake-draftbar {gap: 4px; padding: 8px 16px; align-items: flex-start; flex-wrap: wrap}
+  .intake-draft-actions {gap: 0; padding-top: 4px}
+  .intake-draft-actions .ant-btn {padding-inline: 8px; font-size: 13px}
+  .intake-saved {font-size: 12px}
+  .intake-form-pane {padding: 24px 16px 32px}
+  .case-intake-heading {gap: 12px; flex-wrap: wrap}
+  .case-intake-heading > div:not(.case-intake-number) {flex: 1; min-width: 0}
+  .case-intake-number {flex-basis: calc(100% - 46px); margin-left: 46px; text-align: left; padding-top: 0}
+  .case-intake-heading h1 {font-size: 22px}
+  .intake-mobile-tabs {padding-inline: 16px}
+  .intake-section-heading {padding: 12px 16px; min-height: 56px}
+  .intake-section-heading > span {display: none}
+  .intake-chat-empty {padding: 20px 16px}
+  .intake-messages {padding: 16px}
+  .intake-sender {padding: 12px 16px}
+  .intake-source {grid-template-columns: 1fr; gap: 0}
+  .intake-submit {padding-top: 20px; gap: 8px; flex-wrap: wrap}
+  .intake-submit > button {flex: 1}
+  .intake-submit > span {flex: 0 1 92px}
+  .intake-chat > .intake-chat-note, .intake-chat > .notice {margin-inline: 16px}
+}
+@media (max-height: 600px) {
+  .intake-mode .topbar {min-height: 40px}
+  .intake-section-heading {min-height: 40px; padding-block: 4px}
+  .intake-mobile-tabs .ant-tabs-tab {padding-block: 8px}
+  .intake-sender {padding-block: 8px}
+  .intake-submit {padding-block: 8px}
+}

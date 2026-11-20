@@ -1,0 +1,1 @@
+export function smoke(origin: string, fetcher?: typeof fetch): Promise<{ ok: boolean; checks: {path: string; status: number; passed: boolean}[]; authentication_scope: string; upload_and_model_calls: boolean }>;

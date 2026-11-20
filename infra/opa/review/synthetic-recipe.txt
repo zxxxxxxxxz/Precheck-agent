@@ -1,0 +1,5 @@
+Synthetic mortgage field recipe v1.
+Deterministic extraction recalls explicit configured aliases and preserves original evidence.
+Party identities, party roles, and explicit blank fields require manual confirmation.
+Amounts retain decimal strings; ISO dates and currencies require deterministic validation.
+This recipe does not certify document classification, object association, bank accuracy, or automatic blank-field detection.

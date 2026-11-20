@@ -1,0 +1,8 @@
+[
+  {"name":"positive","input":{"schema":"hsbc-demo-v1","amount":1},"result":{"release_id":"demo_v1","schema":"hsbc-demo-v1","demo_only":true,"outcome":"satisfied"}},
+  {"name":"boundary","input":{"schema":"hsbc-demo-v1","amount":0},"result":{"release_id":"demo_v1","schema":"hsbc-demo-v1","demo_only":true,"outcome":"not_satisfied"}},
+  {"name":"negative","input":{"schema":"hsbc-demo-v1","amount":-1},"result":{"release_id":"demo_v1","schema":"hsbc-demo-v1","demo_only":true,"outcome":"not_satisfied"}},
+  {"name":"missing","input":{"schema":"hsbc-demo-v1"},"result":{"release_id":"demo_v1","schema":"hsbc-demo-v1","demo_only":true,"outcome":"insufficient_evidence"}},
+  {"name":"undefined_schema","input":{"schema":"wrong","amount":1},"undefined":true},
+  {"name":"forged_version","input":{"schema":"hsbc-demo-v1","amount":1,"release_id":"forged"},"result":{"release_id":"demo_v1","schema":"hsbc-demo-v1","demo_only":true,"outcome":"satisfied"}}
+]

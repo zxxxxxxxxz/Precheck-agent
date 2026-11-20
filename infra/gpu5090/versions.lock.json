@@ -1,0 +1,17 @@
+{
+  "packages": {
+    "vllm": "0.31.0",
+    "torch": "2.13.0",
+    "torchvision": "0.28.0",
+    "torchaudio": "2.11.0",
+    "transformers": "5.17.0",
+    "flashinfer-python": "0.7.0.post1",
+    "huggingface-hub": "1.33.0",
+    "supervisor": "4.3.0"
+  },
+  "nginx": "1.30.5",
+  "python": "Python 3.12.15",
+  "driver_preserved": "580.76.05",
+  "cuda_runtime": "13.0",
+  "package_lock_sha256": "004ae7084d7db2cc3b56dce1b97c77ce79e46b0a1f4030ce7f113ae15791c5b6"
+}

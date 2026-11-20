@@ -1,0 +1,32 @@
+/* A reading interruption follows the desk's compact title / detail / action rhythm. */
+.material-scope-notice.ant-alert,
+.material-type-error .ant-alert {
+  display: grid; grid-template-columns: 16px minmax(0, 1fr); align-items: start;
+  gap: 4px 10px; margin: 16px; padding: 16px; border-radius: 0;
+  border: 1px solid var(--border); background: var(--surface); color: var(--ink);
+}
+.material-scope-notice.ant-alert-warning {border-top: 2px solid var(--warning);}
+.material-scope-notice.ant-alert-info {border-top: 2px solid var(--border);}
+.material-scope-notice .ant-alert-icon,
+.material-type-error .ant-alert .ant-alert-icon {margin: 3px 0 0; font-size: 14px;}
+.material-scope-notice .ant-alert-title,
+.material-type-error .ant-alert .ant-alert-title {font-size: 14px; font-weight: 500; line-height: 22px; overflow-wrap: anywhere;}
+.material-scope-notice .ant-alert-description,
+.material-type-error .ant-alert .ant-alert-description {margin-top: 6px; color: var(--muted); font-size: 13px; line-height: 21px; overflow-wrap: anywhere;}
+.material-scope-notice .ant-alert-actions,
+.material-type-error .ant-alert .ant-alert-actions {grid-column: 2; margin: 10px 0 0;}
+.material-scope-notice .ant-btn {min-height: 44px; height: auto; padding: 10px 18px; border-radius: 0; border-color: var(--ink); font-size: 13px; font-weight: 500; box-shadow: none; white-space: normal;}
+.material-scope-notice .ant-btn:hover:not(:disabled) {background: var(--ink); color: var(--surface); border-color: var(--ink);}
+.material-type-drawer {border-left: 1px solid var(--border);}
+.material-type-drawer .ant-drawer-close {width: 44px; height: 44px; margin: -8px -8px -8px 8px; border-radius: 0; color: var(--muted);}
+.material-type-file {display: grid; gap: 6px; padding: 0 0 20px; margin-bottom: 20px; border-bottom: 1px solid var(--border);}
+.material-type-file > span {font-size: 12px; color: var(--muted);}
+.material-type-file > strong {font-size: 14px; font-weight: 500; line-height: 22px; overflow-wrap: anywhere;}
+.material-type-intro {margin-bottom: 24px; color: var(--muted); font-size: 13px; line-height: 21px;}
+.material-type-error:empty {display: none;}
+.material-type-error .ant-alert {margin: 0 0 24px; padding: 12px; border-top: 2px solid var(--error);}
+.material-type-error summary {cursor: pointer;}
+.material-type-drawer .drawer-footer {display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px;}
+@media (max-width: 600px) {
+  .material-scope-notice.ant-alert {margin: 12px; padding: 12px;}
+}

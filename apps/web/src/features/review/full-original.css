@@ -1,0 +1,16 @@
+.field-bilingual-evidence .field-evidence-document > header > a { flex:1; min-width:0; }
+.field-bilingual-evidence .field-full-original-button { flex-shrink:0; height:26px; padding-inline:6px; font-size:12px; color:var(--ink); border-radius:0; }
+.ant-modal .evidence-full-original-container { border:1px solid oklch(0.795 0.005 255); border-radius:0; font-family:UniversNext,"Univers Next for HSBC","Univers Next",Univers,Arial,"PingFang SC","Noto Sans SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; }
+.ant-modal .evidence-full-original-header { border-bottom:2px solid oklch(0.185 0.006 255); padding-bottom:12px; }
+.evidence-full-original-body { --border:oklch(0.795 0.005 255); --primary:#DB0011; color:oklch(0.185 0.006 255); }
+.evidence-full-original-meta { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:16px; }
+.evidence-full-original-meta strong { min-width:0; overflow-wrap:anywhere; font-size:14px; font-weight:500; }
+.evidence-full-original-note { color:oklch(0.515 0.008 255); font-size:12px; line-height:1.6; margin:8px 0; }
+.evidence-full-original-reading { max-height:55vh; overflow:auto; border:1px solid var(--border); background:oklch(0.952 0.003 255); padding:16px 15px; margin-top:16px; }
+.evidence-full-original-reading:focus-visible { outline:2px solid var(--primary); outline-offset:2px; }
+.evidence-full-original-passage + .evidence-full-original-passage { margin-top:12px; }
+.evidence-full-original-passage h3 { color:oklch(0.515 0.008 255); font-size:12px; font-weight:500; margin:0 0 8px; }
+.evidence-full-original-passage p { font-size:13px; line-height:1.7; color:oklch(0.325 0.007 255); overflow-wrap:anywhere; margin:0; }
+.ant-modal .evidence-full-original-footer { border-top:1px solid oklch(0.795 0.005 255); padding-top:16px; }
+.evidence-full-original-actions { display:flex; justify-content:flex-end; flex-wrap:wrap; gap:8px; }
+@media (max-width:480px) { .evidence-full-original-reading { max-height:50vh; } }

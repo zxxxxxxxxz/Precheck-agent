@@ -1,0 +1,15 @@
+{
+  "Version": "1",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": ["oss:ListObjects", "oss:GetBucketInfo", "oss:GetBucketLocation", "oss:ListMultipartUploads"],
+      "Resource": ["acs:oss:*:*:hsbc-poc"]
+    },
+    {
+      "Effect": "Allow",
+      "Action": ["oss:GetObject", "oss:PutObject", "oss:DeleteObject", "oss:AbortMultipartUpload", "oss:ListParts"],
+      "Resource": ["acs:oss:*:*:hsbc-poc/*"]
+    }
+  ]
+}

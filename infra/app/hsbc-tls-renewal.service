@@ -1,0 +1,13 @@
+[Unit]
+Description=Validate and load the certd-deployed HSBC certificate
+RequiresMountsFor=/data
+After=nginx.service
+ConditionPathExists=/etc/ssl/certs/mse.pub/cert.pem
+ConditionPathExists=/etc/ssl/certs/mse.pub/cert.key
+
+[Service]
+Type=oneshot
+ExecStartPre=/usr/bin/mountpoint -q /data
+ExecStart=/usr/bin/python3 /data/hsbc/scripts/activate-tls.py /etc/ssl/certs/mse.pub/cert.pem /etc/ssl/certs/mse.pub/cert.key
+TimeoutStartSec=45
+UMask=0077

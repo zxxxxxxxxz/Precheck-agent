@@ -1,0 +1,11 @@
+[Unit]
+Description=Check certd-deployed HSBC certificate changes every five minutes
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5min
+AccuracySec=15s
+Unit=hsbc-tls-renewal.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,404 @@
+{
+  "schemaVersion": "docx-runtime-release-lock.v1",
+  "createdAt": "2026-10-15T04:48:10.294904+00:00",
+  "runtimeManifestSha256": "475ac04da21ebf798aafbdf7c9072f3ca91c8441a81cf0a741a51456c8f7d54c",
+  "immutableServerPath": "/data/hsbc/docx-releases/475ac04da21ebf798aafbdf7c9072f3ca91c8441a81cf0a741a51456c8f7d54c",
+  "containerMountPath": "/opt/p2-docx",
+  "baseImage": "node:24.21.0-bookworm@sha256:3d27e5c11e5786e309ec3e03f93ae536eb36e6e5eb3714d5eb3300a36157add0",
+  "architecture": "x64",
+  "libreOfficeVersion": "LibreOffice 7.4.7.2 40(Build:2)",
+  "fileCount": 31273,
+  "fileBytes": 1952338380,
+  "fontManifestSha256": "a96850849275d87e4b92f5bcce8e506300641992805cf274e1a1b2633f53e650",
+  "fontRows": 1862,
+  "fontAliases": [
+    {
+      "requested": "Aptos",
+      "resolved": "Carlito",
+      "file": "/usr/share/fonts/truetype/crosextra/Carlito-Regular.ttf",
+      "sha256": "b4ff23ba370cc95a3c349336b73f9c28514a1371210f89832efc85c4b1ea7131",
+      "status": "substituted"
+    },
+    {
+      "requested": "Arial",
+      "resolved": "Liberation Sans",
+      "file": "/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf",
+      "sha256": "8d91388f1d3604b3b8ae0e3ee2d140e50cd6122f9214514f4aca772540a4076d",
+      "status": "substituted"
+    },
+    {
+      "requested": "Batang",
+      "resolved": "Noto Serif CJK KR",
+      "file": "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+      "sha256": "a04178ec485dffdff7cc0c0c20e1fce9202d7e2160d805e8e44a4c8841c58481",
+      "status": "substituted"
+    },
+    {
+      "requested": "Calibri",
+      "resolved": "Carlito",
+      "file": "/usr/share/fonts/truetype/crosextra/Carlito-Regular.ttf",
+      "sha256": "b4ff23ba370cc95a3c349336b73f9c28514a1371210f89832efc85c4b1ea7131",
+      "status": "substituted"
+    },
+    {
+      "requested": "Cambria",
+      "resolved": "Liberation Serif",
+      "file": "/usr/share/fonts/truetype/liberation2/LiberationSerif-Regular.ttf",
+      "sha256": "29d12439831b7f59194efec85872f24f54eff05738933f9a860220d2abff88ba",
+      "status": "substituted"
+    },
+    {
+      "requested": "Courier New",
+      "resolved": "Liberation Mono",
+      "file": "/usr/share/fonts/truetype/liberation2/LiberationMono-Regular.ttf",
+      "sha256": "6b3809450cf6253b36d157198dc15004a5fbade9abad5543c377feb7bb29139c",
+      "status": "substituted"
+    },
+    {
+      "requested": "DengXian",
+      "resolved": "Noto Sans CJK SC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+      "sha256": "b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a",
+      "status": "substituted"
+    },
+    {
+      "requested": "FangSong",
+      "resolved": "Noto Serif CJK SC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+      "sha256": "a04178ec485dffdff7cc0c0c20e1fce9202d7e2160d805e8e44a4c8841c58481",
+      "status": "substituted"
+    },
+    {
+      "requested": "Georgia",
+      "resolved": "Liberation Serif",
+      "file": "/usr/share/fonts/truetype/liberation2/LiberationSerif-Regular.ttf",
+      "sha256": "29d12439831b7f59194efec85872f24f54eff05738933f9a860220d2abff88ba",
+      "status": "substituted"
+    },
+    {
+      "requested": "KaiTi",
+      "resolved": "Noto Serif CJK SC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+      "sha256": "a04178ec485dffdff7cc0c0c20e1fce9202d7e2160d805e8e44a4c8841c58481",
+      "status": "substituted"
+    },
+    {
+      "requested": "MS Gothic",
+      "resolved": "Noto Sans CJK JP",
+      "file": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+      "sha256": "b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a",
+      "status": "substituted"
+    },
+    {
+      "requested": "Microsoft JhengHei",
+      "resolved": "Noto Sans CJK TC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+      "sha256": "b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a",
+      "status": "substituted"
+    },
+    {
+      "requested": "Microsoft YaHei",
+      "resolved": "Noto Sans CJK SC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+      "sha256": "b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a",
+      "status": "substituted"
+    },
+    {
+      "requested": "MingLiU",
+      "resolved": "Noto Serif CJK TC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+      "sha256": "a04178ec485dffdff7cc0c0c20e1fce9202d7e2160d805e8e44a4c8841c58481",
+      "status": "substituted"
+    },
+    {
+      "requested": "NSimSun",
+      "resolved": "Noto Serif CJK SC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+      "sha256": "a04178ec485dffdff7cc0c0c20e1fce9202d7e2160d805e8e44a4c8841c58481",
+      "status": "substituted"
+    },
+    {
+      "requested": "PMingLiU",
+      "resolved": "Noto Serif CJK TC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+      "sha256": "a04178ec485dffdff7cc0c0c20e1fce9202d7e2160d805e8e44a4c8841c58481",
+      "status": "substituted"
+    },
+    {
+      "requested": "STHeiti",
+      "resolved": "Noto Sans CJK SC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+      "sha256": "b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a",
+      "status": "substituted"
+    },
+    {
+      "requested": "STKaiti",
+      "resolved": "Noto Serif CJK SC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+      "sha256": "a04178ec485dffdff7cc0c0c20e1fce9202d7e2160d805e8e44a4c8841c58481",
+      "status": "substituted"
+    },
+    {
+      "requested": "STSong",
+      "resolved": "Noto Serif CJK SC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+      "sha256": "a04178ec485dffdff7cc0c0c20e1fce9202d7e2160d805e8e44a4c8841c58481",
+      "status": "substituted"
+    },
+    {
+      "requested": "Segoe UI",
+      "resolved": "Liberation Sans",
+      "file": "/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf",
+      "sha256": "8d91388f1d3604b3b8ae0e3ee2d140e50cd6122f9214514f4aca772540a4076d",
+      "status": "substituted"
+    },
+    {
+      "requested": "Segoe UI Emoji",
+      "resolved": "Noto Color Emoji",
+      "file": "/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf",
+      "sha256": "e5899ed38b8ed83e08bd3ac5de09791e9d19d288333a796de1d35ad17396f1ec",
+      "status": "substituted"
+    },
+    {
+      "requested": "SimHei",
+      "resolved": "Noto Sans CJK SC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+      "sha256": "b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a",
+      "status": "substituted"
+    },
+    {
+      "requested": "SimSun",
+      "resolved": "Noto Serif CJK SC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+      "sha256": "a04178ec485dffdff7cc0c0c20e1fce9202d7e2160d805e8e44a4c8841c58481",
+      "status": "substituted"
+    },
+    {
+      "requested": "Symbol",
+      "resolved": "OpenSymbol",
+      "file": "/usr/share/fonts/truetype/libreoffice/opens___.ttf",
+      "sha256": "4db4db8686f398ba630fcd3d726f61132a6bf08f35cbc2f9f1d250cafa136296",
+      "status": "substituted"
+    },
+    {
+      "requested": "Tahoma",
+      "resolved": "Liberation Sans",
+      "file": "/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf",
+      "sha256": "8d91388f1d3604b3b8ae0e3ee2d140e50cd6122f9214514f4aca772540a4076d",
+      "status": "substituted"
+    },
+    {
+      "requested": "Times New Roman",
+      "resolved": "Liberation Serif",
+      "file": "/usr/share/fonts/truetype/liberation2/LiberationSerif-Regular.ttf",
+      "sha256": "29d12439831b7f59194efec85872f24f54eff05738933f9a860220d2abff88ba",
+      "status": "substituted"
+    },
+    {
+      "requested": "Verdana",
+      "resolved": "Liberation Sans",
+      "file": "/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf",
+      "sha256": "8d91388f1d3604b3b8ae0e3ee2d140e50cd6122f9214514f4aca772540a4076d",
+      "status": "substituted"
+    },
+    {
+      "requested": "Wingdings",
+      "resolved": "Liberation Sans",
+      "file": "/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf",
+      "sha256": "8d91388f1d3604b3b8ae0e3ee2d140e50cd6122f9214514f4aca772540a4076d",
+      "status": "substituted"
+    },
+    {
+      "requested": "仿宋",
+      "resolved": "Noto Serif CJK SC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+      "sha256": "a04178ec485dffdff7cc0c0c20e1fce9202d7e2160d805e8e44a4c8841c58481",
+      "status": "substituted"
+    },
+    {
+      "requested": "仿宋_GB2312",
+      "resolved": "Noto Serif CJK SC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+      "sha256": "a04178ec485dffdff7cc0c0c20e1fce9202d7e2160d805e8e44a4c8841c58481",
+      "status": "substituted"
+    },
+    {
+      "requested": "华文宋体",
+      "resolved": "Noto Serif CJK SC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+      "sha256": "a04178ec485dffdff7cc0c0c20e1fce9202d7e2160d805e8e44a4c8841c58481",
+      "status": "substituted"
+    },
+    {
+      "requested": "华文楷体",
+      "resolved": "Noto Serif CJK SC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+      "sha256": "a04178ec485dffdff7cc0c0c20e1fce9202d7e2160d805e8e44a4c8841c58481",
+      "status": "substituted"
+    },
+    {
+      "requested": "华文黑体",
+      "resolved": "Noto Sans CJK SC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+      "sha256": "b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a",
+      "status": "substituted"
+    },
+    {
+      "requested": "宋体",
+      "resolved": "Noto Serif CJK SC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+      "sha256": "a04178ec485dffdff7cc0c0c20e1fce9202d7e2160d805e8e44a4c8841c58481",
+      "status": "substituted"
+    },
+    {
+      "requested": "微軟正黑體",
+      "resolved": "Noto Sans CJK TC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+      "sha256": "b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a",
+      "status": "substituted"
+    },
+    {
+      "requested": "微软雅黑",
+      "resolved": "Noto Sans CJK SC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+      "sha256": "b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a",
+      "status": "substituted"
+    },
+    {
+      "requested": "新宋体",
+      "resolved": "Noto Serif CJK SC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+      "sha256": "a04178ec485dffdff7cc0c0c20e1fce9202d7e2160d805e8e44a4c8841c58481",
+      "status": "substituted"
+    },
+    {
+      "requested": "新細明體",
+      "resolved": "Noto Serif CJK TC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+      "sha256": "a04178ec485dffdff7cc0c0c20e1fce9202d7e2160d805e8e44a4c8841c58481",
+      "status": "substituted"
+    },
+    {
+      "requested": "楷体",
+      "resolved": "Noto Serif CJK SC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+      "sha256": "a04178ec485dffdff7cc0c0c20e1fce9202d7e2160d805e8e44a4c8841c58481",
+      "status": "substituted"
+    },
+    {
+      "requested": "楷体_GB2312",
+      "resolved": "Noto Serif CJK SC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+      "sha256": "a04178ec485dffdff7cc0c0c20e1fce9202d7e2160d805e8e44a4c8841c58481",
+      "status": "substituted"
+    },
+    {
+      "requested": "等线",
+      "resolved": "Noto Sans CJK SC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+      "sha256": "b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a",
+      "status": "substituted"
+    },
+    {
+      "requested": "華康儷中宋(P)",
+      "resolved": "Noto Serif CJK TC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+      "sha256": "a04178ec485dffdff7cc0c0c20e1fce9202d7e2160d805e8e44a4c8841c58481",
+      "status": "substituted"
+    },
+    {
+      "requested": "華康儷粗宋(P)",
+      "resolved": "Noto Serif CJK TC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+      "sha256": "a04178ec485dffdff7cc0c0c20e1fce9202d7e2160d805e8e44a4c8841c58481",
+      "status": "substituted"
+    },
+    {
+      "requested": "黑体",
+      "resolved": "Noto Sans CJK SC",
+      "file": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+      "sha256": "b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a",
+      "status": "substituted"
+    }
+  ],
+  "packages": [
+    {
+      "name": "bubblewrap",
+      "version": "0.8.0-2+deb12u1"
+    },
+    {
+      "name": "fonts-crosextra-carlito",
+      "version": "20220224-1"
+    },
+    {
+      "name": "fonts-dejavu-core",
+      "version": "2.37-6"
+    },
+    {
+      "name": "fonts-liberation2",
+      "version": "2.1.5-1"
+    },
+    {
+      "name": "fonts-noto-cjk",
+      "version": "1:20220127+repack1-1"
+    },
+    {
+      "name": "fonts-noto-color-emoji",
+      "version": "2.042-0+deb12u1"
+    },
+    {
+      "name": "fonts-noto-core",
+      "version": "20201225-1"
+    },
+    {
+      "name": "fonts-noto-extra",
+      "version": "20201225-1"
+    },
+    {
+      "name": "fonts-opensymbol",
+      "version": "4:102.12+LibO7.4.7-1+deb12u14"
+    },
+    {
+      "name": "libreoffice-base-core",
+      "version": "4:7.4.7-1+deb12u14"
+    },
+    {
+      "name": "libreoffice-common",
+      "version": "4:7.4.7-1+deb12u14"
+    },
+    {
+      "name": "libreoffice-core",
+      "version": "4:7.4.7-1+deb12u14"
+    },
+    {
+      "name": "libreoffice-style-colibre",
+      "version": "4:7.4.7-1+deb12u14"
+    },
+    {
+      "name": "libreoffice-writer",
+      "version": "4:7.4.7-1+deb12u14"
+    }
+  ],
+  "policy": {
+    "seccompSha256": "ab7e3edec8accae456ff9ecf91af70367d34f66192fc7af387840dfd2bfc062e",
+    "apparmorSha256": "d388a9a23df33b60729b07f1eb9585b164f4a8b1f23a20d1b619673b7b5b4d62",
+    "apparmorProfile": "hsbc-docx-worker",
+    "separateChildDomain": false,
+    "noNewPrivileges": true,
+    "hostCapabilities": []
+  },
+  "probe": {
+    "status": "passed",
+    "fullManifestHashAndProbeMs": 18502,
+    "withSyntheticConversionMs": 20812,
+    "cpuLimit": 1,
+    "memoryBytes": 2147483648,
+    "tmpfsBytes": 268435456,
+    "uid": 10001
+  },
+  "coverageGaps": [
+    "Font substitutions do not establish original font appearance or Word pagination equivalence.",
+    "Wingdings private-use symbol meaning remains unconfirmed.",
+    "Exact packages and file hashes are locked after signed repository resolution; rebuilding requires a new release manifest."
+  ]
+}

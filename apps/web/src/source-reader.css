@@ -1,0 +1,52 @@
+.source-reader-workspace {display:flex; flex:1; min-height:0; min-width:0; background:var(--bg)}
+.source-reader-directory {flex:0 0 260px; min-width:0; border-right:1px solid var(--border); overflow:auto; background:var(--surface)}
+.source-reader-search {padding:12px; position:sticky; top:0; background:var(--surface); z-index:1}
+.source-node-label {display:block; width:100%; font-size:12px; color:var(--muted)}
+.source-node-snippet {display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; overflow-wrap:anywhere}
+.source-list-pager {display:flex; align-items:center; justify-content:space-between; gap:4px; padding:12px; font-size:12px}
+.source-reader-paper {flex:1; min-width:0; overflow:auto; padding:24px clamp(16px,4vw,64px); background:var(--surface)}
+.source-reader-paper:focus {outline:none}
+.source-reader-paper:focus-visible {outline:2px solid var(--selection); outline-offset:-3px}
+.source-reader-gaps,.source-reader-fonts {margin:12px 0; font-size:13px; color:var(--muted); overflow-wrap:anywhere}
+.source-reader-gaps summary,.source-reader-fonts summary {cursor:pointer; padding:4px 0}
+.source-reader-gaps {color:var(--warning)}
+.source-reader-node {padding:16px 0 32px; max-width:960px}
+.source-reader-trail {display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px}
+.source-reader-trail button {background:none; border:0; border-bottom:1px solid var(--border); color:var(--muted); cursor:pointer; font:inherit; font-size:13px; padding:2px}
+.source-reader-node-head {display:flex; flex-wrap:wrap; align-items:baseline; gap:12px; border-left:3px solid var(--selection); padding-left:12px; margin-bottom:16px}
+.source-reader-node-head h3 {margin:0; font-size:18px; font-weight:500}
+.source-reader-node-head span {font-size:13px}
+.source-reader-text {white-space:pre-wrap; overflow-wrap:anywhere; font-size:18px; line-height:1.9; margin:20px 0}
+.source-reader-symbol {display:grid; grid-template-columns:auto 1fr; gap:8px 16px; font-size:13px}
+.source-reader-symbol dt {color:var(--muted)}
+.source-reader-symbol dd {margin:0; overflow-wrap:anywhere}
+.source-reader-locator,.source-reference {display:flex; align-items:center; flex-wrap:wrap; gap:8px; font-size:13px}
+.mock-reader {display:flex; flex-direction:column; flex:1; min-height:0; min-width:0; overflow:auto}
+.mock-reader-bar,.mock-reader-image-bar {display:flex; align-items:center; flex-wrap:wrap; gap:8px; padding:8px 16px; border-bottom:1px solid var(--border); background:var(--surface); font-size:13px}
+.mock-reader-bar .ant-select {width:330px; max-width:100%}
+.mock-reader-content {display:flex; flex:1; min-height:0; min-width:0}
+.mock-reader-image-pane {flex:1; min-width:0; display:flex; flex-direction:column; background:#e8e8e6}
+.mock-reader-image {overflow:auto; padding:20px; flex:1; min-height:0}
+.mock-reader-image svg {display:block; width:100%; background:white}
+.mock-reader-results {flex:0 0 420px; max-width:100%; overflow:auto; padding:16px; border-left:1px solid var(--border); background:var(--surface)}
+.mock-reader-results h3 {margin:0 0 8px; font-size:14px; font-weight:500}
+.mock-reader-results p {font-size:13px; line-height:1.6}
+.mock-overlay-selected {fill:rgba(219,0,17,.06); stroke:var(--selection); stroke-width:2; vector-effect:non-scaling-stroke}
+.mock-region-selected {fill:none; stroke:var(--success); stroke-width:1.5; vector-effect:non-scaling-stroke}
+.mock-row-selected {background:var(--bg)}
+@media(max-width:760px) {
+  .source-reader-workspace {position:relative}
+  .source-reader-directory {position:absolute; z-index:2; top:0; bottom:0; left:0; width:min(280px,85%); box-shadow:4px 0 12px #0002}
+  .source-reader-paper {padding:16px}
+  .source-reader-text {font-size:14px}
+  .mock-reader-content {display:block; overflow:auto}
+  .mock-reader-image-pane {min-height:320px}
+  .mock-reader-image {max-height:65vh}
+  .mock-reader-results {border-left:0; border-top:1px solid var(--border); overflow:visible}
+}
+
+.review-source-pane {display:flex; flex-direction:column; min-width:0; min-height:0; height:100%}
+.review-source-toolbar {display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px; padding:8px 12px; color:var(--muted); font-size:12px; background:var(--surface); border-bottom:1px solid var(--border)}
+.review-source-pane .source-reader-directory {flex-basis:180px}
+.review-source-pane .source-reader-paper {padding:16px}
+@media(max-width:999px), (max-height:640px) {.review-stack .review-source-pane {min-height:420px; height:60vh}}

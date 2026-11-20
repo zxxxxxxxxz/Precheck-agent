@@ -1,0 +1,68 @@
+{
+  "source": "https://raw.githubusercontent.com/moby/profiles/6fe7deb1b9fb7c0397a4593480d7d22b9ee8caef/seccomp/default.json",
+  "commit": "6fe7deb1b9fb7c0397a4593480d7d22b9ee8caef",
+  "sha256": "6416b47770785a41ac59073cdc77d9fe98517df2799dc83ef207e622de3053f6",
+  "derivedSha256": "ab7e3edec8accae456ff9ecf91af70367d34f66192fc7af387840dfd2bfc062e",
+  "addedRules": [
+    {
+      "names": [
+        "clone"
+      ],
+      "action": "SCMP_ACT_ALLOW",
+      "args": [
+        {
+          "index": 0,
+          "value": 268435456,
+          "valueTwo": 268435456,
+          "op": "SCMP_CMP_MASKED_EQ"
+        }
+      ],
+      "includes": {
+        "arches": [
+          "amd64",
+          "arm64"
+        ]
+      },
+      "comment": "Only namespace clone carrying CLONE_NEWUSER; ordinary clone retains default rules."
+    },
+    {
+      "names": [
+        "unshare"
+      ],
+      "action": "SCMP_ACT_ALLOW",
+      "args": [
+        {
+          "index": 0,
+          "value": 268435456,
+          "op": "SCMP_CMP_EQ"
+        }
+      ],
+      "comment": "Bubblewrap secondary user namespace only."
+    },
+    {
+      "names": [
+        "mount",
+        "umount2",
+        "pivot_root",
+        "chroot"
+      ],
+      "action": "SCMP_ACT_ALLOW",
+      "comment": "Bubblewrap root filesystem setup; host capabilities remain empty, kernel restricts to owned user namespace."
+    }
+  ],
+  "status": "passed_same_image_uid10001_nnp_cap_drop_all",
+  "preserved": "Default deny, clone3 ENOSYS and capability-conditioned privileged syscalls remain unchanged.",
+  "validation": {
+    "date": "2026-10-15",
+    "runtimeManifestSha256": "475ac04da21ebf798aafbdf7c9072f3ca91c8441a81cf0a741a51456c8f7d54c",
+    "privatePidNamespace": true,
+    "procTree": "empty_unmounted",
+    "network": "private_namespace_no_external_interface",
+    "rootFilesystem": "read_only",
+    "temporaryFilesystem": "private_job_directory_on_256MiB_tmpfs",
+    "hostCapabilities": [],
+    "noNewPrivileges": true,
+    "separateAppArmorChildDomain": false,
+    "profile": "hsbc-docx-worker"
+  }
+}

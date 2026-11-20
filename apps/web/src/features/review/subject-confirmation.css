@@ -1,0 +1,38 @@
+/* Use the review desk's compact groups; the shared modal body owns scrolling. */
+.subject-confirmation-intro {margin: 0 0 20px; padding: 12px 14px; background: var(--bg); font-size: 13px; line-height: 21px; color: var(--muted)}
+.subject-confirmation-group {border: 1px solid var(--border)}
+.subject-confirmation-group + .subject-confirmation-group {margin-top: 16px}
+.subject-confirmation-group h3 {display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; margin: 0; padding: 10px 14px; background: var(--bg); font-size: 13px; font-weight: 500; line-height: 20px}
+.subject-confirmation-group h3 span {font-size: 12px; font-weight: 400; color: var(--muted)}
+.subject-confirmation-group ul {margin: 0; padding: 0; list-style: none}
+.subject-confirmation-group li {display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; align-items: start; padding: 12px 14px; border-top: 1px solid var(--border)}
+.subject-confirmation-group li.is-checked {background: var(--hover-bg)}
+.subject-confirmation-group .ant-checkbox-wrapper {min-width: 0; align-items: flex-start}
+.subject-confirmation-name {font-size: 14px; font-weight: 500; line-height: 22px; color: var(--ink); overflow-wrap: anywhere}
+.subject-confirmation-sources {grid-column: 1; padding-left: 30px; font-size: 12px; line-height: 19px; color: var(--muted); overflow-wrap: anywhere}
+.subject-confirmation-source-label {white-space: nowrap}
+.subject-confirmation-join {grid-column: 2; grid-row: 1 / span 2; width: 220px; align-self: center}
+.subject-confirmation-empty {margin: 0; padding: 16px 14px; border-top: 1px solid var(--border); font-size: 13px; line-height: 21px; color: var(--muted)}
+.subject-confirmation-add {margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border)}
+.subject-confirmation-add-heading {display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-bottom: 10px}
+.subject-confirmation-add-heading h4 {margin: 0; font-size: 13px; font-weight: 500; line-height: 20px}
+.subject-confirmation-add-heading span {font-size: 12px; line-height: 20px; color: var(--muted)}
+.subject-confirmation-add-fields {display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px}
+.subject-confirmation-add-fields.has-role {grid-template-columns: 144px minmax(0, 1fr) auto}
+.subject-confirmation-add-fields :is(.ant-input, .ant-select) {min-width: 0; width: 100%}
+.subject-confirmation-waiting {display: flex; gap: 10px; align-items: flex-start; margin-top: 12px; padding: 10px 12px; font-size: 13px; line-height: 20px; color: var(--ink); background: var(--warning-bg); border: 1px solid var(--warning-border)}
+.subject-confirmation-waiting .ant-spin {margin-top: 2px}
+.subject-confirmation-waiting p {margin: 0; overflow-wrap: anywhere}
+.subject-confirmation-waiting p + p {color: var(--muted)}
+.subject-confirmation-waiting .ant-btn-link {height: auto; padding: 0 0 0 6px; font-size: 13px}
+.subject-confirmation-notice {margin: 12px 0 0; font-size: 13px; color: var(--warning)}
+.subject-confirmation-error {margin: 12px 0 0; font-size: 13px; color: var(--error)}
+.subject-confirmation-status {display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 0 0 12px; padding: 8px 12px; font-size: 13px; line-height: 20px; color: var(--muted); background: var(--surface); border: 1px solid var(--border)}
+.subject-confirmation-status.is-needed {color: var(--ink); border-top: 2px solid var(--warning)}
+@media (max-width: 620px) {
+  .subject-confirmation-group li {grid-template-columns: minmax(0, 1fr); padding: 12px}
+  .subject-confirmation-group h3 {padding-inline: 12px}
+  .subject-confirmation-join {grid-column: 1; grid-row: auto; width: calc(100% - 30px); margin-left: 30px; margin-top: 4px}
+  .subject-confirmation-add-fields.has-role {grid-template-columns: minmax(0, 1fr) auto}
+  .subject-confirmation-add-fields.has-role > .ant-select {grid-column: 1 / -1}
+}

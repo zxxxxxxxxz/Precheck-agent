@@ -1,0 +1,41 @@
+.cross-file-checks { min-width: 0; }
+.cross-file-check { margin: 20px 0; border: 1px solid var(--border, var(--border)); background: var(--surface); }
+.cross-file-check > header { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px 16px; padding: 14px 16px; background: var(--bg); border-bottom: 1px solid var(--border, var(--border)); }
+.cross-file-check > header h3 { font-size: 14px; font-weight: 500; margin: 0; }
+.cross-file-outcome { font-size: 13px; }
+.cross-file-different > header { border-left: 3px solid var(--primary); }
+.cross-file-different .cross-file-outcome { color: var(--primary); }
+.cross-file-reason,.cross-file-check > .help-text { margin: 14px 16px; line-height: 1.65; }
+div.cross-file-manual { margin: 0 16px 14px; padding: 10px 12px; border-left: 2px solid var(--muted); background: var(--bg); font-size: 13px; }
+div.cross-file-manual ul,.cross-file-warnings { margin: 6px 0 0; padding-left: 18px; }
+.cross-file-sources { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); border-top: 1px solid var(--border, var(--border)); }
+.cross-file-sources > article { min-width: 0; padding: 16px; border-bottom: 1px solid var(--border, var(--border)); overflow-wrap: anywhere; }
+.cross-file-sources > article:nth-child(even) { border-left: 1px solid var(--border, var(--border)); }
+.cross-file-source-heading { display: grid; gap: 4px; font-size: 13px; }
+.cross-file-source-heading > span,.cross-file-missing,.cross-file-warnings { color: var(--muted); font-size: 13px; }
+.cross-file-missing-counterpart { color: var(--ink); font-size: 14px; font-weight: 500; line-height: 1.65; }
+.cross-file-value { white-space: pre-wrap; font-size: 14px; line-height: 1.65; margin: 12px 0; }
+.cross-file-notes,.cross-file-full-extract { margin: 8px 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.cross-file-notes > summary,.cross-file-full-extract > summary { cursor: pointer; }
+.cross-file-full-extract p { white-space: pre-wrap; font-size: 13px; }
+.cross-file-sources .review-loop-evidence { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 8px; }
+.cross-file-sources .review-loop-evidence a,.cross-file-sources .review-source-more { font-size: 12px; font-weight: 400; line-height: 1.6; color: var(--muted); }
+.cross-file-sources .review-loop-evidence a { text-decoration: underline; text-underline-offset: 3px; }
+.cross-file-sources .review-loop-evidence a:hover { color: var(--primary); }
+.cross-file-sources a:focus-visible,.cross-file-sources summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+.cross-file-report { margin: 20px 0; }
+.cross-file-report > summary { cursor: pointer; padding: 14px 0; font-size: 18px; font-weight: 500; }
+.cross-file-filter { display: flex; gap: 8px 20px; flex-wrap: wrap; margin: 12px 0; }
+.cross-file-filter label { display: flex; gap: 8px; align-items: center; font-size: 13px; }
+.cross-file-filter button { font: inherit; font-size: 13px; padding: 8px 0; background: transparent; color: var(--ink,var(--ink)); border: 0; border-bottom: 2px solid transparent; cursor: pointer; }
+.cross-file-filter button[aria-pressed='true'] { border-bottom-color: var(--primary); }
+.cross-file-filter button:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.cross-file-report-item { border-bottom: 1px solid var(--border,var(--border)); }
+.cross-file-report-item > summary { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; padding: 14px 4px; cursor: pointer; }
+.cross-file-report-item > summary::before { content: '+'; }
+.cross-file-report-item[open] > summary::before { content: '−'; }
+.cross-file-report-item > summary > span { flex: 1; min-width: 180px; }
+.cross-file-report-item > summary > strong { font-size: 13px; }
+.start-review-action { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.start-review-action > [role='status'] { font-size: 12px; color: var(--muted); }
+@media(max-width:620px) { .cross-file-sources { grid-template-columns: minmax(0,1fr); } .cross-file-sources > article:nth-child(even) { border-left: 0; } }

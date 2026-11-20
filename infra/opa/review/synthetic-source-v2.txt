@@ -1,0 +1,9 @@
+Synthetic mortgage review fixture v2. User-confirmed synthetic gold, not bank policy or bank approval.
+Borrower and mortgagor identity requires an explicit evidence-backed same_entity confirmation; equal names and ordinary links do not establish identity. Explicit different_entity fails; absent or conflicting identity confirmations require manual review. Distinct object IDs are never merged.
+All three monetary currencies must be USD. Monetary coverage comparisons require both explicit currency facts to be present and USD; no foreign exchange or bare-number currency inference can bypass that check.
+A facility letter, mortgage contract, and insurance policy are required.
+Mortgage and policy references match the explicitly linked facility and mortgage.
+Secured principal and insured amount each cover at least 100% of facility principal; equality passes.
+Insurance coverage includes the entire facility period including both boundary dates.
+Missing required material fails its presence rule. Missing, redacted, unreadable, or uncertain fields and insufficient identity evidence block dependent comparisons.
+Institution lists and jurisdictions are not executable requirements. Blank endorsement and peril sets remain separate synthetic operator examples, never bank requirements.

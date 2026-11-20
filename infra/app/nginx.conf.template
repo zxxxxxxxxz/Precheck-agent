@@ -1,0 +1,51 @@
+log_format hsbc_safe 'id=$request_id status=$status duration=$request_time';
+server {
+    listen 80;
+    server_name hsbc.mse.pub;
+    access_log /data/hsbc/logs/nginx-access.log hsbc_safe;
+    return 308 https://hsbc.mse.pub$request_uri;
+}
+server {
+    listen 443 ssl;
+    http2 on;
+    server_name hsbc.mse.pub;
+    ssl_certificate @@CERT@@;
+    ssl_certificate_key @@KEY@@;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    server_tokens off;
+    root /data/hsbc/current-web;
+    index index.html;
+    client_max_body_size 1m;
+    if (-f /data/hsbc/run/p1-maintenance) { return 503; }
+    access_log /data/hsbc/logs/nginx-access.log hsbc_safe;
+    # Normal upstream failures remain visible as status codes in safe access logs.
+    error_log /data/hsbc/logs/nginx-error.log crit;
+    location = /api/p0 { return 404; }
+    location ^~ /api/p0/ { return 404; }
+    location = /internal { return 404; }
+    location ^~ /internal/ { return 404; }
+    location = /api/internal { return 404; }
+    location ^~ /api/internal/ { return 404; }
+    location ^~ /.well-known/ { return 404; }
+    location = /agentcards { return 404; }
+    location ^~ /agentcards/ { return 404; }
+    location = /api/agentcards { return 404; }
+    location ^~ /api/agentcards/ { return 404; }
+    location /api/ {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header X-Request-ID $request_id;
+        proxy_hide_header X-Powered-By;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_connect_timeout 5s;
+        proxy_read_timeout 120s;
+    }
+    location /assets/ { try_files $uri =404; expires 1d; }
+    location / { try_files $uri $uri/ /index.html; }
+    # Keep a clear unavailable status until the first real SPA is published.
+    location = /index.html { try_files $uri =503; add_header Cache-Control 'no-cache'; }
+    location ~ /\. { deny all; }
+}
+

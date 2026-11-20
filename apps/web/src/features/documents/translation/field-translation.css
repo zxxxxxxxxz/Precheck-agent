@@ -1,0 +1,10 @@
+.field-translation { margin-top: 8px; min-width: 0; }
+.field-translation-content { margin-top: 8px; padding-top: 12px; border-top: 1px solid var(--border); color: var(--ink); }
+.field-translation-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.field-translation-note { margin: 4px 0 12px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.field-translation-text { margin: 8px 0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 14px; line-height: 1.5; }
+.field-translation-segment + .field-translation-segment { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border); }
+.field-translation-segment summary { cursor: pointer; color: var(--muted); line-height: 1.5; }
+.field-translation-segment summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+.field-translation-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.field-translation-content .ant-alert { margin: 8px 0; }

@@ -1,0 +1,10 @@
+#!/bin/sh
+# Resolve the bundled loader and shared libraries, not the host's GLIBC.
+set -eu
+bundle_root=$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)
+case "$(uname -m)" in
+  x86_64) runtime_loader="$bundle_root/lib64/ld-linux-x86-64.so.2"; runtime_lib=x86_64-linux-gnu ;;
+  aarch64) runtime_loader="$bundle_root/lib/ld-linux-aarch64.so.1"; runtime_lib=aarch64-linux-gnu ;;
+  *) exit 78 ;;
+esac
+exec "$runtime_loader" --library-path "$bundle_root/lib/$runtime_lib:$bundle_root/usr/lib/$runtime_lib" "$bundle_root/usr/bin/bwrap" "$@"

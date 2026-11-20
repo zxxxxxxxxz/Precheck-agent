@@ -1,0 +1,1 @@
+{"revision":"hsbc-authz-v1","rego_version":1,"roots":["system/authz","hsbc/health"]}

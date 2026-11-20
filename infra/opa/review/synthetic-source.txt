@@ -1,0 +1,9 @@
+Synthetic mortgage review fixture v1. This is not a bank policy or bank approval.
+The single borrower is the mortgagor. All monetary facts use USD; no foreign exchange is inferred.
+A facility letter, mortgage contract, and insurance policy are required.
+Mortgage and policy references must match their explicitly linked facility/mortgage.
+Secured amount and insured amount each cover at least 100% of facility principal.
+Insurance coverage includes the entire facility period, including both boundary dates.
+Missing required material fails its presence rule. Missing, redacted, unreadable, or uncertain field facts block dependent comparisons.
+An unused endorsement is an explicit synthetic blank-field example only; it is not a bank requirement.
+Account charge, personal guarantee, corporate guarantee, and SBLC are recorded as outside this executable synthetic subset.

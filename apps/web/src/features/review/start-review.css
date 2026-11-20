@@ -1,0 +1,14 @@
+.start-review-dialog .start-review-content {color: var(--ink); font-size: 13px; line-height: 1.65;}
+.start-review-dialog .start-review-content p {margin: 0;}
+.start-review-dialog .start-review-lead {max-width: 34em;}
+.start-review-dialog .start-review-expectations {margin: 20px 0 0; padding-top: 16px; border-top: 1px solid var(--border); font-size: 13px;}
+.start-review-dialog .start-review-expectations > div {display: grid; grid-template-columns: 5em minmax(0, 1fr); gap: 16px;}
+.start-review-dialog .start-review-expectations > div + div {margin-top: 12px;}
+.start-review-dialog .start-review-expectations dt {color: var(--muted);}
+.start-review-dialog .start-review-expectations dd {margin: 0;}
+.start-review-dialog .start-review-error-title {color: var(--error); font-size: 14px; font-weight: 500;}
+.start-review-dialog .start-review-error > p + p {margin-top: 8px; font-size: 13px;}
+.start-review-dialog .start-review-error details {margin-top: 16px; color: var(--muted); font-size: 12px; overflow-wrap: anywhere;}
+.start-review-dialog .start-review-error summary {width: fit-content; cursor: pointer;}
+.start-review-dialog .start-review-error summary:focus-visible {outline: 2px solid var(--ink); outline-offset: 4px;}
+.workspace-dialog .start-review-dialog .workspace-overlay-footer {background: var(--surface);}

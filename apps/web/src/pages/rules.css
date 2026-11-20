@@ -1,0 +1,140 @@
+/* Match the review-desk mockup's compact typography and continuous white surfaces. */
+.rules-page {gap: 20px; font-size: 13px; line-height: 1.6}
+.rules-page > .page-header {gap: 8px 16px; min-height: 36px; margin-bottom: 0}
+.rules-page > .page-header h1 {font-size: 22px; line-height: 30px; font-weight: 500; white-space: normal; overflow-wrap: anywhere}
+.rules-page .page-header-title {flex-wrap: wrap; gap: 8px; max-width: 100%}
+.rules-page .page-header-meta {font-size: 12px; min-height: 24px}
+.rules-page .page-header-actions {flex-wrap: wrap; gap: 8px}
+.rules-page > .notice {margin: 0}
+.rules-page .mono, .rules-dialog .mono {font-family: inherit; font-size: 12px; font-variant-numeric: tabular-nums}
+.rules-page h3, .rules-dialog h3, .rules-dialog h4 {font-size: 14px; line-height: 22px; font-weight: 500}
+.rules-page .ant-tag {font-size: 12px; line-height: 22px; padding-inline: 8px}
+.rules-page .ant-alert-title {font-size: 13px; font-weight: 500}
+.rules-page .ant-alert-description {font-size: 13px; line-height: 1.65; color: var(--muted)}
+.rules-page .ant-alert-description, .rules-page .ant-alert-title {overflow-wrap: anywhere}
+.rules-page .ant-table-cell {vertical-align: top; line-height: 1.65; overflow-wrap: anywhere}
+.rules-page .ant-table-thead > tr > th {font-size: 12px; font-weight: 400; padding-block: 10px}
+.rules-page .ant-table-cell strong, .rules-page .table-main {font-size: 13px; font-weight: 500}
+.rules-page .row-actions {gap: 12px; flex-wrap: nowrap}
+.rules-page .row-actions .ant-btn {padding: 0; height: auto; font-size: 12px; line-height: 22px}
+.rules-page .review-loop-rule-source {margin-top: 6px; font-size: 12px; line-height: 1.6}
+.rules-page .review-loop-code {font-size: 12px; line-height: 1.5}
+.rules-page .review-loop-rule-table p {margin-bottom: 6px}
+.rules-list .section-notice:empty {display: none}
+.rules-list .ant-table-pagination {padding-inline: 16px}
+.rules-status {display: inline-flex; align-items: center; gap: 6px; white-space: nowrap}
+.rules-status::before {content: ''; width: 5px; height: 5px; flex: none; border-radius: 50%; background: var(--muted)}
+.rules-status[data-status="published"]::before {background: var(--ink)}
+.rules-status[data-status="draft"] {color: var(--muted)}
+
+/* Tabs form the toolbar; only the active item carries the project-red underline. */
+.rules-config .rules-tabs-header {margin: 0 20px; padding: 0; min-height: 48px}
+.rules-config .ant-tabs-tab {padding: 14px 0}
+.rules-config .ant-tabs-tab-active {font-weight: 500}
+.rules-config .ant-tabs-extra-content {padding-left: 16px}
+.rules-config .ant-tabs-extra-content .ant-btn {height: 30px; font-size: 12px}
+.rules-config .rules-tabs-body {padding: 20px}
+.rules-tab-count {margin-left: 6px; color: var(--muted); font-size: 12px; font-weight: 400; font-variant-numeric: tabular-nums}
+
+/* 适用与参数: forms keep a readable line length instead of stretching across the screen. */
+.rules-general {max-width: 960px}
+.rules-page .review-loop-fields, .rules-dialog .review-loop-fields {gap: 0 24px}
+.rules-page .ant-form-item-extra, .rules-dialog .ant-form-item-extra {margin-top: 4px; font-size: 12px; line-height: 1.6}
+.rules-parameters {margin-top: 4px; padding-top: 20px; border-top: 1px solid var(--border)}
+.rules-parameters h3 {margin: 0}
+.rules-hint {margin: 4px 0 16px; color: var(--muted); font-size: 12px; line-height: 1.65}
+.rules-page > .rules-hint {max-width: 900px; margin: -8px 0 0}
+.rules-parameter-list {display: grid; gap: 12px; margin-bottom: 16px}
+.rules-parameter-row {display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr) 48px; gap: var(--space-4); align-items: center}
+.rules-parameter-head {color: var(--muted); font-size: 12px; line-height: 20px}
+.rules-parameter-row > .link-button.ant-btn {justify-self: end}
+.rules-scalar {display: flex; align-items: center; gap: var(--space-2); width: 100%; min-width: 0}
+.rules-scalar > .rules-scalar-kind {flex: 0 0 124px; width: 124px}
+.rules-scalar > .rules-scalar-value {flex: 1 1 auto; min-width: 0}
+
+/* 试跑与发布: four stages on one rail; ink marks done, red marks the single current stage. */
+.rules-release {container-type: inline-size}
+.rules-steps {list-style: none; margin: 0 0 24px; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border)}
+.rules-step {display: flex; gap: 10px; min-width: 0; padding: 16px; background: var(--surface); box-shadow: inset 0 2px 0 var(--border)}
+.rules-step.is-done {box-shadow: inset 0 2px 0 var(--ink)}
+.rules-step.is-current {box-shadow: inset 0 2px 0 var(--primary)}
+.rules-step-index {flex: none; display: grid; place-items: center; width: 22px; height: 22px; border: 1px solid var(--border); border-radius: 50%; color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums}
+.is-done .rules-step-index {background: var(--ink); border-color: var(--ink); color: var(--surface)}
+.is-current .rules-step-index {border-color: var(--primary); color: var(--primary)}
+.rules-step-body {display: flex; flex-direction: column; align-items: flex-start; min-width: 0}
+.rules-step-body h3 {margin: 0; line-height: 22px}
+.rules-step-state {margin: 4px 0 12px; color: var(--muted); font-size: 12px; line-height: 20px}
+.is-done .rules-step-state {color: var(--ink)}
+.rules-step .review-loop-action-reason {margin: 8px 0 0; font-size: 12px; line-height: 20px}
+@container (max-width: 880px) {.rules-steps {grid-template-columns: repeat(2, minmax(0, 1fr))}}
+@container (max-width: 480px) {.rules-steps {grid-template-columns: minmax(0, 1fr)} .rules-step {padding: var(--space-4)}}
+
+.rules-release-block + .rules-release-block {margin-top: 24px}
+.rules-release-block h3 {margin: 0; padding: 10px 12px; background: var(--bg); border-bottom: 1px solid var(--border)}
+.rules-facts {display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 16px 24px; margin: 0; padding: 16px 12px}
+.rules-facts dt {margin-bottom: 4px; color: var(--muted); font-size: 12px}
+.rules-facts dd {margin: 0; min-width: 0; overflow-wrap: anywhere}
+.rules-facts .rules-facts-wide {grid-column: 1 / -1}
+.rules-facts .copy-value {margin: 0; font-size: 13px}
+.rules-issues {margin: 0; padding: 0; list-style: none; border: 1px solid var(--warning-border); background: var(--warning-bg)}
+.rules-issues li {display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px var(--space-4); padding: 10px var(--space-4); border-top: 1px solid var(--warning-border)}
+.rules-issues li:first-child {border-top: 0}
+.rules-issues .mono {color: var(--muted); font-size: 13px}
+.rules-receipt {margin: 12px 0 0; color: var(--muted); font-size: 12px; overflow-wrap: anywhere}
+.rules-receipt .mono {font-size: 12px}
+
+/* Portalled dialogs receive this class through the page-local ConfigProvider. */
+.rules-dialog {top: max(16px, 5vh); padding-bottom: 20px}
+.rules-dialog .ant-modal-container {display: flex; flex-direction: column; max-height: calc(100dvh - max(16px, 5vh) - 20px)}
+.rules-dialog .ant-modal-header {flex: none; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--border)}
+.rules-dialog .ant-modal-body {min-height: 0; overflow-y: auto; padding-inline: 2px; font-size: 13px; line-height: 1.6; scrollbar-gutter: stable}
+.rules-dialog .ant-modal-footer {flex: none; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border)}
+.rules-dialog .action-summary {margin-bottom: 20px; padding: 12px 16px; background: var(--bg); font-size: 13px}
+.rules-dialog .action-summary dl {margin: 0}
+.rules-dialog .action-summary dd {overflow-wrap: anywhere}
+.rules-dialog .ant-alert {font-size: 13px}
+.rules-dialog .review-loop-subpanel {padding: 16px; border-color: var(--border)}
+.rules-dialog .ant-form .review-loop-subpanel legend {font-size: 13px; padding-inline: 6px}
+.rules-dialog .signature-requirement-editor > .signature-editor-grid {grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px}
+.rules-dialog .signature-editor-grid > label, .rules-dialog .signature-expression > label {font-size: 13px}
+.rules-dialog .ant-form-item {min-width: 0}
+.rules-dialog .ant-select {max-width: 100%}
+.rules-dialog .ant-modal-confirm-title {font-size: 18px}
+.rules-dialog .ant-modal-confirm-content {font-size: 13px; line-height: 1.7}
+
+@media (max-width: 767px) {
+  .rules-page {gap: 16px}
+  .rules-page > .page-header h1 {font-size: 18px; line-height: 28px}
+  .rules-page .page-header-title {flex: 1 1 100%}
+  .rules-page .page-header-actions {margin-left: auto}
+  .rules-config .rules-tabs-header {margin: 0 var(--space-4); padding: 0}
+  .rules-config .rules-tabs-body {padding: var(--space-4)}
+  .rules-config .rules-tabs-header {flex-wrap: wrap; row-gap: 8px}
+  .rules-page .rules-config .rules-tabs-header > .ant-tabs-nav-wrap {flex: 1 1 0%; min-width: 0}
+  .rules-page .rules-config .rules-tabs-header > .ant-tabs-nav-operations {flex: none}
+  .rules-page .rules-config .rules-tabs-header > .ant-tabs-extra-content {flex-basis: 100%; padding: 0 0 8px; text-align: right}
+  .rules-page .review-loop-fields, .rules-dialog .review-loop-fields {grid-template-columns: minmax(0, 1fr)}
+  .rules-dialog .signature-editor-grid, .rules-dialog .signature-requirement-editor > .signature-editor-grid {grid-template-columns: minmax(0, 1fr)}
+  .rules-dialog .action-summary dl {grid-template-columns: minmax(0, 1fr); gap: 4px}
+  .rules-dialog .action-summary dd {margin-bottom: 8px}
+  .rules-parameter-head {display: none}
+  .rules-parameter-row {grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-2) var(--space-3); padding-bottom: var(--space-3); border-bottom: 1px solid var(--border)}
+  .rules-parameter-row > .rules-scalar {grid-column: 1 / -1; grid-row: 2}
+  .rules-scalar {flex-wrap: wrap}
+  .rules-scalar > .rules-scalar-value {flex-basis: 160px}
+}
+
+.rules-signatures-heading {display:flex;align-items:center;justify-content:space-between;gap:12px;margin:24px 0 0;padding:10px 12px;background:var(--bg);border-bottom:1px solid var(--border)}
+.rules-signatures-heading h3 {margin:0}
+.rules-signatures-heading .ant-btn {height:30px;font-size:12px}
+.rules-signatures-heading + .rules-hint {margin:0;padding:10px 12px;border-bottom:1px solid var(--border)}
+.rules-signature-signer {border:1px solid var(--border);padding:12px;margin:12px 0;min-width:0}
+
+.rules-guidance-statement {margin:4px 0 0;white-space:pre-wrap}
+.rules-digest-hint {margin: 0; padding: 12px 16px 0}
+.rules-digest-entries, .rules-digest-adopt {margin: 0; padding: 0; list-style: none}
+.rules-digest-entries li {display: grid; gap: 2px; padding: 4px 0}
+.rules-digest-entries strong, .rules-digest-adopt strong {margin-right: 8px}
+.rules-digest-adopt li {padding: 12px 0; border-top: 1px solid var(--border)}
+.rules-digest-adopt p {margin: 4px 0 0 24px}
+.rules-digest-statement {margin: 8px 0 0 24px}

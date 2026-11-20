@@ -1,0 +1,16 @@
+.evidence-picker {min-width: 0;}
+.evidence-picker .evidence-picker-select {width: 100%; min-width: 0;}
+.evidence-picker-option {white-space: normal; overflow-wrap: anywhere; line-height: 24px; padding: 4px 0;}
+.evidence-picker-option-location {display: block; color: var(--muted, var(--muted)); font-size: 13px; margin-bottom: 4px;}
+.evidence-picker .selected-evidence {padding: 16px 0;}
+.selected-evidence-heading {display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px;}
+.selected-evidence-heading strong {font-weight: 500; overflow-wrap: anywhere;}
+.selected-evidence-heading .muted {font-size: 13px;}
+.selected-evidence-excerpt {margin: 8px 0; white-space: pre-wrap; overflow-wrap: anywhere; line-height: 24px;}
+.selected-evidence .review-loop-toolbar-actions {font-size: 13px;}
+
+.evidence-picker .evidence-picker-selected {border-bottom: 1px solid var(--border, var(--border)); padding-bottom: 8px; margin-bottom: 24px;}
+.material-adoption-scopes {margin: 16px 0;}
+
+.evidence-picker .evidence-material-field {grid-column: 1 / -1;}
+.evidence-picker .review-loop-fields {margin-bottom: 16px;}

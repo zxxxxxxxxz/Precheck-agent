@@ -1,0 +1,102 @@
+/* Match the reader's compact field table while keeping each signing block distinct. */
+.personal-guarantors,
+.personal-guarantor-records {
+  container: personal-guarantors / inline-size;
+  min-width: 0;
+  color: var(--ink, var(--ink));
+  font-size: 13px;
+  line-height: 20px;
+}
+.personal-guarantors { margin: 4px 0 16px; }
+.personal-guarantors-heading,
+.personal-guarantor-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 12px;
+}
+.personal-guarantors-heading { flex-wrap: wrap; }
+.personal-guarantors-heading strong,
+.personal-guarantor-heading strong { font-size: 13px; font-weight: 500; overflow-wrap: anywhere; }
+.personal-guarantors-heading > span { font-size: 12px; }
+.personal-guarantors > p { margin: 4px 0 10px; font-size: 12px; line-height: 18px; }
+.personal-guarantor { border: 1px solid var(--border, var(--border)); margin-bottom: 8px; }
+.personal-guarantor-heading { background: var(--bg, var(--bg)); padding: 6px 10px; }
+.personal-guarantor-heading strong { min-width: 0; }
+.personal-guarantor-heading > .ant-btn { flex-shrink: 0; }
+.personal-guarantor dl { margin: 0; }
+.personal-guarantor-row {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: start;
+  padding: 7px 10px;
+  border-top: 1px solid var(--border-soft);
+}
+.personal-guarantor-row dt { color: var(--muted, var(--muted)); overflow-wrap: anywhere; }
+.personal-guarantor-row dd { margin: 0; min-width: 0; display: flex; flex-direction: column; gap: 3px; overflow-wrap: anywhere; }
+.personal-guarantors .evidence-value-link { font-size: 13px; line-height: 20px; }
+.personal-guarantor-row .tone-warning { font-size: 12px; line-height: 18px; }
+.personal-guarantor .ant-btn-link { height: 24px; min-height: 24px; padding: 0 2px; font-size: 12px; line-height: 20px; }
+.personal-guarantor-row > .ant-btn { margin-top: -2px; }
+.personal-guarantors .personal-guarantors-unassigned { border-radius: 0; background: var(--surface, var(--surface)); font-size: 12px; }
+.personal-guarantors .personal-guarantors-unassigned-header { padding: 7px 10px; align-items: center; line-height: 20px; }
+.personal-guarantors .personal-guarantors-unassigned-body { padding: 10px; font-size: 12px; line-height: 18px; }
+.personal-guarantor-unassigned p { margin: 0 0 8px; }
+.personal-guarantor-unassigned > div { margin-top: 6px; overflow-wrap: anywhere; }
+
+.personal-guarantor-records { margin-top: 12px; border-block: 1px solid var(--border, var(--border)); }
+.personal-guarantor-records > summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 8px 10px;
+  list-style: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.personal-guarantor-records > summary::-webkit-details-marker { display: none; }
+.personal-guarantor-records > summary::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(-45deg);
+  margin-right: 2px;
+}
+.personal-guarantor-records[open] > summary::before { transform: rotate(45deg); }
+.personal-guarantor-records > summary:hover { background: var(--hover-bg, var(--hover-bg)); }
+.personal-guarantor-records > summary:focus-visible { outline: 2px solid var(--focus, var(--ink)); outline-offset: -2px; }
+.personal-guarantor-records-count { margin-left: auto; flex-shrink: 0; color: var(--muted, var(--muted)); font-size: 12px; font-weight: 400; }
+.personal-guarantor-records .ant-table { font-size: 13px; line-height: 20px; }
+.personal-guarantor-records .ant-table-wrapper .ant-table .ant-table-thead > tr > th { padding: 7px 10px; background: var(--bg, var(--bg)); color: var(--muted, var(--muted)); font-size: 12px; font-weight: 500; }
+.personal-guarantor-records .ant-table-wrapper .ant-table .ant-table-tbody > tr > td { padding: 8px 0; vertical-align: top; background: var(--surface, var(--surface)); }
+.personal-guarantor-records .signature-details,
+.personal-guarantor-records .signature-details h4,
+.personal-guarantor-records .signature-details dt,
+.personal-guarantor-records .signature-details dd,
+.personal-guarantor-records .signature-details .evidence-value-link { font-size: 13px; line-height: 20px; }
+.personal-guarantor-records .signature-details > section + section { margin-top: 8px; }
+.personal-guarantor-records .signature-person-heading > span { font-size: 12px; }
+.personal-guarantor-records .field-signature-cell .signature-details .signature-person-heading { padding: 7px 10px; }
+.personal-guarantor-records .field-signature-cell .signature-details dl > div { gap: 8px; padding: 7px 10px; }
+
+@container personal-guarantors (max-width: 420px) {
+  .personal-guarantor-row { grid-template-columns: 76px minmax(0, 1fr) auto; gap: 6px; }
+  .personal-guarantor-heading { flex-wrap: wrap; }
+}
+@container personal-guarantors (max-width: 300px) {
+  .personal-guarantor-row { grid-template-columns: minmax(0, 1fr) auto; gap: 2px 8px; }
+  .personal-guarantor-row dt { grid-column: 1; font-size: 12px; }
+  .personal-guarantor-row dd { grid-column: 1; grid-row: 2; }
+  .personal-guarantor-row > .ant-btn { grid-column: 2; grid-row: 1 / span 2; margin-top: 0; }
+}
+
+.reader-field-correction { display: block; margin-top: 4px; }
+.reader-correction-guide { display: flex; flex-direction: column; gap: 12px; }
+.reader-correction-guide .ant-select { width: 100%; }

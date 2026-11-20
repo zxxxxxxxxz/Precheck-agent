@@ -1,0 +1,8 @@
+.field-signature-state {display: block; margin: 0 10px 8px}
+.field-signature-person {padding: 6px 0 10px; min-width: 0}
+.field-signature-person + .field-signature-person {border-top: 1px solid var(--border-subtle,var(--border)); padding-top: 10px}
+.field-signature-person dl {margin: 6px 0 0}
+.field-signature-person dl > div {display: grid; grid-template-columns: 86px minmax(0,1fr); gap: 12px; margin: 3px 0}
+.field-signature-person dt {color: var(--text-secondary,var(--muted)); font-size: 13px}
+.field-signature-person dd {margin: 0; min-width: 0; overflow-wrap: anywhere}
+.field-signature-note {display: block; color: var(--text-secondary,var(--muted)); font-size: 12px; margin-top: 5px}

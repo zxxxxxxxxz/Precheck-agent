@@ -1,0 +1,108 @@
+/* Case assistant: a margin note beside the workspace. Answers sit flat on the canvas, only the reviewer's
+   own words are boxed, and the composer names what the question is about. Red only for the one confirm action. */
+.case-assistant-root.ant-drawer {top: var(--topbar-h)}
+.case-assistant-title {display: inline-flex; align-items: baseline; gap: 8px; font-size: 14px; font-weight: 500}
+.case-assistant-title span {font-size: 12px; font-weight: 400; color: var(--muted)}
+.case-assistant-body {display: flex; flex-direction: column; background: var(--bg); font-size: 13px; line-height: 22px}
+.case-assistant-chat {display: flex; flex: 1; flex-direction: column; min-height: 0; min-width: 0; overflow: hidden}
+.case-assistant-messages {flex: 1; min-height: 0; padding: 6px 8px 2px}
+.case-assistant-empty {flex: 1; min-height: 0; overflow: auto; padding: 24px 16px 12px; color: var(--muted)}
+.case-assistant-empty h3 {margin: 0 0 8px; font-size: 14px; font-weight: 500; color: var(--ink)}
+.case-assistant-empty p {margin: 0 0 8px; max-width: 34em}
+.case-assistant-unavailable {padding: 24px 16px}
+
+/* Composer: quick asks on one line, then the input with its subject line. Nothing sits below the input. */
+.case-assistant-compose {flex: none; min-width: 0; max-height: 65%; overflow-y: auto; padding: 8px 12px 12px; background: var(--surface); border-top: 1px solid var(--border)}
+.case-assistant-prompts {display: flex; align-items: center; gap: 4px; min-width: 0; margin: 0 0 8px}
+.case-assistant-prompt-list {display: flex; flex: 1; gap: 6px; min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; touch-action: pan-x; scrollbar-width: none; padding: 2px}
+.case-assistant-prompt-list .case-assistant-prompt {flex: none; height: 30px; padding: 2px 10px}
+.case-assistant-prompt[aria-pressed="true"] {border-color: var(--ink); background: var(--bg)}
+.case-assistant-prompts .case-assistant-prompt-arrow {flex: none; width: 24px; height: 30px; padding: 0; font-size: 18px}
+.case-assistant-prompt:focus-visible {outline: 2px solid var(--ink); outline-offset: -2px}
+.case-assistant-prompt-list::-webkit-scrollbar {display: none}
+.case-assistant-prompt {font-size: 13px; font-weight: 400; line-height: 20px; white-space: nowrap}
+.case-assistant-about {display: flex; align-items: center; gap: 6px; min-width: 0; padding: 8px 10px 0; font-size: 12px; line-height: 20px; color: var(--muted)}
+.case-assistant-about-label {flex: none}
+.case-assistant-subject {display: inline-flex; flex: 0 1 auto; align-items: center; gap: 6px; min-width: 0; max-width: 100%; height: 22px; padding: 0 6px; font-size: 12px; line-height: 20px; color: var(--muted); background: var(--bg); border: 1px solid var(--border)}
+.case-assistant-subject strong {min-width: 0; overflow: hidden; font-weight: 500; color: var(--ink); text-overflow: ellipsis; white-space: nowrap}
+.case-assistant-subject.is-file {font-family: inherit; cursor: pointer}
+.case-assistant-subject.is-file:hover:not(:disabled) {border-color: var(--ink)}
+.case-assistant-subject.is-file:focus-visible {outline: 2px solid var(--ink); outline-offset: 1px}
+.case-assistant-subject.is-file:disabled {cursor: not-allowed; opacity: .6}
+.case-assistant-subject.is-off {flex: none; background: transparent; border-style: dashed}
+.case-assistant-error {margin: 0 0 8px; font-size: 13px; color: var(--error)}
+
+/* Transcript */
+.case-assistant-text {margin: 0; white-space: pre-wrap; overflow-wrap: anywhere}
+.case-assistant-answer {display: grid; gap: 10px; max-width: 100%}
+.case-assistant-note {margin: 0; font-size: 13px; line-height: 20px; color: var(--muted)}
+.case-assistant-working {margin: 0; color: var(--muted)}
+.case-assistant-working::after {display: inline-block; width: 1.2em; overflow: hidden; vertical-align: bottom; content: '…'; animation: case-assistant-wait 1.2s steps(4, end) infinite}
+@keyframes case-assistant-wait {from {width: 0} to {width: 1.2em}}
+@media (prefers-reduced-motion: reduce) {.case-assistant-working::after {animation: none}}
+.case-assistant-failed {display: grid; gap: 6px; justify-items: start; padding-left: 10px; border-left: 2px solid var(--border)}
+.case-assistant-question {margin: 0 0 4px; font-weight: 500}
+.case-assistant-targets ul, .case-assistant-rules-card ul, .case-assistant-legal ul, .case-assistant-digests ul, .case-assistant-retired ul {margin: 0; padding: 0; list-style: none}
+.case-assistant-targets li {display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 12px; padding: 6px 0; border-top: 1px solid var(--border)}
+.case-assistant-target {display: flex; flex-wrap: wrap; gap: 2px 8px; align-items: baseline; min-width: 0}
+.case-assistant-target span {font-size: 13px; color: var(--muted)}
+.case-assistant-target .case-assistant-status, .case-assistant-status {font-size: 13px; color: var(--ink)}
+.case-assistant-links {display: flex; gap: 12px; align-items: center; font-size: 13px}
+.case-assistant-links .ant-btn-link {padding: 0; height: auto; font-size: 13px}
+.case-assistant-links a, .case-assistant-legal a, .case-assistant-quotes a {color: var(--ink); text-decoration: underline}
+/* Passages of the open file, checked verbatim before they are shown. */
+.case-assistant-quotes {margin: 0; padding-top: 8px; border-top: 1px solid var(--border)}
+.case-assistant-quotes figcaption {margin-bottom: 6px; font-size: 12px; line-height: 18px; color: var(--muted); overflow-wrap: anywhere}
+.case-assistant-quotes blockquote {margin: 0 0 8px; padding-left: 10px; border-left: 2px solid var(--ink); white-space: pre-wrap; overflow-wrap: anywhere}
+.case-assistant-quotes blockquote:last-child {margin-bottom: 0}
+.case-assistant-quotes a {margin-left: 8px; font-size: 12px; white-space: nowrap}
+/* The slip: the reviewer's words above the rule they become. */
+.case-assistant-slip {padding: 12px 14px; background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--ink)}
+.case-assistant-slip.is-settled {border-left-color: var(--border)}
+.case-assistant-slip blockquote, .case-assistant-legal blockquote {margin: 0 0 8px; padding-left: 10px; border-left: 2px solid var(--border); color: var(--muted); font-size: 13px; white-space: pre-wrap; overflow-wrap: anywhere}
+.case-assistant-slip-kind {margin: 0 0 4px; font-size: 13px; font-weight: 500}
+.case-assistant-slip-object {margin-left: 8px; font-weight: 400; color: var(--muted)}
+.case-assistant-slip blockquote a {margin-left: 8px; font-size: 12px; color: var(--ink); text-decoration: underline; white-space: nowrap}
+.case-assistant-slip-before {margin: 0 0 4px; font-size: 13px; color: var(--muted); text-decoration: line-through; overflow-wrap: anywhere}
+.case-assistant-slip-before span {margin-right: 8px; text-decoration: none; display: inline-block}
+.case-assistant-slip-statement {margin: 0; font-size: 13px; overflow-wrap: anywhere}
+.case-assistant-slip dl {display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 10px 0 0; font-size: 13px}
+.case-assistant-slip dt {color: var(--muted)}
+.case-assistant-slip dd {margin: 0; display: flex; flex-wrap: wrap; gap: 4px}
+.case-assistant-expression {padding: 0 6px; background: var(--bg); border: 1px solid var(--border); overflow-wrap: anywhere}
+.case-assistant-actions {display: flex; gap: 8px; margin-top: 12px}
+.case-assistant-settled {display: grid; gap: 8px; margin-top: 10px; font-size: 13px}
+.case-assistant-settled p {margin: 0}
+.case-assistant-settled .ant-btn {justify-self: start}
+.case-assistant-rules-card li {padding: 6px 0; border-top: 1px solid var(--border)}
+.case-assistant-rules-card strong {margin-right: 8px}
+.case-assistant-legal section + section {margin-top: 12px}
+.case-assistant-legal h4 {margin: 0 0 4px; font-size: 14px; font-weight: 500}
+.case-assistant-legal li {padding: 8px 0; border-top: 1px solid var(--border)}
+.case-assistant-legal li p {margin: 0 0 6px}
+.case-assistant-baseline {margin-left: 8px; font-size: 12px; color: var(--warning)}
+.case-assistant-footnote {margin: 8px 0 0; font-size: 12px; line-height: 18px; color: var(--muted)}
+.case-assistant-digest {display: grid; gap: 6px; justify-items: start}
+
+/* Rules view */
+.case-assistant-rules {flex: 1; overflow: auto; padding: 12px 16px 24px; background: var(--surface)}
+.case-assistant-rules-config {display: flex; flex-wrap: wrap; gap: 4px 8px; margin: 0 0 8px; font-size: 12px; line-height: 18px; color: var(--muted)}
+.case-assistant-rules-config span {color: var(--ink); overflow-wrap: anywhere}
+.case-assistant-rule-list {margin: 12px 0 0; padding: 0; list-style: none}
+.case-assistant-rule-list li {padding: 12px 0; border-top: 1px solid var(--border)}
+.case-assistant-rule-list p {margin: 4px 0 0; overflow-wrap: anywhere}
+.case-assistant-rule-head {display: flex; align-items: baseline; gap: 8px}
+.case-assistant-rule-head span {font-size: 13px; color: var(--muted)}
+.case-assistant-rule-head .ant-btn {margin-left: auto; padding: 0; height: auto}
+.case-assistant-rule-scope, .case-assistant-rule-meta {font-size: 13px; color: var(--muted)}
+.case-assistant-empty-rules {margin: 16px 0; color: var(--muted)}
+.case-assistant-retired {margin-top: 12px; font-size: 13px; color: var(--muted)}
+.case-assistant-retired li {display: grid; gap: 2px; padding: 6px 0}
+.case-assistant-digests {margin-top: 24px; padding-top: 12px; border-top: 1px solid var(--border)}
+.case-assistant-digests h4 {margin: 0 0 4px; font-size: 14px; font-weight: 500}
+.case-assistant-digests ul {margin-top: 12px}
+.case-assistant-digests li {display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; padding: 8px 0; border-top: 1px solid var(--border); font-size: 13px}
+.case-assistant-note + .case-assistant-digest, .case-assistant-digests .case-assistant-digest {margin-top: 8px}
+@media (max-width: 767px) {.case-assistant .ant-drawer-content-wrapper {width: 100vw !important}}
+
+.case-assistant-modes {padding: 12px 16px 0; flex: none;}

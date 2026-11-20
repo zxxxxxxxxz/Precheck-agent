@@ -1,0 +1,37 @@
+{
+  "sourcePage": "https://www.hsbc.com.cn/",
+  "retrievedAt": "2026-10-13T10:39:46.542542+00:00",
+  "usage": "Original official favicon files, unmodified; declarations verified from source page.",
+  "assets": [
+    {
+      "file": "favicon-16x16.png",
+      "url": "https://www.hsbc.com.cn/etc.clientlibs/dpws/clientlibs-public/clientlib-site/resources/favicons/favicon-16x16.png",
+      "bytes": 17837,
+      "sha256": "2872883a52702bdba032cdf987ada410872cb0e76f148cb63f48368cd8ccba39"
+    },
+    {
+      "file": "favicon-32x32.png",
+      "url": "https://www.hsbc.com.cn/etc.clientlibs/dpws/clientlibs-public/clientlib-site/resources/favicons/favicon-32x32.png",
+      "bytes": 17958,
+      "sha256": "e3fbe878da9f2a357e7e3f556d0c3e32b6a7c82f5bb7507f5b0878bad2a4c395"
+    },
+    {
+      "file": "favicon.ico",
+      "url": "https://www.hsbc.com.cn/etc.clientlibs/dpws/clientlibs-public/clientlib-site/resources/favicons/favicon.ico",
+      "bytes": 15086,
+      "sha256": "6792c4c37672b1a8d6c2842f403c70c85f3b66f3ebaa434b816b5cd25203113b"
+    },
+    {
+      "file": "apple-touch-icon.png",
+      "url": "https://www.hsbc.com.cn/etc.clientlibs/dpws/clientlibs-public/clientlib-site/resources/favicons/apple-touch-icon.png",
+      "bytes": 1910,
+      "sha256": "d258f7e2ad662d73ec5c4a2c9e0b7d514b353df351bb8880b9b4731682788766"
+    },
+    {
+      "file": "safari-pinned-tab.svg",
+      "url": "https://www.hsbc.com.cn/etc.clientlibs/dpws/clientlibs-public/clientlib-site/resources/favicons/safari-pinned-tab.svg",
+      "bytes": 892,
+      "sha256": "23a8acd97df7b33042f0b0937328282bfcd7ae48f59e7cce93ff70bb48edb8bb"
+    }
+  ]
+}

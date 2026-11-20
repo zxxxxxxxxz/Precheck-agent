@@ -1,0 +1,9 @@
+[
+  {
+    "allowedOrigin": ["https://hsbc.mse.pub"],
+    "allowedMethod": ["POST"],
+    "allowedHeader": ["content-type"],
+    "exposeHeader": ["x-oss-version-id", "etag", "x-oss-request-id"],
+    "maxAgeSeconds": "300"
+  }
+]

@@ -1,0 +1,9 @@
+[Unit]
+Description=HSBC local database and immutable policy backup
+After=hsbc-infra.service
+RequiresMountsFor=/data/hsbc
+[Service]
+Type=oneshot
+UMask=0077
+ExecStart=/usr/bin/python3 /data/hsbc/scripts/backup.py
+

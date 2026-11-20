@@ -1,0 +1,34 @@
+@import '../materials/preparation-checklist.css';
+
+.case-business-picker {margin-bottom: 24px; padding-top: 16px; border-top: 1px solid var(--border)}
+.case-business-heading {display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 12px}
+.case-business-heading h2 {margin: 0; font-size: 14px; font-weight: 500}
+.case-business-heading h2 span, .case-business-heading > span {color: var(--muted); font-size: 13px; font-weight: 400}
+.case-business-heading h2 span {margin-left: 8px}
+.case-business-options {display: flex; flex-wrap: wrap; gap: 8px}
+.case-business-options .case-business-option {min-height: 44px; margin: 0; padding: 8px 10px; border: 1px solid var(--border); background: var(--surface); font-size: 13px; align-items: center}
+.case-business-options .case-business-option:hover {border-color: var(--ink)}
+.case-business-options .case-business-option.is-selected {border-color: var(--primary); background: var(--selection-fill); box-shadow: inset 0 -2px 0 var(--primary)}
+.case-business-options .case-business-option:focus-within {outline: 2px solid var(--focus); outline-offset: 2px}
+.case-business-hint {margin: 12px 0 0; color: var(--muted); font-size: 13px; line-height: 1.6}
+.case-business-hint.has-warning {color: var(--warning)}
+.case-rule-details {margin-top: 8px; color: var(--muted); font-size: 13px}
+.case-rule-details summary {cursor: pointer; width: fit-content; line-height: 32px}
+.case-rule-details summary:focus-visible {outline: 2px solid var(--focus); outline-offset: 2px}
+.case-rule-details p {margin: 4px 0; overflow-wrap: anywhere}
+.intake-workspace > .intake-support-pane {display: flex; flex-direction: column; background: var(--bg); border-left: 1px solid var(--border); padding: 32px 24px 36px}
+.intake-support-pane > .intake-chat-pane {height: max(520px, calc(var(--intake-viewport-height, 100dvh) - 260px)); min-height: 0; overflow: hidden; border-right: 0}
+.case-material-preview {min-width: 0}
+.case-material-preview header {display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid var(--ink)}
+.case-material-preview h2 {margin: 0; font-size: 14px; font-weight: 500}
+.case-material-preview header > span {color: var(--muted); font-size: 12px; white-space: nowrap}
+.case-material-intro {color: var(--muted); font-size: 13px; line-height: 1.6; margin: 12px 0 20px}
+.case-material-preview .preparation-checklist li {grid-template-columns: minmax(0, 1fr)}
+.case-mobile-materials {margin: 0 0 24px; font-size: 13px}
+.case-mobile-materials > summary {cursor: pointer; min-height: 44px; line-height: 44px}
+.case-mobile-materials > summary:focus-visible {outline: 2px solid var(--focus); outline-offset: 2px}
+@media (max-width: 991px) {
+  .intake-workspace > .intake-support-pane {border-left: 0; padding: 0}
+  .intake-support-pane > .intake-chat-pane {border-top: 0}
+  .case-mobile-materials .case-material-preview {padding: 20px 16px; background: var(--bg); border: 1px solid var(--border)}
+}

@@ -1,0 +1,73 @@
+/* Match the review desk: square surfaces, quiet context, one clear primary action. */
+.workspace-dialog .ant-modal {top: 48px; margin: 0 auto; padding-bottom: 48px; max-width: calc(100% - 32px);}
+.workspace-dialog .workspace-overlay {
+  display: flex; flex-direction: column; max-height: calc(100dvh - 96px);
+  padding: 0; border: 1px solid var(--border); border-radius: 0;
+  box-shadow: 0 16px 48px rgb(0 0 0 / 14%);
+}
+.workspace-overlay {color: var(--ink); font-size: 13px; line-height: 1.6;}
+.workspace-overlay .workspace-overlay-header {
+  flex: none; margin: 0; padding: 20px 24px; border-bottom: 1px solid var(--border);
+  background: var(--surface); border-radius: 0;
+}
+.workspace-dialog .workspace-overlay-header {padding-right: 72px;}
+.workspace-overlay .workspace-overlay-title {font-size: 18px; font-weight: 400; line-height: 28px; overflow-wrap: anywhere;}
+.workspace-dialog .workspace-dialog-close {top: 12px; right: 12px; width: 44px; height: 44px; border-radius: 0; color: var(--muted);}
+.workspace-overlay .workspace-overlay-body {min-height: 0; padding: 24px; overflow: auto; overscroll-behavior: contain; font-size: 13px; line-height: 1.6;}
+.workspace-overlay .workspace-overlay-footer {
+  flex: none; display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; gap: 8px;
+  margin: 0; padding: 16px 24px; border-top: 1px solid var(--border); border-radius: 0; background: var(--hover-bg);
+}
+.workspace-overlay-footer > .ant-btn + .ant-btn {margin-inline-start: 0;}
+.workspace-overlay .ant-btn {border-radius: 0; font-size: 13px; font-weight: 500; box-shadow: none;}
+.workspace-overlay .ant-btn:not(.ant-btn-link):not(.ant-btn-text):not(.ant-btn-icon-only) {padding-inline: 18px;}
+.workspace-overlay :is(.workspace-overlay-footer, .ant-modal-confirm-btns) .ant-btn {min-height: 44px; height: auto; white-space: normal;}
+.workspace-overlay .ant-btn-default:not(:disabled):not(.ant-btn-dangerous) {border-color: var(--ink);}
+.workspace-overlay .ant-btn-default:not(:disabled):not(.ant-btn-dangerous):hover {background: var(--ink); color: var(--surface);}
+.workspace-overlay .ant-form {font-size: 13px;}
+.workspace-overlay .ant-form-item {margin-bottom: 20px;}
+.workspace-overlay .ant-form-item:last-child {margin-bottom: 0;}
+.workspace-overlay .ant-form-item .ant-form-item-label > label {height: auto; color: var(--ink); font-size: 13px;}
+.workspace-overlay .ant-form-item .ant-form-item-label {padding-bottom: 6px;}
+.workspace-overlay :is(.ant-input, .ant-input-affix-wrapper, .ant-input-number, .ant-select, .ant-select-selector) {border-radius: 0; font-size: 13px;}
+.workspace-overlay .ant-input {line-height: 1.6;}
+.workspace-overlay .ant-input:not(textarea) {min-height: 40px;}
+.workspace-overlay :is(.ant-checkbox-wrapper, .ant-radio-wrapper, .ant-form-item-explain, .ant-form-item-extra) {font-size: 13px; line-height: 1.6;}
+.workspace-overlay .ant-select-multiple .ant-select-selection-item {border-radius: 0; font-size: 13px;}
+.workspace-overlay .ant-alert {align-items: flex-start; padding: 12px 14px; border-radius: 0; font-size: 13px; line-height: 1.65;}
+.workspace-overlay .ant-alert .ant-alert-icon {margin-top: 4px; font-size: 13px;}
+.workspace-overlay .ant-alert-warning {background: var(--warning-bg); border-color: var(--warning-border);}
+.workspace-overlay :is(.ant-alert-title, .ant-alert-description) {font-size: 13px; line-height: 1.65;}
+.workspace-overlay .action-summary {margin: 0 0 20px; padding: 12px 16px; border: 0; background: var(--bg); font-size: 13px;}
+.workspace-overlay .action-summary :is(dt, dd, .review-loop-snapshot) {font-size: 13px;}
+.workspace-overlay .action-summary p:last-child {margin-bottom: 0;}
+.workspace-overlay .action-summary .review-loop-snapshot {gap: 8px 20px;}
+.workspace-overlay .help-text {margin-top: 12px; font-size: 13px;}
+.workspace-overlay .detail-list {font-size: 13px;}
+.workspace-overlay .detail-list dt {font-size: 13px;}
+.workspace-overlay .detail-list > div {display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border);}
+.workspace-overlay .detail-list :is(dt, dd) {margin: 0; overflow-wrap: anywhere;}
+.workspace-overlay .ant-table {font-size: 13px;}
+.workspace-overlay .ant-table-thead > tr > th {font-size: 13px; font-weight: 500;}
+
+/* Hook confirmations have their own inner layout; body semantics address the message. */
+.workspace-dialog .ant-modal-confirm .ant-modal-body {min-height: 0; overflow: auto; padding: 0;}
+.workspace-dialog .ant-modal-confirm .ant-modal-confirm-body {padding: 24px;}
+.workspace-dialog .ant-modal-confirm .ant-modal-confirm-title {font-size: 18px; font-weight: 400; line-height: 28px;}
+.workspace-dialog .ant-modal-confirm .workspace-overlay-body {padding: 0; margin-top: 12px;}
+.workspace-dialog .ant-modal-confirm .ant-modal-confirm-btns {display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 8px; margin: 0; padding: 16px 24px; border-top: 1px solid var(--border); background: var(--hover-bg);}
+.workspace-dialog .ant-modal-confirm .ant-modal-confirm-btns .ant-btn + .ant-btn {margin-inline-start: 0;}
+
+@media (max-width: 600px), (max-height: 600px) {
+  .workspace-dialog .ant-modal {top: 16px; padding-bottom: 16px; max-width: calc(100% - 24px);}
+  .workspace-dialog .workspace-overlay {max-height: calc(100dvh - 32px);}
+  .workspace-overlay .workspace-overlay-header {padding: 16px;}
+  .workspace-dialog .workspace-overlay-header {padding-right: 64px;}
+  .workspace-dialog .workspace-dialog-close {top: 8px; right: 8px;}
+  .workspace-overlay .workspace-overlay-body, .workspace-dialog .ant-modal-confirm .ant-modal-confirm-body {padding: 16px;}
+  .workspace-overlay .workspace-overlay-footer, .workspace-dialog .ant-modal-confirm .ant-modal-confirm-btns {padding: 12px 16px;}
+  .workspace-dialog .ant-modal-confirm .workspace-overlay-body {padding: 0;}
+  .workspace-overlay .action-summary dl {grid-template-columns: minmax(0, 1fr); gap: 2px;}
+  .workspace-overlay .action-summary dd + dt {margin-top: 8px;}
+  .workspace-overlay .detail-list > div {grid-template-columns: 88px minmax(0, 1fr);}
+}

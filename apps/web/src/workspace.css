@@ -1,0 +1,299 @@
+/* Bank V2 workspace. Brand tokens remain owned by theme.ts/styles.css. */
+.app-shell.workspace-mode { display: block; }
+.workspace-topbar { flex-shrink: 0; position: sticky; top: 0; z-index: 30; background: var(--surface); }
+.workspace-utility { min-height: 36px; padding: 0 32px; background: var(--bar); color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 12px; }
+.workspace-utility-links,.workspace-account { display: flex; align-items: center; gap: 24px; min-width: 0; }
+.workspace-account { gap: 12px; }
+.workspace-utility a,.workspace-utility .workspace-menu,.workspace-utility .account-trigger,.workspace-utility .workspace-pages { color: #fff; }
+.workspace-utility-links > a { display: flex; align-items: center; min-height: 36px; border-bottom: 2px solid transparent; }
+.workspace-utility-links > a.active { border-bottom-color: var(--surface); }
+.workspace-utility .account-trigger,.workspace-utility .workspace-pages { min-height: 36px; height: auto; width: auto; padding: 4px 8px; font-size: 12px; }
+.workspace-utility .workspace-pages:hover { color: white !important; background: #444 !important; }
+.workspace-utility .account-copy { flex-direction: row; align-items: center; gap: 8px; }
+.workspace-utility .user-avatar { display: none; }
+.workspace-utility .user-name,.workspace-utility .user-role { color: inherit; font-size: 12px; }
+.workspace-utility .account-trigger:hover,.workspace-utility .workspace-menu:hover,.workspace-utility .workspace-pages:hover { color: #fff !important; background: #444 !important; }
+.workspace-utility :focus-visible { outline-color: white; }
+.workspace-menu { display: none; }
+.workspace-header { display: grid; grid-template-columns: max-content minmax(0, 220px) max-content minmax(0,1fr); gap: 24px; min-height: 56px; padding: 0 32px; align-items: center; border-bottom: 1px solid var(--border); }
+.workspace-header-global { grid-template-columns: max-content minmax(120px,1fr) auto; }
+.workspace-brand { display: flex; align-items: center; gap: 12px; white-space: nowrap; }
+.workspace-brand:hover { text-decoration: none; }
+.workspace-brand > strong, .workspace-brand > span { line-height: 24px; }
+.workspace-brand strong { padding-left: 12px; border-left: 1px solid var(--border); font-size: 14px; font-weight: 500; }
+.workspace-brand > span { font-size: 12px; color: var(--muted); }
+.workspace-brand .hsbc-logo { width: 104px; height: 28px; }
+.workspace-case-identity { min-width: 0; border-left: 1px solid var(--border); padding-left: 16px; font-size: 13px; }
+.workspace-case-identity:empty { border-left: 0; padding-left: 0; }
+.workspace-case-identity > * { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.workspace-case-identity > span { color: var(--muted); font-size: 12px; }
+.workspace-case-identity > strong { font-weight: 500; }
+.workspace-journey { display: flex; align-self: stretch; }
+.workspace-journey > a,.workspace-journey > span { display: flex; align-items: center; gap: 8px; padding: 0 18px; border-bottom: 3px solid transparent; font-size: 13px; white-space: nowrap; }
+.workspace-journey > a > span,.workspace-journey > span > span { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.workspace-journey > [aria-current] { border-bottom-color: var(--primary); }
+.workspace-journey > [aria-current] > span { color: var(--primary); }
+.workspace-journey > [aria-disabled] { color: var(--muted); opacity: .65; }
+.workspace-state { display: flex; align-items: center; justify-content: flex-end; gap: 8px; font-size: 12px; min-width: 0; }
+.workspace-round-static { white-space: nowrap; }
+.workspace-state > div { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+/* Case assistant entry sits beside the round selector so the case bar keeps its height. */
+.workspace-assistant-trigger.ant-btn {height: 36px; flex-shrink: 0; gap: 8px; padding: 0 14px; border: 1px solid var(--ink); border-radius: 0; background: var(--surface); color: var(--ink); font-size: 13px; font-weight: 400; box-shadow: none}
+.workspace-assistant-trigger.ant-btn .nav-icon {width: 18px; height: 18px}
+.workspace-assistant-trigger.ant-btn:not(:disabled):hover,
+.workspace-assistant-trigger.ant-btn:not(:disabled):active,
+.workspace-assistant-trigger.ant-btn[aria-expanded='true'] {border-color: var(--ink); background: var(--ink); color: var(--surface)}
+.workspace-assistant-trigger.ant-btn:focus-visible {outline: 2px solid var(--ink); outline-offset: 3px}
+@media (max-width: 860px) {
+  .workspace-header .workspace-state:has(.workspace-assistant-trigger) {flex-direction: column; align-items: stretch}
+  .workspace-header .workspace-state > div:has(.workspace-assistant-trigger) {flex-wrap: nowrap; justify-content: flex-start}
+  .workspace-header .workspace-assistant-trigger {margin-left: auto}
+}
+.workspace-state > span { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--muted); }
+.workspace-mode .content { padding: 20px 32px 32px; max-width: none; }
+.workspace-mode .section,.workspace-mode .panel { border-radius: 0; }
+.workspace-mode .section-toolbar { min-height: 48px; }
+.workspace-mode .page-header { margin-bottom: 16px; }
+.workspace-mode .review-round-controls { margin-bottom: 16px; }
+/* Entries such as the Checker hand-off decide for themselves whether to render; an empty bar is not shown. */
+.workspace-mode .review-round-controls-compact:not(:has(.ant-btn, a[href], p, [role="status"])) { display: none; }
+.workspace-mode .review-round-controls .section-toolbar { min-height: 52px; }
+.workspace-mode .review-round-controls .section-body { padding-block: 8px; }
+.workspace-mode .review-round-controls .help-text { margin: 0; font-size: 13px; }
+.round-selector { width: 240px; max-width: 100%; }
+.workspace-mode .case-page-review .review-loop-workspace > .section > .section-body { padding: 0; }
+.workspace-mode .desk-tabs-header { padding-inline: 20px; margin-bottom: 0; }
+.workspace-mode .desk-tabs-content:not(:has(.field-desk)) { padding: 20px; }
+.desk-utility { display: flex; gap: 24px; align-items: center; font-size: 13px; }
+.desk-utility > a { min-height: 44px; display: flex; align-items: center; }
+.desk-utility details { position: relative; }
+.desk-utility summary { cursor: pointer; padding: 12px 0; }
+.desk-utility details > .review-loop-snapshot { position: absolute; right: 0; top: 100%; z-index: 10; width: 300px; padding: 16px; background: var(--surface); border: 1px solid var(--border); box-shadow: 0 4px 12px #00000014; display: grid; gap: 8px; }
+.workspace-cases .page-header h1 { font-size: 22px; }
+.workspace-approval-link { margin: -8px 0 12px; text-align: right; font-size: 13px; }
+.workspace-onboarding { position: relative; isolation: isolate; overflow: hidden; display: grid; grid-template-columns: minmax(0,1fr) minmax(240px,360px); align-items: center; gap: 48px; min-height: 232px; padding: 32px 40px; margin-top: 24px; background: var(--bg); border: 1px solid var(--border); }
+.workspace-onboarding::after { content: ''; position: absolute; inset: 0 -72px 0 auto; width: 42%; z-index: -1; background: var(--surface); clip-path: polygon(26% 0,100% 0,100% 100%,26% 100%,0 50%); }
+.workspace-onboarding h2 { font-size: 22px; line-height: 1.45; margin: 0 0 12px; }
+.workspace-onboarding p { color: var(--muted); font-size: 13px; }
+.workspace-onboarding ol { display: flex; flex-wrap: wrap; gap: 12px 24px; list-style: none; margin: 20px 0 0; padding: 0; font-size: 13px; }
+.workspace-onboarding li { display: flex; align-items: center; gap: 8px; }
+.workspace-onboarding li > span { font-size: 12px; color: var(--primary); }
+.workspace-onboarding > img { width: 100%; max-width: 300px; justify-self: center; }
+@media (max-width: 1180px) {
+  .workspace-header { gap: 12px; grid-template-columns: max-content minmax(100px,1fr) max-content minmax(100px,auto); padding-inline: 20px; }
+  .workspace-header-global { grid-template-columns: max-content minmax(120px,1fr) auto; }
+  .workspace-brand > span { display: none; }
+  .workspace-journey > a,.workspace-journey > span { padding-inline: 12px; }
+  .workspace-state > div { gap: 4px 8px; }
+  .workspace-utility { padding-inline: 20px; }
+  .workspace-mode .content { padding-inline: 20px; }
+  .workspace-onboarding { grid-template-columns: minmax(0,1fr) 240px; gap: 24px; }
+}
+@media (max-width: 860px) {
+  .workspace-header { grid-template-columns: minmax(0,1fr) minmax(100px,1fr); gap: 8px 16px; padding: 12px 16px 0; }
+  .workspace-header-global { padding-bottom: 12px; }
+  .workspace-case-identity { text-align: right; }
+  .workspace-journey { grid-column: 1 / -1; overflow-x: auto; min-width: 0; }
+  .workspace-journey > a,.workspace-journey > span { flex: 1; justify-content: center; min-height: 44px; padding: 8px; }
+  .workspace-state { grid-column: 1 / -1; flex-direction: row; align-items: center; justify-content: space-between; padding-bottom: 8px; }
+  .workspace-state:empty { display: none; }
+  .workspace-utility-links > a { display: none; }
+  .workspace-menu { display: inline-flex; }
+  .workspace-mode .review-round-controls .section-toolbar { gap: 8px; }
+  .desk-utility { gap: 12px; }
+}
+@media (max-width: 620px) {
+  .workspace-utility { padding-inline: 8px; gap: 4px; }
+  .workspace-account { gap: 2px; }
+  .workspace-brand { gap: 8px; }
+  .workspace-brand .hsbc-logo { width: 89px; height: 24px; }
+  .workspace-brand strong { font-size: 13px; padding-left: 8px; }
+  .workspace-journey > a,.workspace-journey > span { font-size: 12px; gap: 6px; }
+  .workspace-mode .content { padding: 16px 12px 24px; }
+  .workspace-mode .page-header-extra { flex-basis: 100%; }
+  .workspace-onboarding { padding: 24px; grid-template-columns: minmax(0,1fr); }
+  .workspace-onboarding > img { max-width: 200px; }
+  .workspace-onboarding ol { flex-direction: column; gap: 12px; }
+  .workspace-onboarding li { max-width: none; }
+  .workspace-mode .desk-tabs-header { padding-inline: 12px; flex-wrap: wrap; }
+  .workspace-mode .desk-tabs-header .ant-tabs-extra-content { flex: 1 1 100%; }
+  .desk-utility { justify-content: space-between; border-top: 1px solid var(--border); }
+  .desk-utility details > .review-loop-snapshot { left: 0; right: auto; width: min(300px,calc(100vw - 24px)); }
+}
+.workspace-materials-top { display: grid; grid-template-columns: minmax(0,1.45fr) minmax(360px,.75fr); gap: 0; align-items: start; margin-bottom: 24px; background: var(--surface); border: 1px solid var(--border); }
+.workspace-materials-main { min-width: 0; padding: 24px; }
+.workspace-materials-top .section { margin-bottom: 16px; }
+.workspace-materials-top .review-loop-snapshot { gap: 8px 16px; }
+.workspace-materials-list { padding: 24px; background: var(--bg); border-left: 1px solid var(--border); }
+.workspace-materials-list > h2 { margin: 0 0 20px; font-size: 18px; }
+.workspace-requirements h3 { margin-top: 24px; font-size: 14px; font-weight: 500; border-bottom: 1px solid var(--border); padding-bottom: 12px; }
+.workspace-requirements ul { list-style: none; padding: 0; }
+.workspace-requirements li { padding: 12px 0; border-bottom: 1px solid var(--border); display: flex; flex-direction: column; gap: 4px; }
+.workspace-requirements li strong { font-weight: 500; font-size: 14px; }
+.workspace-requirements li span { font-size: 12px; color: var(--muted); }
+.workspace-upload { border: 1px dashed var(--muted); padding: 0; text-align: center; background: var(--bg); }
+.workspace-upload.is-dragging { border-color: var(--primary); background: var(--error-bg); }
+.workspace-upload h2 { font-size: 18px; }
+.workspace-upload .workspace-upload-trigger { height: auto; min-height: 148px; padding: 20px; border: 0; white-space: normal; }
+.workspace-upload .workspace-upload-trigger:not(:disabled):hover { background: var(--error-bg); color: var(--ink); }
+.workspace-upload .workspace-upload-trigger:focus-visible { outline: 2px solid var(--primary); outline-offset: -3px; }
+.workspace-upload .workspace-upload-copy { display: flex; flex-direction: column; align-items: center; gap: 4px; white-space: normal; }
+.workspace-upload-copy > strong { color: var(--ink); font-size: 14px; font-weight: 500; }
+.workspace-upload-copy > span { color: var(--muted); font-size: 13px; }
+.workspace-upload-copy .workspace-upload-mark { font-size: 22px; line-height: 1; color: var(--primary); }
+.workspace-upload > [role="status"] { margin: 0; padding: 0 16px 16px; font-size: 13px; }
+.workspace-materials-main .processing-access { border: 0; border-bottom: 1px solid var(--border); }
+.workspace-materials-main .processing-access > .section-toolbar { padding: 0 0 8px; border: 0; }
+.workspace-materials-main .processing-access > .section-body { padding: 0 0 16px; }
+.workspace-materials-main .processing-access .help-text { margin: 0 0 8px; }
+.workspace-materials-main .workspace-file-list { border: 0; margin: 24px 0 0; }
+.workspace-materials-main .workspace-file-list > .section-toolbar { padding-inline: 0; }
+.workspace-file-list > .section-toolbar { border-bottom: 1px solid var(--ink); }
+.workspace-file-list .section-toolbar-info { flex: 1; min-width: 0; }
+.workspace-file-toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 16px; width: 100%; }
+.workspace-file-toolbar > strong { color: var(--ink); font-size: 18px; font-weight: 500; }
+.workspace-mode .intake-workspace { grid-template-columns: minmax(340px, 1.1fr) minmax(0, 1fr); }
+@media (max-width: 860px) { .workspace-materials-top { grid-template-columns: 1fr; } .workspace-mode .intake-workspace { grid-template-columns: minmax(0, 1fr); } }
+.workspace-mode .content:has(.field-desk) { padding: 8px 0 12px; }
+.workspace-mode .case-page:has(.field-desk) > .review-round-controls { margin: 0 0 8px; border-inline: 0; border-top: 0; }
+.workspace-mode .case-page:has(.field-desk) { margin-top: 0; }
+.report-workspace { --report-aside: 280px; display: grid; grid-template-columns: var(--report-aside) minmax(0, 1fr); align-items: start; background: linear-gradient(90deg, var(--bg) 0 calc(var(--report-aside) - 1px), var(--border) 0 var(--report-aside), var(--surface) 0); }
+/* The overview stays in view while the mail is read; its group index jumps within the mail. */
+.report-overview { position: sticky; top: var(--topbar-h); max-height: calc(100vh - var(--topbar-h)); overflow-y: auto; min-width: 0; padding: 28px 22px; }
+.report-overview-groups { margin: 0 0 20px; font-size: var(--text-xs); }
+.report-overview-groups h3, .report-overview-groups a { display: grid; grid-template-columns: minmax(0, 1fr) 40px 56px; align-items: baseline; gap: 8px; }
+.report-overview-groups h3 { margin: 0 0 4px; padding-bottom: 6px; border-bottom: 1px solid var(--border); font-size: var(--text-xs); font-weight: 500; color: var(--muted); }
+.report-overview-groups h3 > span + span, .report-overview-groups a > span + span { text-align: right; font-variant-numeric: tabular-nums; }
+.report-overview-groups a { padding: 6px 0; color: var(--ink); border-bottom: 1px solid var(--border-soft); }
+.report-overview-groups a > span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.report-overview-groups a:hover { text-decoration: none; background: var(--surface); }
+.mail-tone-filter { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; margin: 0 0 12px; font-size: var(--text-xs); color: var(--muted); }
+.mail-table-grouped tr[id] { scroll-margin-top: calc(var(--topbar-h) + 12px); }
+.report-eyebrow { font-size: 12px; color: var(--muted); }
+.report-overview h2 { margin: 0; padding-bottom: 14px; border-bottom: 1px solid var(--ink); font-size: 18px; font-weight: 500; }
+.report-run-status { margin: 14px 0 4px; color: var(--muted); font-size: 13px; }
+.report-overview dl { margin: 8px 0 20px; }
+.report-overview dl > div { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--border); }
+.report-overview dt { font-size: 13px; }
+.report-overview dd { margin: 0; flex-shrink: 0; white-space: nowrap; font-variant-numeric: tabular-nums; font-size: 14px; font-weight: 500; }
+.report-overview .review-loop-toolbar { margin: 24px 0 16px; gap: 10px; }
+.report-overview .review-loop-toolbar label { width: 100%; display: grid; gap: 8px; font-size: 13px; }
+.report-overview .ant-select { width: 100%; min-width: 0; }
+.report-overview > a { font-size: 13px; text-decoration: underline; text-underline-offset: 4px; }
+.report-main { min-width: 0; }
+.report-comparison { margin-top: 16px; scroll-margin-top: calc(var(--topbar-h) + 12px); }
+.report-comparison:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+.report-workspace > .report-main { padding: 32px clamp(24px, 4vw, 56px) 48px; }
+.report-supporting { margin-top: 24px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.report-supporting > summary { padding-block: 16px; cursor: pointer; font-weight: 500; }
+.report-supporting[open] > summary { border-bottom: 1px solid var(--border); }
+.report-snapshot { margin-bottom: 12px; }
+.report-snapshot > summary { cursor: pointer; }
+.report-snapshot .review-loop-snapshot { margin-top: 12px; }
+.mail-subject { margin: 24px 0 16px; padding: 20px; background: var(--bg); border-left: 3px solid var(--ink); }
+.mail-subject > span { font-size: 12px; color: var(--muted); }
+.mail-subject > h3 { margin: 8px 0 0; font-size: 18px; font-weight: 500; overflow-wrap: anywhere; }
+.comparison-workspace { display: grid; grid-template-columns: 240px minmax(0,1fr); border: 1px solid var(--border); margin-block: 20px; }
+.comparison-files { background: var(--bg); border-right: 1px solid var(--border); min-width: 0; }
+.comparison-files h3 { padding: 16px; margin: 0; font-size: 13px; }
+.comparison-files button { display: flex; flex-direction: column; text-align: left; gap: 8px; padding: 16px; width: 100%; border: 0; border-top: 1px solid var(--border); border-left: 3px solid transparent; background: white; cursor: pointer; font: inherit; overflow-wrap: anywhere; }
+.comparison-files button[aria-current] { border-left-color: var(--primary); background: var(--error-bg); }
+.comparison-files button:hover { background: var(--hover-bg); }
+.comparison-files button:focus-visible { outline: 2px solid var(--primary); outline-offset: -3px; }
+.comparison-files button strong { font-size: 14px; font-weight: 500; }
+.comparison-files button span { font-size: 12px; color: var(--muted); }
+.comparison-files > p { padding: 16px; }
+.comparison-detail { padding: 20px; min-width: 0; overflow-wrap: anywhere; }
+.comparison-detail > header { border-bottom: 1px solid var(--border); }
+.comparison-detail > header h3 { margin: 0; font-size: 18px; }
+.comparison-detail > header p { font-size: 12px; color: var(--muted); }
+.comparison-detail .delivery-compare > div { min-width: 0; background: var(--bg); padding: 16px; }
+@media (max-width: 1180px) { .report-workspace { --report-aside: 240px; } .comparison-workspace { grid-template-columns: 200px minmax(0,1fr); } .comparison-detail .delivery-compare { grid-template-columns: minmax(0,1fr); } }
+@media (max-width: 860px) { .report-workspace,.comparison-workspace { grid-template-columns: minmax(0,1fr); } .report-workspace { background: var(--surface); } .report-overview { position: static; max-height: none; background: var(--bg); } .report-overview { border-right: 0; border-bottom: 1px solid var(--border); padding: 20px; } .report-overview dl { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 20px; } .report-workspace > .report-main { padding: 24px 20px; } .comparison-files { max-height: 320px; overflow: auto; border-right: 0; border-bottom: 1px solid var(--border); } }
+.workspace-materials-list { max-height: calc(100dvh - var(--topbar-h) - 32px); overflow-y: auto; position: sticky; top: calc(var(--topbar-h) + 16px); }
+.workspace-materials-list:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+@media (max-width: 860px) { .workspace-materials-list { max-height: none; position: static; } }
+.workspace-case-identity h1 { margin: 0; font-size: 14px; font-weight: 500; line-height: 20px; }
+.comparison-files { max-height: 680px; overflow-y: auto; overscroll-behavior: contain; }
+.comparison-detail { max-height: 820px; overflow-y: auto; overscroll-behavior: contain; }
+@media (max-width: 860px) { .comparison-files { max-height: 320px; } .comparison-detail { max-height: none; } }
+.workspace-upload .material-upload-list { text-align: left; margin: 0; padding: 16px; border-top: 1px solid var(--border); background: var(--surface); }
+
+/* Keep the round selector and its restrictions together without a second status row. */
+.workspace-mode .review-round-controls-compact .section-toolbar { padding-block: 6px; }
+.workspace-mode .review-round-controls-compact .section-toolbar-info { flex: 1; }
+.workspace-mode .review-round-controls-compact .section-toolbar-info > .review-loop-toolbar-actions { width: 100%; gap: 8px 16px; }
+.workspace-mode .review-round-controls-compact .round-control-notice { flex: 1 1 280px; }
+.workspace-mode .review-round-controls-compact .section-body:empty { display: none; }
+.mail-preview-cell { white-space: pre-wrap; overflow-wrap: anywhere; }
+
+/* Preserve full business text; only navigation, controls and auxiliary labels are denser. */
+.workspace-mode .review-summary-materials { margin-bottom: 16px; }
+.review-summary-materials .section-body { display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 12px 16px; }
+.review-summary-materials .section-body > p { flex: 1 1 480px; color: var(--muted); font-size: 13px; }
+.summary-translations { margin-top: 12px; }
+.summary-translations > summary { cursor: pointer; font-size: 13px; min-height: 32px; display: list-item; align-content: center; }
+.review-summary-materials .summary-translations { margin: 0; }
+.review-summary-materials .summary-translations[open] { flex-basis: 100%; }
+.workspace-file-list { margin-top: 16px; }
+.workspace-file-list .section-toolbar { padding-inline: 12px; }
+.workspace-file-list .ant-table-cell { vertical-align: top; padding: 12px; }
+.workspace-file-list .ant-table-cell.workspace-file-cell { padding-block: 16px; border-bottom: 2px solid var(--border); }
+.workspace-file-list .row-actions { gap: 4px; align-items: flex-start; flex-direction: column; }
+.workspace-file-list .row-actions > a { display: inline-flex; align-items: center; min-height: 44px; }
+.workspace-file-adoption { margin-top: 12px; }
+.workspace-file-source { margin-top: 12px; font-size: 13px; color: var(--muted); }
+.workspace-file-source > summary { cursor: pointer; padding-block: 6px; }
+.workspace-mode .case-page-reports .review-loop-workspace > .section:first-child > .section-body { padding: 0; }
+.workspace-mode .mail-subject { margin: 16px 0; padding: 16px; border-left: 0; border-block: 1px solid var(--border); }
+.workspace-mode .wb-metrics,.workspace-mode .wb-next-action,.workspace-mode .wb-next-action > a { border-radius: 0; }
+.workspace-mode .wb-next-action { background: var(--surface); color: var(--ink); border: 1px solid var(--border); border-top: 3px solid var(--primary); }
+.workspace-mode .wb-next-action h2,.workspace-mode .wb-next-action p { color: var(--ink); }
+.workspace-mode .wb-next-action > a { border-color: var(--border); }
+.workspace-mode .wb-next-action > a:focus-visible { outline-color: var(--ink); }
+.workspace-mode .wb-metrics { padding-block: 16px; }
+@media (max-width: 1180px) { .workspace-materials-top { grid-template-columns: minmax(0,1fr) 300px; gap: 0; } }
+@media (max-width: 860px) { .workspace-materials-top { grid-template-columns: minmax(0,1fr); } }
+
+.workspace-upload-readonly { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 20px; padding: 16px; border-style: solid; text-align: left; }
+.workspace-upload-readonly .workspace-upload-mark { display: none; }
+.workspace-upload-readonly h2 { font-size: 14px; margin: 0; }
+.workspace-upload-readonly > p { margin: 0; color: var(--muted); font-size: 13px; }
+.workspace-materials-main .processing-access .section-body { padding: 12px 16px; }
+.workspace-materials-main .processing-access .help-text { margin: 0 0 8px; }
+.workspace-materials-main .processing-access .help-text:last-child { margin-bottom: 0; }
+
+.report-mail-jump { display: none; }
+#report-mail { scroll-margin-top: calc(var(--topbar-h) + 12px); }
+@media (max-width: 860px) { .report-mail-jump { display: inline-flex; align-items: center; min-height: 44px; text-decoration: underline; } }
+
+@media (max-width: 860px) { .workspace-materials-list { border-left: 0; border-top: 1px solid var(--border); } }
+@media (max-width: 620px) { .workspace-materials-main,.workspace-materials-list { padding: 12px; } }
+
+
+/* The reader fills the space below the header; scrolling belongs to its panes. */
+.workspace-mode:has(.case-page-reader) .shell-main {height: 100dvh; display: flex; flex-direction: column; overflow: hidden;}
+.workspace-mode .content:has(.case-page-reader) {flex: 1; min-height: 0; width: 100%; margin: 0; padding: 6px 16px 0; overflow: hidden;}
+.workspace-mode .case-page-reader {margin: 0; height: 100%; min-height: 0; display: flex; flex-direction: column; gap: 6px;}
+.workspace-mode .case-page-reader > .review-round-controls {flex: none; margin: 0; --round-select-width: 180px;}
+.workspace-mode .case-page-reader > .review-round-controls .section-toolbar {min-height: 42px; padding: 4px 12px; gap: 4px 12px; border-bottom: 0;}
+.workspace-mode .case-page-reader > .review-round-controls .ant-select,
+.workspace-mode .case-page-reader > .review-round-controls .ant-btn,
+.workspace-mode .case-page-reader .review-docbar .ant-select {height: 32px; min-height: 32px; font-size: 13px;}
+.workspace-mode .case-page-reader > .review-round-controls .round-control-notice {font-size: 13px; line-height: 1.5;}
+.workspace-mode .case-page-reader > .case-page-content {flex: 1; min-height: 0; overflow: auto;}
+.workspace-mode .case-page-reader > .case-page-content:has(> .review) {overflow: hidden;}
+.workspace-mode .case-page-reader .review {--review-control-height: 32px; --review-toolbar-pad: 12px; --review-action-font: 13px; height: 100%; min-height: 0; margin: 0;}
+.workspace-mode .case-page-reader .review-docbar {min-height: 40px; padding-block: 2px; padding-inline: 12px; gap: 4px 12px; font-size: 13px;}
+.workspace-mode .case-page-reader .review-docbar .review-field {font-size: inherit;}
+.workspace-mode .case-page-reader .review-stack {flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain;}
+@media (max-width: 767px) {
+  .workspace-mode .content:has(.case-page-reader) {padding-inline: 8px;}
+  .workspace-mode .case-page-reader > .review-round-controls .round-control-notice {flex-basis: 100%;}
+}
+
+.workspace-mode .case-page-reader .round-selector {width: 180px; min-width: 180px;}
+
+@media (max-width: 620px) {
+  .workspace-mode .review-round-controls-compact .section-toolbar-info { flex-basis: 100%; }
+}

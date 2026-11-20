@@ -1,0 +1,3 @@
+export function formatTime(value: string) {const date = new Date(value); return Number.isNaN(date.getTime()) ? '—' : new Intl.DateTimeFormat('zh-CN', {timeZone: 'Asia/Singapore', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false}).format(date);}
+export function formatSize(bytes: number) {return bytes < 1024 * 1024 ? `${(bytes / 1024).toFixed(1)} KiB` : `${(bytes / 1024 / 1024).toFixed(1)} MiB`;}
+export function formatClock(epochMs: number) {return epochMs ? new Intl.DateTimeFormat('zh-CN', {timeZone: 'Asia/Singapore', hour: '2-digit', minute: '2-digit', hour12: false}).format(new Date(epochMs)) : '—';}

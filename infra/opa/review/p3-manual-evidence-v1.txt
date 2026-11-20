@@ -1,0 +1,5 @@
+P3 manual evidence recipe v1.
+No automatic final field assertion is permitted.
+A reviewer must bind the field to an object, an immutable document version, and source evidence.
+Blank, unreadable, redacted, missing, and not-applicable remain separate states.
+Human confirmation does not modify source text or imply bank rule approval.

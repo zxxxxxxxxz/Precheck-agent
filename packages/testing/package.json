@@ -1,0 +1,22 @@
+{
+  "name": "@hsbc/testing",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./cases/cleanup": "./src/cases/cleanup.ts",
+    "./document/loan-fixture": "./src/document/loan-fixture.ts",
+    "./fixtures": "./src/index.ts",
+    "./intake/fixtures": "./src/intake/fixtures.ts",
+    "./review/private-field-fixtures": "./src/review/private-field-fixtures.ts",
+    "./storage/memory-object-store": "./src/storage/memory-object-store.ts"
+  },
+  "dependencies": {
+    "@hsbc/contracts": "workspace:*",
+    "@hsbc/server": "workspace:*",
+    "@napi-rs/canvas": "1.0.11",
+    "@pdf-lib/fontkit": "1.1.1",
+    "pdf-lib": "1.17.1",
+    "pg": "8.23.1"
+  }
+}

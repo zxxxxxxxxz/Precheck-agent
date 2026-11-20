@@ -1,0 +1,17 @@
+# Optional, explicitly installed after the runtime/font/sandbox probe succeeds.
+# docx-runtime.env pins host directories to one immutable runtime release.
+services:
+  app-worker:
+    security_opt:
+      - no-new-privileges:true
+      - seccomp:/data/hsbc/deploy/docx-seccomp.json
+      - apparmor:hsbc-docx-worker
+    mem_limit: 3g
+    cpus: 2
+    pids_limit: 128
+    volumes:
+      - ${P2_DOCX_RUNTIME_DIR:?verified immutable DOCX runtime}:/opt/p2-docx:ro
+      - ${P2_MOCK_FONT_DIR:?verified immutable mock fonts}:/opt/p2-mock-fonts:ro
+  app-api:
+    volumes:
+      - ${P2_MOCK_FONT_DIR:?verified immutable mock fonts}:/opt/p2-mock-fonts:ro

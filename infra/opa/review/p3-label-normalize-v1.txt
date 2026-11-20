@@ -1,0 +1,5 @@
+P3 label normalization v1.
+Recall explicit configured aliases using the P2 field engine and preserve original evidence.
+Canonicalize decimal amounts without binary floating point, ISO dates, and uppercase ISO currency codes.
+Labels do not establish object identity, role, effective amendments, or applicability.
+Unresolved or competing candidates require evidence-based human confirmation.

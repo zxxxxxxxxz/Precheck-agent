@@ -1,0 +1,21 @@
+{
+  "Version": "1",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": ["oss:GetBucketInfo", "oss:GetBucketLocation", "oss:GetBucketVersioning"],
+      "Resource": ["acs:oss:*:*:hsbc-poc"]
+    },
+    {
+      "Effect": "Allow",
+      "Action": ["oss:ListObjectVersions"],
+      "Resource": ["acs:oss:*:*:hsbc-poc"],
+      "Condition": {"StringLike": {"oss:Prefix": ["p1/*"]}}
+    },
+    {
+      "Effect": "Allow",
+      "Action": ["oss:PutObject", "oss:GetObject", "oss:GetObjectVersion", "oss:DeleteObjectVersion"],
+      "Resource": ["acs:oss:*:*:hsbc-poc/p1/*"]
+    }
+  ]
+}

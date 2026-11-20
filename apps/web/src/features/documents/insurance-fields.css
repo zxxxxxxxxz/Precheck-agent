@@ -1,0 +1,26 @@
+.insurance-fields-heading {display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 0 12px;}
+.insurance-fields-heading strong {font-size:14px;font-weight:500;}
+.insurance-fields-heading .muted {font-size:13px;}
+.insurance-fields>.ant-segmented {margin-bottom:12px;}
+.insurance-field-label {display:block;overflow-wrap:anywhere;}
+.insurance-field-label.is-child {padding-left:12px;border-left:2px solid var(--border);color:var(--muted);}
+.insurance-field-value,.insurance-observation {display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-width:0;}
+.insurance-field-value {gap:10px;}
+.insurance-observation+.insurance-observation {margin-top:6px;}
+.insurance-candidate {min-width:0;width:100%;overflow-wrap:anywhere;}
+.insurance-candidate .evidence-value-link {text-align:left;white-space:normal;}
+.insurance-status,.insurance-source-kind,.insurance-observation-label {display:block;font-size:13px;line-height:1.5;color:var(--muted);}
+.insurance-status.needs-attention {color:var(--warning);}
+.insurance-source-kind {padding-left:8px;border-left:2px solid var(--border);}
+.insurance-field-detail>p {margin:0 0 12px;line-height:1.6;}
+.insurance-field-detail .insurance-observation {margin:12px 0;}
+.insurance-other-fields {margin-top:20px;border-top:1px solid var(--border);padding-top:12px;}
+.insurance-other-fields>summary {cursor:pointer;font-size:13px;color:var(--muted);padding:8px 0;}
+.insurance-payment-content {display:flex;flex-direction:column;gap:16px;}
+.insurance-payment-content .ant-select {width:100%;}
+.insurance-payment-content p {margin:0;line-height:1.6;}
+.insurance-payment-fields {display:flex;flex-direction:column;gap:12px;}
+.insurance-payment-fields article {border-bottom:1px solid var(--border);padding-bottom:12px;}
+.insurance-payment-fields article strong {display:block;margin-bottom:6px;font-weight:500;}
+.insurance-payment-fields article p {overflow-wrap:anywhere;}
+@media (max-width:600px) {.insurance-field-table .ant-table-cell {padding-inline:6px!important;}.insurance-fields-heading {flex-wrap:wrap;gap:4px;}}

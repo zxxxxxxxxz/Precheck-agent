@@ -1,0 +1,10 @@
+.closure-acknowledgement > p { margin: 0 0 var(--space-3); }
+.closure-acknowledgement-items { list-style: none; margin: var(--space-2) 0 var(--space-4); padding: 0; max-height: 240px; overflow: auto; border: 1px solid var(--border); }
+.closure-acknowledgement-items li { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2); padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--border); }
+.closure-acknowledgement-items li:last-child { border-bottom: 0; }
+.closure-acknowledgement-items .ant-checkbox-wrapper { flex: 1 1 16rem; min-width: 0; }
+.closure-acknowledgement-items .ant-input { flex: 1 1 100%; }
+.closure-acknowledgement-label { display: block; overflow-wrap: anywhere; }
+.closure-acknowledgement-meta { display: block; color: var(--muted); font-size: 13px; overflow-wrap: anywhere; }
+.closure-acknowledgement-reason { display: block; }
+.closure-acknowledgement-reason > span { display: block; margin-bottom: var(--space-2); font-weight: 600; }

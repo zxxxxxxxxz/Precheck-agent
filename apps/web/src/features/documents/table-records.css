@@ -1,0 +1,17 @@
+.field-table-records { min-width: 0; }
+.field-table-record + .field-table-record { border-top: 1px solid var(--border); margin-top: 12px; padding-top: 12px; }
+.field-table-record dl { margin: 0; }
+.field-table-component { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 12px; padding: 4px 0; }
+.field-table-component dt { color: var(--muted); font-size: 13px; line-height: 24px; }
+.field-table-component dd { margin: 0; min-width: 0; }
+.field-table-component dd:only-child { grid-column: 1 / -1; }
+.field-table-component .field-table-value { display: block; height: auto; max-width: 100%; padding: 0; color: var(--ink); text-align: left; white-space: normal; overflow-wrap: anywhere; font-size: 14px; line-height: 24px; }
+.field-table-component .field-table-value > span { white-space: normal; }
+.field-table-component .field-table-value:hover { color: var(--primary); }
+.field-table-location, .field-table-note { display: block; color: var(--muted); font-size: 13px; line-height: 22px; }
+.field-table-note { margin-top: 6px; }
+.field-table-other { margin-top: 12px; }
+.field-table-other summary { cursor: pointer; color: var(--muted); font-size: 13px; }
+@media (max-width: 600px) {
+  .field-table-component { grid-template-columns: 1fr; gap: 0; padding: 6px 0; }
+}

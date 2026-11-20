@@ -1,0 +1,24 @@
+.document-field-section-title {
+  margin: 0;
+  padding: 8px 10px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.field-summary-table .ant-table-tbody > tr > td{padding-block:12px;font-size:13px;border-bottom-color:var(--border-soft)}
+.field-summary-table .field-label{font-size:13px;font-weight:400;color:var(--muted)}
+.field-summary-table .evidence-value-link{font-size:13px;line-height:1.65;text-align:left;white-space:pre-wrap;overflow-wrap:anywhere}
+.field-summary-table .field-state{font-size:12px}
+
+/* Keep the record group flush with the next field instead of leaving a blank trailing row. */
+.field-summary-table.field-table .ant-table-tbody > tr > td.field-signature-cell.ant-table-cell{background:var(--surface);padding-block-end:0}
+.field-signature-cell .signature-details dl > div:last-child{border-bottom:0}
+.field-signature-cell .field-signature-state,
+.field-signature-cell .signature-details .signature-person-heading{padding-inline:0;margin-inline:0}
+.field-signature-cell .signature-details dl > div{gap:8px;padding-inline:0}
+.field-summary-table .ant-table-tbody > tr.field-row-located > td{background:var(--error-bg)}
+.field-summary-table .ant-table-tbody > tr.field-row-located > td:first-child{box-shadow:inset 3px 0 0 var(--primary)}

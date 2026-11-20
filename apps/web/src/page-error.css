@@ -1,0 +1,15 @@
+.page-error {
+  box-sizing: border-box;
+  max-width: 640px;
+  margin: 48px auto;
+  padding: 32px;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+.page-error h1 {margin: 0 0 16px; font-size: 22px; font-weight: 500; line-height: 1.4;}
+.page-error p {margin: 0 0 20px; line-height: 1.6;}
+.page-error .page-error-note {color: var(--muted); font-size: 13px;}
+@media (max-width: 480px) {
+  .page-error {margin: 24px 16px; padding: 24px;}
+}

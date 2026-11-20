@@ -1,0 +1,84 @@
+{
+  "repo_id": "Inferact/Qwen3.8-27B-NVFP4",
+  "revision": "6128240ebaf4eaa7bad2b3d1c72c37d677c5f462",
+  "served_model": "Qwen/Qwen3.8-27B",
+  "quantization": "NVFP4",
+  "local_path": "/data/hsbc/models/Qwen3.8-27B-NVFP4/6128240ebaf4eaa7bad2b3d1c72c37d677c5f462",
+  "files": {
+    "LICENSE": {
+      "size": 11343
+    },
+    "README.md": {
+      "size": 182
+    },
+    "chat_template.jinja": {
+      "size": 8952
+    },
+    "config.json": {
+      "size": 19252
+    },
+    "crc32.txt": {
+      "size": 2393
+    },
+    "generation_config.json": {
+      "size": 214
+    },
+    "hf_quant_config.json": {
+      "size": 15113
+    },
+    "merges.txt": {
+      "size": 3353259
+    },
+    "model-00001-of-00006.safetensors": {
+      "size": 4013662656,
+      "sha256": "4b71c5d9d5027c88d1df9f53b93ad77b8d5e428d5d6f75ae42063704d94930b9"
+    },
+    "model-00002-of-00006.safetensors": {
+      "size": 4104675536,
+      "sha256": "d0ceb042ef003ec63e00203823eb70d4815c9fc0430ba04a5442b6b8bde19093"
+    },
+    "model-00003-of-00006.safetensors": {
+      "size": 4028901296,
+      "sha256": "b633a26c1d3b97bf061585363b99d4c01650b4e3f6d0cbb18e7c7e03ca2de1e4"
+    },
+    "model-00004-of-00006.safetensors": {
+      "size": 4003421984,
+      "sha256": "485ea312626e2d1f3a820d9f7545809cef1e2e77414e3977a61d32dacd370bd0"
+    },
+    "model-00005-of-00006.safetensors": {
+      "size": 4000515080,
+      "sha256": "2aa61bab1ed252fe3cdb479286b5b7add7e8ad567501add5f6eeef3987b03d31"
+    },
+    "model-00006-of-00006.safetensors": {
+      "size": 5380672368,
+      "sha256": "8214cd21a46832380c06be552c42d9514c6cc9f27d98e09e2a09e36a8bd6e6ce"
+    },
+    "model.safetensors.index.json": {
+      "size": 205647
+    },
+    "nvfp4_experts_mtp.safetensors": {
+      "size": 849400392,
+      "sha256": "c2b7cb6987e40f13b1ab6e552958afe47a759f86cac0c3c4a1c29f606dc080ef"
+    },
+    "preprocessor_config.json": {
+      "size": 390
+    },
+    "safetensors-md5sum.txt": {
+      "size": 0
+    },
+    "tokenizer.json": {
+      "size": 12809320,
+      "sha256": "0997f410c57a1f4e53b09e4be8f4a172d90edd9564368fb0847030937229b9f3"
+    },
+    "tokenizer_config.json": {
+      "size": 17927
+    },
+    "video_preprocessor_config.json": {
+      "size": 385
+    },
+    "vocab.json": {
+      "size": 6722759
+    }
+  },
+  "download_complete": false
+}

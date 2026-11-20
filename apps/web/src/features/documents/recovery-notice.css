@@ -1,0 +1,21 @@
+/* Match the mockup's workflow note: a compact line within the reading desk. */
+.recovery-notices {flex: none; min-width: 0}
+.recovery-notices .recovery-notice.ant-alert {
+  min-height: 46px;
+  padding: 6px var(--review-toolbar-pad, var(--content-pad, 24px));
+  gap: 16px;
+  align-items: center;
+  background: var(--surface, var(--surface));
+  border: 0;
+  border-bottom: 1px solid var(--border, var(--border));
+  border-radius: 0;
+}
+.recovery-notices .recovery-notice.ant-alert .recovery-notice-copy {display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 16px; min-width: 0}
+.recovery-notices .recovery-notice.ant-alert .recovery-notice-title {display: inline-flex; align-items: baseline; gap: 8px; margin: 0; color: var(--ink, var(--ink)); font-size: 13px; font-weight: 500; line-height: 1.6; overflow-wrap: anywhere}
+.recovery-notices .recovery-notice.ant-alert .recovery-notice-title::before {content: ''; flex: none; width: 6px; height: 6px; background: var(--primary, var(--primary)); align-self: baseline; margin-top: 7px}
+.recovery-notices .recovery-notice.ant-alert .recovery-notice-description {color: var(--muted, var(--muted)); font-size: 13px; line-height: 1.6; overflow-wrap: anywhere}
+@media (max-width: 640px) {
+  .recovery-notices .recovery-notice.ant-alert {flex-wrap: wrap; gap: 8px; padding-inline: var(--review-toolbar-pad, 16px)}
+  .recovery-notices .recovery-notice.ant-alert .recovery-notice-copy {flex-basis: 100%; display: block}
+  .recovery-notices .recovery-notice.ant-alert .recovery-notice-description {padding-left: 14px; margin-top: 2px}
+}

@@ -1,0 +1,10 @@
+.ocr-region-content {min-width: 0; max-width: 100%}
+.ocr-table-note {margin: 8px 0; color: var(--muted); font-size: 13px; line-height: 1.6}
+.ocr-table-scroll {max-width: 100%; overflow-x: auto; overscroll-behavior-x: contain; border: 1px solid var(--border)}
+.ocr-table-scroll:focus-visible {outline: 2px solid var(--ink); outline-offset: 2px}
+.ocr-table {width: 100%; border-spacing: 0; border-collapse: collapse; color: var(--ink); background: var(--surface); font-size: 13px; line-height: 1.6; font-variant-numeric: tabular-nums}
+.ocr-table th, .ocr-table td {min-width: 72px; max-width: 320px; padding: 6px 8px; border: 1px solid var(--border); text-align: left; vertical-align: top; white-space: pre-wrap; overflow-wrap: anywhere}
+.ocr-table th {background: var(--bg); font-weight: 500}
+.ocr-table-source {margin-top: 8px; font-size: 13px; color: var(--muted)}
+.ocr-table-source > summary {cursor: pointer; width: fit-content; min-height: 32px; padding: 5px 0}
+.ocr-table-source > summary:focus-visible {outline: 2px solid var(--ink); outline-offset: 2px}

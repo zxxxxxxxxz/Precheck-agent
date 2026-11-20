@@ -1,0 +1,64 @@
+name: hsbc
+services:
+  postgres:
+    image: ${POSTGRES_IMAGE:?lock POSTGRES_IMAGE}
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: hsbc
+      POSTGRES_USER: hsbc_admin
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+      POSTGRES_INITDB_ARGS: --data-checksums
+    volumes:
+      - /data/hsbc/data/postgres:/var/lib/postgresql
+      - /data/hsbc/secrets/postgres_password:/run/secrets/postgres_password:ro
+      - /data/hsbc/scripts/init-postgres.sh:/docker-entrypoint-initdb.d/10-hsbc.sh:ro
+      - /data/hsbc/secrets/db-roles.env:/run/secrets/db-roles.env:ro
+    networks: [app]
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U hsbc_admin -d hsbc']
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    shm_size: 256mb
+  redis:
+    image: ${REDIS_IMAGE:?lock REDIS_IMAGE}
+    restart: unless-stopped
+    command: [redis-server, /usr/local/etc/redis/redis.conf]
+    volumes:
+      - /data/hsbc/data/redis:/data
+      - /data/hsbc/config/redis.conf:/usr/local/etc/redis/redis.conf:ro
+      - /data/hsbc/secrets/redis.acl:/run/secrets/redis.acl:ro
+      - /data/hsbc/secrets/redis_password:/run/secrets/redis_password:ro
+    networks: [app]
+    healthcheck:
+      test: [CMD-SHELL, 'REDISCLI_AUTH=$$(cat /run/secrets/redis_password) redis-cli --user hsbc ping | grep -q PONG']
+      interval: 10s
+      timeout: 5s
+      retries: 12
+  opa:
+    image: ${OPA_IMAGE:?lock OPA_IMAGE}
+    user: '10001:10001'
+    restart: unless-stopped
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    env_file: /data/hsbc/secrets/opa.env
+    command: [run, --server, --addr=0.0.0.0:8181, --authentication=token, --authorization=basic, --skip-version-check, --log-level=error, --bundle, /config/authz, /config/registry]
+    volumes:
+      - /data/hsbc/config/opa:/config:ro
+      - /data/hsbc/policies/releases:/releases:ro
+    networks: [rules]
+networks:
+  app:
+    name: hsbc_app
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: br-hsbc
+    ipam:
+      config:
+        - subnet: 172.30.90.0/24
+          gateway: 172.30.90.1
+  rules:
+    name: hsbc_rules
+    internal: true
+

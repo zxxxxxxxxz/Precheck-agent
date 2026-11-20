@@ -1,0 +1,8 @@
+.initial-review-result{margin-bottom:24px;padding:16px 20px;background:var(--bg);border-left:3px solid var(--border);color:var(--ink)}
+.initial-review-title{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.initial-review-result h3,.initial-review-result h4{margin:0;font-size:14px;font-weight:500}
+.initial-review-result p,.initial-review-result li{margin:10px 0 0;line-height:1.7;overflow-wrap:anywhere;white-space:pre-wrap}
+.initial-review-result ul{margin:8px 0;padding-left:20px}
+.initial-review-result h4{margin-top:14px}
+.initial-review-result .initial-review-meta{font-size:12px;color:var(--muted)}
+@media(max-width:800px){.initial-review-result{padding:14px 12px}.initial-review-title{align-items:flex-start}.initial-review-title .ant-tag{white-space:normal}}

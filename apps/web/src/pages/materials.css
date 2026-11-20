@@ -1,0 +1,159 @@
+@import '../features/materials/preparation-checklist.css';
+
+/* Keep the upload and its files in one column, independent of the requirements length. */
+.materials-workspace {display:grid; grid-template-columns:minmax(0,1.45fr) minmax(320px,.75fr); background:var(--surface); border:1px solid var(--border);}
+.materials-main {min-width:0; padding:32px 24px 40px; container-type:inline-size; container-name:material-files;}
+.materials-history-links {display:flex; flex-wrap:wrap; gap:16px; margin-top:12px; font-size:13px;}
+.materials-main .material-rule-details {margin:0 0 16px;}
+.materials-main .section {margin-bottom:16px;}
+.materials-main .workspace-upload {padding:0; background:var(--bg);}
+.materials-main .workspace-upload-mark {display:block; margin-bottom:6px; color:var(--primary); font-size:22px; line-height:24px; font-weight:300;}
+.materials-main .material-drop-trigger.ant-btn {min-height:148px; height:auto; padding:24px; border:0; border-radius:0; white-space:normal; color:var(--ink);}
+.materials-main .material-drop-trigger.ant-btn:hover:not(:disabled) {background:var(--selection-fill);}
+.material-drop-trigger strong {display:block; font-size:14px; font-weight:500; line-height:21px;}
+.material-drop-hint {display:block; margin-top:4px; font-size:12px; line-height:18px; font-weight:400; color:var(--muted);}
+.materials-main .workspace-upload h2 {margin:8px 0 4px; font-size:14px; line-height:24px; font-weight:500;}
+.materials-main .workspace-upload p {margin:4px 0 12px; color:var(--muted); font-size:13px; line-height:22px;}
+.materials-main .workspace-upload .help-text {margin:12px 0 0;}
+.materials-main .workspace-upload.is-dragging {border-color:var(--primary); background:var(--selection-fill);}
+.materials-main .workspace-upload.is-readonly {padding:12px 16px; text-align:left; border-style:solid; border-color:var(--border);}
+.materials-main .material-upload-list {padding:0; margin-top:16px;}
+.material-upload-details {margin-top:12px; font-size:13px; line-height:22px; color:var(--muted);}
+.material-upload-details > summary {cursor:pointer;}
+.material-upload-details > summary:focus-visible {outline:2px solid var(--focus); outline-offset:4px;}
+.material-upload-details > summary > [role="status"] {color:var(--ink);}
+.material-upload-details .material-upload-list {color:var(--ink);}
+.material-upload-row {display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:16px; min-height:76px; padding:12px 4px; border-bottom:1px solid var(--border); background:var(--surface);}
+.material-upload-row:hover {background:var(--hover-bg);}
+.material-upload-info {min-width:0;}
+.material-upload-name {display:block; font-size:13px; line-height:22px; font-weight:400; overflow-wrap:anywhere;}
+.material-upload-state {margin:2px 0 0; font-size:12px; line-height:20px; color:var(--muted); overflow-wrap:anywhere;}
+.material-upload-actions {display:flex; flex-wrap:wrap; justify-content:flex-end; gap:4px;}
+.material-upload-actions .ant-btn {font-size:13px; padding-inline:8px;}
+.materials-main .material-file-section {padding:0;}
+.materials-main .material-file-list {margin-top:28px; padding-top:0;}
+.materials-main .material-file-empty {margin:0; padding:24px 0; text-align:left; font-size:13px; border-bottom:1px solid var(--border);}
+/* Let the file column set the shared height; long checklists scroll inside it. */
+.materials-requirements {min-width:0; min-height:0; max-height:none; align-self:stretch; contain:size; overflow:auto; padding:32px 28px 36px; background:var(--bg); border-left:1px solid var(--border);}
+.materials-requirements:focus-visible {outline:2px solid var(--focus); outline-offset:-2px;}
+.materials-requirements > h2 {margin:0; padding-bottom:14px; border-bottom:1px solid var(--ink); font-size:14px; line-height:24px; font-weight:500;}
+.materials-requirements .workspace-requirements > p {font-size:13px; line-height:22px; overflow-wrap:anywhere;}
+.materials-requirements .workspace-requirements h3 {margin:24px 0 0; padding-bottom:10px;}
+.materials-requirements .workspace-requirements ul {margin:0;}
+.materials-requirements .workspace-requirements li {padding:10px 0;}
+.materials-requirements .workspace-requirements li strong {overflow-wrap:anywhere;}
+/* The file list responds to its column width, including medium desktop windows. */
+@container material-files (max-width:760px) {
+  .materials-main .material-file-row {grid-template-columns:24px minmax(0,1fr) 76px 44px; gap:12px;}
+  .materials-main .material-file-status {grid-column:2; grid-row:2; margin-top:-8px;}
+  .materials-main .material-file-actions {grid-column:4; grid-row:1 / 3;}
+  .materials-main .material-file-rows.is-readonly .material-file-row {grid-template-columns:minmax(0,1fr) 76px 56px;}
+  .materials-main .material-file-rows.is-readonly .material-file-status {grid-column:1;}
+  .materials-main .material-file-rows.is-readonly .material-file-actions {grid-column:3;}
+}
+@container material-files (max-width:600px) {
+  .materials-heading {flex-wrap:wrap;}
+  .materials-case-meta {flex-basis:100%; padding-left:50px; text-align:left;}
+}
+@container material-files (max-width:480px) {
+  .material-upload-row {grid-template-columns:minmax(0,1fr); gap:4px;}
+  .materials-main .material-file-header {flex-wrap:wrap; gap:8px;}
+  .materials-main .material-file-row {grid-template-columns:20px minmax(0,1fr) 44px; gap:8px;}
+  .materials-main .material-file-status {grid-column:2 / -1; grid-row:3; margin-top:0;}
+  .materials-main .material-file-size {grid-column:2 / -1; grid-row:2; flex-direction:row; gap:12px;}
+  .materials-main .material-file-actions {grid-column:3; grid-row:1; align-self:start;}
+  .materials-main .material-file-rows.is-readonly .material-file-row {grid-template-columns:minmax(0,1fr) 44px;}
+  .materials-main .material-file-rows.is-readonly .material-file-size {grid-column:1 / -1;}
+  .materials-main .material-file-rows.is-readonly .material-file-status {grid-column:1 / -1;}
+  .materials-main .material-file-rows.is-readonly .material-file-actions {grid-column:2; grid-row:1;}
+}
+@media (max-width:991px) {
+  .materials-workspace {grid-template-columns:minmax(0,1fr);}
+  .materials-requirements {contain:none; border-left:0; border-top:1px solid var(--border);}
+}
+@media (max-width:540px) {
+  .workspace-mode .case-page-materials > .review-round-controls-compact .section-toolbar-info,
+  .workspace-mode .existing-case-materials > .review-round-controls-compact .section-toolbar-info {flex-basis:100%;}
+  .materials-main,.materials-requirements {padding:24px 16px;}
+  .previous-round {padding:24px 16px 10px;}
+  .previous-round-head {flex-direction:column;}
+  .previous-round-actions {align-items:flex-start;}
+  .materials-round-divider {padding-inline:16px;}
+  .materials-main .material-drop-trigger.ant-btn {padding:24px 12px;}
+}
+
+/* Material preparation follows the uploaded-round checklist. */
+.material-guarantee-picker {padding:20px 0 24px; border-top:1px solid var(--border);}
+.material-guarantee-picker .case-business-heading h2 {font-size:14px;}
+.material-selection-actions {display:flex; align-items:center; flex-wrap:wrap; gap:12px; margin-top:12px;}
+.material-selection-actions p {flex-basis:100%; margin:0; font-size:13px; color:var(--muted);}
+.materials-requirements:has(.preparation-checklist) > h2 {padding-bottom:0; border-bottom:0;}
+/* Match the mockup batch toolbar and compact file rows. */
+.materials-main .material-file-tools {flex-wrap:wrap; justify-content:flex-end; gap:12px;}
+.materials-main .material-file-tools .ant-btn,
+.material-history-dialog .ant-btn {border-radius:0; font-size:13px; font-weight:500; letter-spacing:.01em; padding-inline:18px;}
+.materials-main .material-file-tools .ant-btn-default:not(:disabled):not(.ant-btn-dangerous),
+.material-history-dialog .ant-btn-default:not(:disabled) {border-color:var(--ink);}
+.materials-main .material-file-tools .ant-btn-default:not(:disabled):not(.ant-btn-dangerous):hover,
+.material-history-dialog .ant-btn-default:not(:disabled):hover {color:var(--surface); background:var(--ink);}
+.materials-main .material-file-tools .ant-btn-link {height:auto; padding:2px 0; font-weight:500;}
+.materials-main .material-file-tools .ant-btn-link:not(:disabled) {color:var(--ink);}
+.materials-main .material-file-tools .ant-btn-link:hover:not(:disabled) {text-decoration:underline; text-underline-offset:3px;}
+.historical-material-intro {margin:12px 0 20px; color:var(--muted); font-size:12px; line-height:1.6;}
+.historical-materials {max-height:50dvh; overflow:auto;}
+.historical-materials h3 {margin:20px 0 0; padding-bottom:10px; border-bottom:1px solid var(--ink); font-size:13px; font-weight:500; color:var(--ink);}
+.historical-materials section:first-child h3 {margin-top:0;}
+.historical-materials ul {list-style:none; padding:0; margin:0;}
+.historical-materials li {display:flex; align-items:center; justify-content:space-between; gap:14px; min-height:64px; padding:12px 4px; border-bottom:1px solid var(--border);}
+.historical-materials li:hover {background:var(--hover-bg);}
+.historical-materials .ant-checkbox-wrapper {min-width:0; align-items:center;}
+.historical-material-name {display:block; font-size:13px; line-height:20px; font-weight:500; overflow-wrap:anywhere;}
+.historical-material-meta,.historical-material-state {display:block; font-size:12px; line-height:1.45; color:var(--muted);}
+.historical-material-meta {margin-top:3px;}
+.historical-material-state {flex-shrink:0;}
+
+
+/* Page head: one row — the batch, then upload, the next step and round actions. Case facts read as one line below. */
+.materials-page-head {display:flex; align-items:center; flex-wrap:wrap; gap:8px 16px; min-height:44px; margin-bottom:2px;}
+.materials-page-title {display:flex; align-items:center; gap:12px; min-width:0;}
+.materials-page-title h2 {margin:0; font-size:var(--text-xl); line-height:30px; font-weight:400; white-space:nowrap;}
+.materials-page-actions {margin-left:auto; display:flex; align-items:center; flex-wrap:wrap; justify-content:flex-end; gap:8px;}
+.materials-page-actions .round-more {width:36px; padding:0; font-size:16px;}
+.materials-context {display:flex; flex-wrap:wrap; align-items:center; gap:4px 24px; margin:0 0 16px; color:var(--muted); font-size:var(--text-xs); line-height:20px;}
+.materials-context b {color:var(--ink); font-weight:400;}
+.materials-context-item {display:inline-flex; align-items:center; flex-wrap:wrap; gap:4px 8px; min-width:0;}
+.materials-context .ant-btn {height:auto; padding:0; border:0; background:transparent; box-shadow:none; color:var(--ink); font-size:var(--text-xs); text-decoration:underline; text-underline-offset:3px; text-decoration-color:var(--border);}
+.materials-context .ant-btn:hover:not(:disabled) {background:transparent; color:var(--ink); text-decoration-color:var(--ink);}
+.materials-context > .material-guarantee-picker {flex-basis:100%; margin:4px 0 8px; color:var(--ink); font-size:var(--text-sm);}
+.materials-context-note {flex-basis:100%;}
+.materials-next {margin-top:16px;}
+.materials-next p {margin:0; max-width:72ch; color:var(--muted); font-size:var(--text-xs); line-height:20px;}
+.materials-requirements {position:sticky; top:calc(var(--topbar-h) + 16px); align-self:start; max-height:calc(100vh - var(--topbar-h) - 32px); overflow:auto;}
+
+/* Earlier round: one line that unfolds to its file names. */
+.previous-round {margin:0 0 16px; background:var(--surface); border:1px solid var(--border);}
+.previous-round > summary {display:flex; align-items:center; flex-wrap:wrap; gap:4px 16px; min-height:44px; padding:6px 16px; cursor:pointer; list-style:none; font-size:var(--text-xs);}
+.previous-round > summary::-webkit-details-marker {display:none;}
+.previous-round-title {display:inline-flex; align-items:center; gap:6px;}
+.previous-round-title b {font-weight:500; font-size:var(--text-sm);}
+.previous-round-meta {color:var(--muted);}
+.previous-round-actions {margin-left:auto; display:flex; gap:16px;}
+.previous-round-actions a {text-decoration:underline; text-underline-offset:3px; text-decoration-color:var(--border);}
+.previous-round-toggle {display:inline-flex; align-items:center; gap:6px; color:var(--ink);}
+.previous-round-toggle::after {content:""; width:7px; height:7px; border-right:1px solid currentColor; border-bottom:1px solid currentColor; transform:translateY(-2px) rotate(45deg);}
+.previous-round[open] .previous-round-toggle::after {transform:translateY(1px) rotate(-135deg);}
+.previous-round-files {display:flex; flex-wrap:wrap; gap:8px; list-style:none; margin:0; padding:4px 16px 16px;}
+.previous-round-files li {max-width:100%; padding:4px 8px; border:1px solid var(--border); background:var(--bg); font-size:var(--text-xs); overflow-wrap:anywhere;}
+.previous-round > [role="status"], .previous-round > .ant-alert {margin:0 16px 12px;}
+
+/* Upload: a full drop area for an empty batch; a slim strip once files are listed. */
+.materials-main .workspace-upload.is-compact {margin-top:12px; background:transparent;}
+.materials-main .workspace-upload.is-compact .material-drop-trigger.ant-btn {min-height:52px; padding:8px 16px; border:1px dashed #a7a9a6; color:var(--muted);}
+.materials-main .workspace-upload.is-compact .workspace-upload-mark {display:none;}
+.materials-main .workspace-upload.is-compact .material-drop-trigger strong {display:inline; font-weight:400; font-size:var(--text-xs); margin-right:8px; color:var(--ink);}
+.materials-main .workspace-upload.is-compact .material-drop-hint {font-size:var(--text-xs);}
+@media (max-width: 860px) {
+  .materials-page-actions {margin-left:0; justify-content:flex-start;}
+  .materials-requirements {position:static; max-height:none;}
+  .previous-round-actions {margin-left:0;}
+}

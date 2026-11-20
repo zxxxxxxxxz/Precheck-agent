@@ -1,0 +1,29 @@
+.report-next-actions:has(.round-completion) { border-top-color: var(--ink); padding-top: 24px; }
+/* Shared report footer: mockup typography, left acknowledgement, stacked actions. */
+.round-completion { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 24px; }
+.round-completion-copy { flex: 1 1 46rem; min-width: min(100%, 46rem); }
+.round-completion-keep-line { white-space: nowrap; }
+.round-completion-copy h3 { margin: 0; color: var(--ink, var(--ink)); font-size: 14px; font-weight: 500; line-height: 1.35; }
+.round-completion-copy p { margin: 8px 0 0; color: var(--ink-soft, var(--muted)); font-size: 13px; line-height: 1.6; overflow-wrap: normal; }
+.round-completion-copy .ant-checkbox-wrapper { display: flex; align-items: flex-start; gap: 10px; margin-top: 12px; color: var(--ink, var(--ink)); font-size: 13px; font-weight: 500; line-height: 1.6; }
+.round-completion-copy .ant-checkbox { margin-top: 2px; }
+.round-completion-copy .ant-checkbox-label { padding: 0; }
+.round-completion-copy .round-completion-note { margin: 8px 0 0; font-size: 13px; }
+.round-completion-actions { display: flex; flex-direction: column; align-items: stretch; gap: 8px; }
+.round-completion-actions .ant-btn { min-height: 44px; height: auto; padding: 10px 18px; border-radius: 0; box-shadow: none; font-size: 13px; font-weight: 500; letter-spacing: .01em; white-space: normal; }
+.workspace-mode .report-next-actions .round-completion .round-completion-actions .ant-btn { font-size: 13px; }
+.round-completion-actions .ant-btn-default:not(:disabled) { color: var(--ink); border-color: var(--ink); background: var(--surface); }
+.round-completion-actions .ant-btn-default:not(:disabled):hover { color: #FFFFFF; border-color: var(--ink); background: #000000; }
+.round-completion-actions .ant-btn-dangerous:not(:disabled) { color: var(--primary, var(--primary)); border-color: var(--primary, var(--primary)); background: var(--surface); }
+.round-completion-actions .ant-btn-dangerous:not(:disabled):hover { color: #FFFFFF; border-color: var(--primary, var(--primary)); background: var(--primary, var(--primary)); }
+.round-completion-actions .ant-btn:disabled { color: var(--muted); border-color: var(--border); background: var(--surface); }
+.round-completion-actions .ant-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.round-completion-support { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 20px; margin-top: 16px; font-size: 13px; }
+.round-completion-support .ant-btn, .round-completion-support a { padding: 0; height: auto; min-height: 24px; border: 0; border-radius: 0; box-shadow: none; color: var(--ink, var(--ink)); font-size: 13px; text-decoration: underline; text-underline-offset: 3px; background: transparent; }
+.round-completion-support .ant-btn:hover, .round-completion-support a:hover { color: var(--ink); background: transparent; }
+.round-completion-section > .section-body { padding: 0; }
+@media(max-width:640px){
+ .round-completion { align-items: start; }
+ .round-completion-actions { width: 100%; max-width: none; }
+ .round-completion-support { gap: 12px 20px; }
+}

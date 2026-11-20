@@ -1,0 +1,18 @@
+{
+  "label": "跨海通道",
+  "recommended": true,
+  "file": "international-campaign-banner.jpg",
+  "page": "https://www.business.hsbc.com/en-gb/campaigns/international-business",
+  "url": "https://www.business.hsbc.com/-/media/media/global/images/campaigns/international-campaign-banner.jpg?h=1386&hash=76FF7C9629CC4B9A301A72E821D8C9C2&iar=0&w=2880",
+  "width": 2880,
+  "height": 1386,
+  "objectFit": "cover",
+  "objectPosition": "55% 50%",
+  "notes": "Verified natural photograph of a long bridge across water at dusk; no overlaid HSBC marketing copy or regional lettering. Central road remains legible in portrait-ish crop.",
+  "sha256": "4b618cc0dc4d2603b0c8a35a4e3be6928fe3f76a01a221f962e7da8088e2b6b1",
+  "bytes": 1022616,
+  "verifiedAt": "2026-10-13",
+  "localPath": "/brand/international-business.jpg",
+  "usage": "Decorative login background; unmodified original, CSS object-fit crop",
+  "alt": ""
+}

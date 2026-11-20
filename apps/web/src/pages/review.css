@@ -1,0 +1,222 @@
+/* Review workspace: full bleed under the case bar; the document never scrolls, each pane scrolls on its own. */
+.review {--review-control-height: 44px; --review-toolbar-pad: var(--content-pad); --review-action-font: 12.5px; display: flex; flex-direction: column; min-width: 0; margin: 0 calc(-1 * var(--content-pad)) calc(-1 * var(--content-pad)); background: var(--surface); height: calc(100vh - var(--topbar-h) - var(--casebar-h)); height: calc(100dvh - var(--topbar-h) - var(--casebar-h)); min-height: 520px}
+.review-notice {margin-top: var(--space-4)}
+.review-docbar {flex: none; display: flex; align-items: center; flex-wrap: wrap; gap: 4px 16px; min-height: 52px; padding: 4px var(--review-toolbar-pad); border-bottom: 1px solid var(--border)}
+.review-field {display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 13px}
+.review-record-time {color: var(--ink); font-variant-numeric: tabular-nums}
+.review-file {width: clamp(200px, 24vw, 340px)}
+.file-option {display: grid}
+.file-option .mono {font-size: 12px}
+.review-progress {display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 13px}
+.review-progress .ant-progress {width: 96px; margin: 0}
+.review-version {font-size: 12px}
+.review-docbar-actions {display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-left: auto}
+/* Document actions follow the mockup control geometry and treatment. */
+.review .review-docbar-actions .ant-btn {height: var(--review-control-height); min-height: var(--review-control-height); padding-inline: 14px; border-radius: 0; font-size: var(--review-action-font); font-weight: 400; box-shadow: none}
+.review .review-docbar-actions .ant-btn-default:not(:disabled) {color: var(--ink); border-color: var(--ink); background: var(--surface)}
+.review .review-docbar-actions .ant-btn-default:not(:disabled):hover {color: var(--surface); border-color: var(--ink); background: var(--ink)}
+.review-translation-action {display: inline-flex}
+.review-translation-action:empty {display: none}
+.review-banner {flex: none}
+/* Word reading notices follow the mockup's compact, lightly tinted status rows. */
+.review-document-notice.ant-alert {display: grid; grid-template-columns: 14px minmax(0, 1fr) auto; align-items: center; gap: 8px; min-height: 40px; padding: 8px var(--content-pad); border: 0; border-bottom: 1px solid var(--border); border-radius: 0; color: var(--ink); font-size: 13px; line-height: 20px}
+.review-document-notice.ant-alert-info {background: var(--bg)}
+.review-document-notice.ant-alert-warning {background: var(--warning-bg); border-bottom-color: var(--warning-border)}
+.review-document-notice .ant-alert-icon {align-self: start; margin: 3px 0 0; font-size: 13px; line-height: 1}
+.review-document-notice.ant-alert-info .ant-alert-icon {color: var(--muted)}
+.review-document-notice.ant-alert-warning .ant-alert-icon {color: var(--warning)}
+.review-document-notice .ant-alert-title {color: inherit; font-size: inherit; line-height: inherit; font-weight: 400; overflow-wrap: anywhere}
+.review-document-notice .ant-alert-actions {margin: 0 0 0 8px}
+.review-document-notice .ant-alert-actions .ant-btn {height: 24px; min-height: 24px; padding: 0 2px; border-radius: 0; color: var(--ink); font-size: 13px; line-height: 20px; text-decoration: underline; text-underline-offset: 3px}
+.review-document-notice .ant-alert-actions .ant-btn:hover {color: var(--ink); background: transparent; text-decoration-thickness: 2px}
+@media (max-width: 600px) {
+  .review-document-notice.ant-alert {grid-template-columns: 14px minmax(0, 1fr); padding-inline: 12px}
+  .review-document-notice .ant-alert-actions {grid-column: 2; justify-self: start; margin: 0}
+}
+.review-notices {flex: none; padding: 8px var(--content-pad) 0}
+.review-notices:empty, .review-pane-notices:empty {display: none}
+.review-pane-notices {flex: none; padding: 8px 12px 0}
+.review-status {padding: 16px}
+.review-workspace.ant-splitter {flex: 1; min-height: 0}
+.review-workspace > .ant-splitter-panel, .review-reader-split > .ant-splitter-panel {min-height: 0; overflow: hidden}
+.review-document-split, .review-reader-split {height: 100%; min-height: 0; min-width: 0}
+.review-document-split [role="separator"]:focus-visible {outline: 2px solid var(--focus); outline-offset: 2px; z-index: 3}
+
+.review-pane {display: flex; flex-direction: column; height: 100%; min-height: 0; min-width: 0; background: var(--surface)}
+.review-pane-head {flex: none; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; min-height: 52px; padding: 4px 12px; border-bottom: 1px solid var(--border); background: var(--hover-bg)}
+.review-pane-title {font-size: 13px; color: var(--muted)}
+.review-pane-body {flex: 1; min-height: 0; overflow: auto}
+.pane-close.ant-btn {margin-left: auto; width: 44px; padding: 0; font-size: 18px; color: var(--muted)}
+.pane-note {font-size: 13px; margin: 0 0 8px}
+.review-directory .review-pane-body {padding: 4px 0}
+.review-directory .review-pane-head {flex-wrap: nowrap; gap: 4px; padding-right: 4px}
+.review-directory .pane-close.ant-btn {width: 36px}
+
+/* Directory and page list: one current item, marked by the single red bar. */
+.directory-list, .page-list {list-style: none; margin: 0; padding: 0}
+.directory-item {display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; width: 100%; min-height: 40px; padding: 8px 12px 8px 13px; border: 0; border-left: 3px solid transparent; background: transparent; color: var(--ink); text-align: left; cursor: pointer; font: inherit}
+.directory-item:hover {background: var(--hover-bg)}
+.directory-item.active {background: var(--bg); border-left-color: var(--selection)}
+.directory-name {flex: 1 1 auto; min-width: 0; overflow-wrap: anywhere}
+.directory-pages, .directory-status {font-size: 13px; color: var(--muted); white-space: nowrap}
+.directory-status.tone-warning, .tone-warning {color: var(--warning)}
+.review-thumbnails {display: flex; gap: 6px; padding: 8px 12px; border-bottom: 1px solid var(--border); overflow-x: auto}
+.review-thumbnails button {flex: 0 0 52px; padding: 3px; background: var(--bg); border: 1px solid var(--border); cursor: pointer; color: var(--ink); font-size: 12px}
+.review-thumbnails button[aria-current="page"] {border: 2px solid var(--selection); padding: 2px}
+.review-thumbnails img {display: block; width: 100%; height: 64px; object-fit: contain; background: white}
+
+/* Preview controls belong to the canvas, never span or shrink the evidence pane. */
+.review-canvas-pane {background: #e8e8e6}
+.review-image-pane {flex: 1; height: auto}
+.review-canvas-stage {position: relative; display: flex; flex: 1; min-height: 0; min-width: 0}
+.review-footer {flex: none; display: flex; align-items: center; flex-wrap: wrap; gap: 4px 16px; min-height: 48px; padding: 4px 12px; border-top: 1px solid var(--border); background: var(--surface); color: var(--ink)}
+.reader-tools {display: flex; align-items: center; flex-wrap: wrap; gap: 2px; max-width: 100%}
+.reader-tools .ant-btn {height: 36px; min-height: 36px; width: 36px; padding: 0; flex: none}
+.reader-tools .reader-directory-toggle, .reader-tools .reader-reset-split {width: auto; padding-inline: 8px; font-size: 13px}
+.reader-tools .ant-btn[aria-expanded="true"] {background: var(--bg); color: var(--selection)}
+.reader-page-controls {display: inline-flex; align-items: center; flex: none; gap: 2px; padding-inline: 4px; border-inline: 1px solid var(--border)}
+.reader-page-number {display: inline-flex; align-items: center; gap: 6px}
+.reader-page-number .review-page-input {width: 42px; height: 32px; min-height: 32px; padding: 2px; font-size: 13px; text-align: center}
+.reader-page-total {font-size: 13px; color: var(--muted); white-space: nowrap}
+.review-canvas {padding-left: 72px}
+.review-canvas {flex: 1; min-height: 0; overflow: auto; padding: 16px; position: relative}
+.review-canvas.fit-page {display: flex; justify-content: center; align-items: flex-start}
+.review-paper {display: block; margin: 0 auto; background: white; box-shadow: 0 2px 8px #00000012; min-width: 0}
+.review-canvas.fit-page .review-paper {height: 100%; width: auto; max-width: 100%}
+
+/* Regions: ink for hover and focus, amber dashes for candidates, red only for the current selection. */
+.review-region {fill: transparent; stroke: var(--muted); stroke-width: 1.25; cursor: pointer; vector-effect: non-scaling-stroke}
+.review-region:hover {fill: rgba(51, 51, 51, .06); stroke: var(--ink); stroke-width: 2}
+.review-region:focus-visible {outline: none; stroke: var(--ink); stroke-width: 2.5; stroke-dasharray: 3 2}
+.review-region.signature {stroke: var(--candidate); stroke-dasharray: 6 4}
+.review-region.selected {fill: var(--selection-fill); stroke: var(--selection); stroke-width: 2.5; stroke-dasharray: none}
+.regions-hover .review-region:not(:hover):not(:focus-visible):not(.selected) {stroke: transparent}
+.review-anchor {fill: none; stroke: var(--selection); stroke-width: 2; pointer-events: none; vector-effect: non-scaling-stroke}
+.review-anchor.current {fill: rgba(219, 0, 17, .12); stroke-width: 2.5}
+
+/* Evidence pane: tabs as the pane head, compact field table, file-level gaps listed once. */
+.review-evidence-tabs.ant-tabs {height: 100%; min-height: 0; flex: 1; display: flex; flex-direction: column; overflow: hidden}
+.review-evidence-tabs > .ant-tabs-nav {flex: none; margin: 0; padding: 0 4px 0 12px; min-height: 52px; background: var(--hover-bg)}
+.review-evidence-tabs > .ant-tabs-nav .ant-tabs-tab {padding: 12px 0}
+.review-evidence-tabs > .ant-tabs-body-holder {flex: 1; min-height: 0; overflow: hidden}
+.review-evidence-body {height: 100%; overflow: auto; overscroll-behavior: contain; scrollbar-gutter: stable}
+.review-evidence-content {min-width: 0; min-height: 100%}
+.review-field-body {flex: 1; min-height: 0; height: auto}
+.review-evidence > .review-pane-head {flex: none; min-height: 52px; background: var(--hover-bg)}
+.review-evidence > .review-pane-head h3 {margin: 0; font-weight: 500}
+.evidence-panel {padding: 12px}
+.field-filter {margin-bottom: 8px}
+.field-semantic-status {display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; font-size: 13px}
+.field-semantic-status > span {flex: 1 1 150px}
+.field-table .ant-table-tbody > tr > td {vertical-align: top}
+.field-table .ant-table-tbody > tr.is-selected > td {background: var(--bg)}
+.field-table .ant-table-tbody > tr.is-selected > td:first-child {box-shadow: inset 3px 0 0 var(--selection)}
+.field-table .ant-table-tbody > tr:not(.ant-table-expanded-row) {cursor: pointer}
+.field-label {color: var(--muted); font-size: 13px; overflow-wrap: anywhere}
+.evidence-value-link {display: block; width: 100%; padding: 0; border: 0; background: transparent; color: var(--ink); text-align: left; font: inherit; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; white-space: pre-wrap; cursor: pointer}
+.evidence-value-link:hover:not(:disabled) {text-decoration: underline; text-underline-offset: 3px}
+.evidence-value-link:disabled {cursor: default}
+.field-state {display: block; font-size: 13px; color: var(--muted)}
+.field-kept-values {display: grid; gap: 4px}
+.field-value-source {display: grid; gap: 2px; min-width: 0}
+.field-kept-values > .field-value-source + .field-value-source {padding-top: 6px; border-top: 1px solid var(--border)}
+.field-value-source .source-links {font-size: 13px}
+.field-state.tone-warning {color: var(--warning)}
+.source-links {display: inline-flex; flex-wrap: wrap; gap: 0 10px}
+.source-none {font-size: 13px}
+.region-card {margin: 0 0 12px; padding: 8px 12px; border: 1px solid var(--border); border-left: 3px solid var(--selection)}
+.region-card-head {display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; font-size: 13px}
+.evidence-excerpt {font-size: 13px; line-height: 1.6; margin: 8px 0; white-space: pre-wrap; overflow-wrap: anywhere; border-left: 2px solid var(--border); padding-left: 10px}
+.evidence-excerpt.clamp {display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden}
+.signature-row {padding: 12px 0; border-bottom: 1px solid var(--border)}
+.signature-row.is-selected {box-shadow: inset 3px 0 0 var(--selection); padding-left: 12px}
+.signature-head {display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-bottom: 4px}
+.signature-sources {display: flex; gap: 8px; align-items: baseline; font-size: 13px}
+.review-search {display: flex; gap: 8px; margin-bottom: 12px}
+.review-search input {min-width: 0}
+.search-hit {padding: 8px 0; border-bottom: 1px solid var(--border)}
+.search-hit-head {display: flex; gap: 8px; align-items: baseline}
+.gap-group h3 {margin: 12px 0 4px; font-size: 13px}
+.gap-group:first-child h3 {margin-top: 0}
+
+/* Drawers: footer actions stay visible; directory correction is non-modal so the page stays readable. */
+.drawer-footer {display: flex; align-items: center; justify-content: flex-end; gap: 12px}
+.drawer-footer > .muted {margin-right: auto; font-size: 13px}
+.directory-editor-row {border: 1px solid var(--border); padding: 12px; margin-bottom: 12px}
+.directory-editor-row.active {border-left: 3px solid var(--selection)}
+.directory-editor-fields {display: grid; grid-template-columns: 1fr 1fr; gap: 12px}
+.directory-editor-fields label {display: grid; gap: 4px; font-size: 13px; color: var(--muted)}
+.directory-editor-actions {flex-wrap: wrap; margin-top: 8px; font-size: 13px}
+.directory-region-picker {max-height: 220px; overflow: auto; border: 1px solid var(--border); padding: 10px; margin: 16px 0}
+.directory-region-picker label {display: flex; margin-bottom: 8px}
+.compare-head {position: sticky; top: -24px; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto; align-items: end; gap: 16px; margin: -24px -24px 16px; padding: 16px 24px; background: var(--surface); border-bottom: 1px solid var(--border)}
+.compare-file {display: grid; gap: 4px; min-width: 0}
+.compare-file .mono {font-size: 12px}
+.compare-arrow {padding-bottom: 10px; color: var(--muted)}
+.compare-summary {margin: 0 0 8px}
+.compare-row {display: grid; grid-template-columns: 120px minmax(0, 1fr) minmax(0, 1fr); gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border)}
+.compare-row-head {padding: 8px 0; color: var(--muted); font-size: 13px}
+.compare-side > div + div {margin-top: 12px}
+.compare-text {margin: 0 0 6px; font-family: "SFMono-Regular", Consolas, monospace; font-size: 13px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere}
+.compare-text del {color: var(--muted); text-decoration: line-through}
+.compare-text ins {color: var(--ink); text-decoration: underline; text-decoration-thickness: 2px; font-weight: 500}
+
+/* Narrow readers stack inside their scroll container; short desktop windows keep both panes. */
+@media (max-width: 999px) {
+  .review {height: auto; min-height: 0}
+  .review-stack .review-pane {height: auto}
+  .review-stack .review-canvas-stage {flex: none; height: 70vh; min-height: 320px}
+  .review-stack .review-canvas {height: 100%; flex: 1}
+  .review-stack .review-directory .review-pane-body {max-height: 260px}
+  .review-stack .review-evidence {border-top: 1px solid var(--border)}
+  .review-stack .review-evidence-tabs {height: auto; overflow: visible}
+  .review-stack .review-evidence-tabs > .ant-tabs-body-holder {overflow: visible}
+  .review-stack .review-evidence-body {height: auto; overflow: visible; scrollbar-gutter: auto}
+  .review-stack .region-card, .review-stack .review-canvas-stage {scroll-margin-top: calc(var(--topbar-h) + 8px)}
+}
+@media (max-width: 767px) {
+  .review-file {width: 100%}
+  .review-field {flex: 1 1 100%}
+  .review-docbar-actions {margin-left: 0}
+  .review-stack .review-canvas-stage {height: 65vh}
+  .review-stack .review-canvas {padding: 12px}
+  .directory-editor-fields {grid-template-columns: 1fr}
+  .compare-head {grid-template-columns: 1fr}
+  .compare-arrow {display: none}
+  .compare-row {grid-template-columns: 1fr}
+}
+
+/* The V2 mobile shell uses 12px content padding, rather than work-mode's 16px. */
+@media (max-width: 620px) {
+  .workspace-mode .review {margin-inline: -12px}
+}
+
+@media (pointer: coarse) {
+  .reader-tools .ant-btn {height: 44px; min-height: 44px; width: 44px}
+  .reader-tools .reader-directory-toggle, .reader-tools .reader-reset-split {width: auto}
+  .reader-page-number .review-page-input {width: 44px; height: 44px}
+}
+
+/* Signing checks keep the source and human decision together; dense details open on demand. */
+.signature-review-toolbar, .signature-row-actions, .signature-observation-heading {display: flex; flex-wrap: wrap; align-items: center; gap: 8px}
+.signature-review-toolbar {justify-content: space-between; margin-bottom: 10px; font-size: 13px}
+.signature-filter {margin-bottom: 8px}
+.signature-table .ant-table-tbody > tr > td {vertical-align: top; overflow-wrap: anywhere}
+.signature-detail {font-size: 13px; display: grid; gap: 12px}
+.signature-detail p {margin: 4px 0}
+.signature-observation {border-top: 1px solid var(--border); padding-top: 10px}
+.signature-observation-heading {justify-content: space-between; margin-bottom: 8px}
+.signature-crop {display: block; width: 100%; max-height: 240px; min-height: 64px; margin: 8px 0; background: white; border: 1px solid var(--border)}
+.signature-row-actions {margin-top: 8px}
+.signature-review-toolbar .signature-row-actions {margin-top: 0}
+.signature-transaction-action, .signature-coverage, .signature-history {margin-top: 12px}
+.signature-coverage summary, .signature-history summary {cursor: pointer; color: var(--muted); font-size: 13px}
+.signature-coverage summary:focus-visible, .signature-history summary:focus-visible {outline: 2px solid var(--focus); outline-offset: 3px}
+.signature-history p {padding: 8px 0; margin: 0; border-bottom: 1px solid var(--border); font-size: 13px}
+
+.signature-record-picker {display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 10px; font-size: 13px; color: var(--muted)}
+.signature-record-picker .ant-select {flex: 1; min-width: 180px}
+.ocr-mark-clues > section {padding: 10px 0; border-top: 1px solid var(--border)}
+.ocr-mark-clues p {margin: 6px 0; overflow-wrap: anywhere}
+.ocr-mark-clue {padding: 6px 0}
+.ocr-mark-clue > details {font-size: 13px}

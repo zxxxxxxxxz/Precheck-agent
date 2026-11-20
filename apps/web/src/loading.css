@@ -1,0 +1,70 @@
+.hsbc-loading {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  align-content: center;
+  width: 100%;
+  min-width: 0;
+  min-height: 380px;
+  padding: 32px 12px;
+  background: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+.hsbc-loading--full-page {min-height: 100vh; min-height: 100svh}
+
+/* Keep the preview's one-logo-height clear space on every side. The complete
+   box scales down in narrow page panels without changing the original SVG. */
+.hsbc-loading__brand-space {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  place-items: center;
+  /* A definite preferred width avoids intrinsic sizing through the logo. */
+  width: min(342px, calc(58vw * 171 / 111));
+  max-width: 100%;
+  aspect-ratio: 171 / 90;
+}
+.hsbc-loading__brand {
+  display: block;
+  width: calc(100% * 111 / 171);
+  height: auto;
+  aspect-ratio: 111 / 30;
+}
+.hsbc-loading__motion {display: block; width: 80px; height: 64px; overflow: visible}
+.hsbc-loading__chevron {
+  fill: none;
+  stroke: #db0011;
+  stroke-width: 2;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  opacity: 0;
+  animation: hsbc-loading-opening 2400ms cubic-bezier(.4, 0, .2, 1) infinite both;
+}
+.hsbc-loading__chevron--left {--hsbc-loading-dx: -8px; --hsbc-loading-dy: -8px}
+.hsbc-loading__chevron--right {--hsbc-loading-dx: 8px; --hsbc-loading-dy: 8px; animation-delay: 120ms}
+
+@keyframes hsbc-loading-opening {
+  0% {opacity: 0; transform: translate(0, 0)}
+  12%, 18% {opacity: 1; transform: translate(0, 0)}
+  60%, 66% {opacity: 1; transform: translate(var(--hsbc-loading-dx), var(--hsbc-loading-dy))}
+  82% {opacity: 0; transform: translate(var(--hsbc-loading-dx), var(--hsbc-loading-dy))}
+  92%, 100% {opacity: 0; transform: translate(0, 0)}
+}
+.hsbc-loading__status {
+  margin: 18px 0 0;
+  max-width: 100%;
+  color: #595959;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: .08em;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+@media (forced-colors: active) {
+  .hsbc-loading__chevron {stroke: CanvasText}
+}
+
+/* In-page waits: a skeleton with the panel's footprint instead of the full brand animation. */
+.panel-loading {display: block; width: 100%; min-width: 0; padding: 16px; background: var(--surface, #fff)}

@@ -1,0 +1,103 @@
+/* One reading style for inline field records and the standalone signature panel. */
+.signature-details {
+  container: signature-values / inline-size;
+  min-width: 0;
+  color: var(--ink, var(--ink));
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.signature-details .signature-person-details,
+.signature-details .signature-extracted-details {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.signature-details > section + section { margin-top: 12px; }
+.signature-information .signature-details { margin-top: 10px; }
+
+.signature-details .signature-person-heading,
+.signature-details .signature-extracted-details > h4 {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+  padding: 7px 10px;
+  background: var(--bg, var(--bg));
+}
+
+.signature-details h4 {
+  min-width: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.signature-person-heading > span {
+  flex-shrink: 0;
+  color: var(--muted, var(--muted));
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.signature-details dl { margin: 0; }
+.signature-details dl > div {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.signature-details dt {
+  color: var(--muted, var(--muted));
+  font-size: 13px;
+  line-height: 21px;
+  overflow-wrap: anywhere;
+}
+
+.signature-details dd {
+  min-width: 0;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.signature-details .evidence-value-link,
+.field-summary-table .signature-details .evidence-value-link {
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: left;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.signature-detail-value {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 3px 12px;
+  min-width: 0;
+}
+.signature-detail-value + .signature-detail-value { margin-top: 3px; }
+.signature-detail-value > .evidence-value-link,
+.signature-detail-value > span { flex: 1; min-width: 0; white-space: pre-wrap; }
+.signature-details .ant-btn-link { padding: 0; height: auto; min-height: 24px; font-size: 13px; white-space: normal; text-align: left; }
+.signature-details-actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+.signature-details .signature-details-note { margin: 4px 10px 0; color: var(--muted, var(--muted)); font-size: 12px; line-height: 1.5; }
+.signature-details dd .signature-details-note { margin: 3px 0 0; }
+.signature-details-status { font-size: 13px; margin: 12px 0; padding: 8px 10px; background: var(--bg); border-left: 2px solid var(--border); }
+
+@container signature-values (max-width: 360px) {
+  .signature-details dl > div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .signature-details dt { font-size: 12px; line-height: 18px; }
+  .signature-details .signature-person-heading { flex-wrap: wrap; gap: 2px 12px; }
+}

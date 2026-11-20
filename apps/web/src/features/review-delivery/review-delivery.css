@@ -1,0 +1,70 @@
+.review-delivery { min-width:0; padding:16px 0; border-block:1px solid var(--border,var(--border)); }
+.delivery-toolbar { display:flex; flex-wrap:wrap; align-items:end; gap:12px; margin-bottom:16px; }
+.delivery-toolbar label { display:flex; flex-direction:column; gap:8px; min-width:220px; }
+.delivery-toolbar .ant-select { min-width:220px; }
+.delivery-table td { white-space:pre-wrap; overflow-wrap:anywhere; vertical-align:top; }
+.delivery-reply { border-bottom:1px solid var(--border,var(--border)); padding:12px 0; }
+.delivery-reply p,.delivery-copy { white-space:pre-wrap; overflow-wrap:anywhere; }
+.delivery-copy { width:100%; min-height:240px; padding:12px; font:inherit; border:1px solid var(--muted); }
+.delivery-reference { font-size:13px; overflow-wrap:anywhere; color:var(--muted); }
+.review-delivery summary { cursor:pointer; padding:12px 0; }
+.review-delivery article { padding:12px 0; border-top:1px solid var(--border); }
+@media(max-width:640px){.delivery-toolbar label,.delivery-toolbar .ant-select{width:100%;min-width:0}.review-delivery{font-size:14px}.delivery-toolbar{align-items:stretch}}
+
+.delivery-original{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--bg);border:1px solid var(--border);padding:16px;line-height:1.7}
+.delivery-evidence article{margin:16px 0}.delivery-compare{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}.delivery-mapping{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:12px 0}.review-delivery textarea{display:block;width:100%;min-height:80px;margin:8px 0 16px;padding:12px;font:inherit;box-sizing:border-box}
+@media(max-width:760px){.delivery-compare,.delivery-mapping{grid-template-columns:1fr}}
+
+.review-delivery.report-mail { padding: 0; border: 0; display: flex; flex-direction: column; }
+.report-mail-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+.report-mail-title { display: flex; align-items: flex-start; gap: 14px; min-width: 0; }
+.report-mail-title > div { min-width: 0; }
+.report-step { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; min-width: 34px; height: 24px; color: var(--primary); border-top: 2px solid var(--primary); font-size: 12px; font-weight: 500; line-height: 1; font-variant-numeric: tabular-nums; }
+.report-mail-title h2 { margin: 6px 0 0; font-size: 22px; font-weight: 400; line-height: 1.5; overflow-wrap: anywhere; }
+.report-mail-actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 8px; flex-shrink: 0; max-width: 100%; }
+.mail-options { margin-top: 10px; color: var(--muted); font-size: 13px; }
+.mail-options[open] { padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.mail-options .delivery-toolbar { margin-top: 8px; color: var(--ink); }
+.mail-options .delivery-toolbar label { min-width: 0; flex: 1 1 220px; max-width: 340px; }
+.mail-options .ant-select { width: 100%; min-width: 0; }
+.mail-options-saved { order: 3; }
+.mail-preview-grouped .mail-context { display: none; }
+.mail-preview-grouped .mail-caption { margin-top: 16px; margin-bottom: 8px; }
+.mail-preview-grouped .mail-table { margin-top: 12px; }
+.report-mail .mail-confirmation { margin-top: 0; margin-bottom: 0; }
+.mail-version { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0; font-size: 13px; color: var(--muted); }
+.mail-confirmation, .mail-context, .mail-notice { margin: 8px 0; font-size: 13px; color: var(--muted); }
+.mail-caption { margin: 24px 0 12px; font-size: 14px; font-weight: 500; }
+.mail-table { margin-top: 16px; border-top: 2px solid var(--ink); }
+.mail-table .mail-table-heading { color: var(--ink); font-weight: 500; }
+.mail-table .mail-condition { background: var(--bg); }
+.mail-table .mail-followup-resolved { color: var(--success); background: var(--success-bg); }
+.mail-table .mail-followup-open { color: var(--error); background: var(--error-bg); }
+.mail-table .mail-followup-acknowledged { color: var(--warning); background: var(--warning-bg); }
+.report-mail-empty { margin: 24px 0; padding: 28px; background: var(--bg); border: 1px solid var(--border); }
+.report-mail-empty h3 { margin: 0 0 12px; font-size: 18px; font-weight: 500; }
+.report-mail-empty p { margin: 8px 0 0; }
+.mail-table-grouped .ant-table-cell { padding: 13px 12px; font-size: 13px; line-height: 1.6; vertical-align: top; }
+.mail-table-grouped .mail-table-heading { padding: 10px 12px; font-size: 13px; font-weight: 500; }
+.mail-table-grouped .mail-condition { font-weight: 500; }
+.mail-table-grouped .mail-followup { font-weight: 500; }
+.report-pending { padding: 40px 32px; min-height: 220px; background: var(--surface, var(--surface)); }
+.report-pending h2 { font-size: 22px; font-weight: 400; margin: 0 0 16px; }
+.report-pending .review-loop-toolbar-actions { gap: 24px; margin-top: 24px; }
+.report-next-actions { margin-top: 32px; border-top: 1px solid var(--border); padding-top: 16px; }
+.report-next-actions:empty { display: none; }
+.report-next-actions .section { margin: 0; border: 0; box-shadow: none; }
+.workspace-mode .report-next-actions .review-round-controls-compact .section-toolbar { padding: 0; border: 0; gap: 16px; }
+.workspace-mode .report-next-actions .review-round-controls-compact .ant-btn { min-height: 44px; height: auto; font-size: 13px; white-space: normal; }
+.report-completion-title { margin: 0; font-size: 18px; font-weight: 400; }
+.comparison-impact { padding: 16px; background: var(--bg); border-left: 3px solid var(--primary); margin-top: 20px; }
+.delivery-original mark { color: inherit; background: var(--highlight); text-decoration: underline; text-underline-offset: 3px; }
+.report-overview .tone-success { color: var(--success); }
+/* Result workspace follows the original mockup's compact, continuous mail table. */
+.mail-preview-report .mail-caption { margin: 20px 0 10px; color: var(--ink); font-size: 12px; font-weight: 500; }
+.mail-preview-report .mail-notice { font-size: 12px; line-height: 1.6; }
+.mail-preview-report .mail-table-grouped .ant-table-cell { font-size: 13px; }
+.mail-preview-report .mail-table-grouped .mail-table-heading { font-size: 12px; }
+@media(max-width:1180px){.report-mail-header{flex-direction:column}.report-mail-actions{justify-content:flex-start;flex-shrink:1}}
+@media(max-width:640px){.report-mail-title h2{font-size:18px}.report-mail-actions{width:100%}.report-mail-actions .ant-btn{max-width:100%;height:auto;min-height:44px;white-space:normal}.report-mail-empty{padding:20px}.mail-options .delivery-toolbar label{max-width:none}}
+.report-guidance { margin: 0; padding: 12px 16px; font-size: 13px; color: var(--muted); background: var(--surface, var(--surface)); border-left: 3px solid var(--ink); }

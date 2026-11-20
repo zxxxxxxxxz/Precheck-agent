@@ -1,0 +1,51 @@
+.checker-panel .ant-alert { margin: 12px 0; }
+.checker-links,.checker-actions,.checker-record-head { display:flex; align-items:center; flex-wrap:wrap; gap:12px; }
+.checker-links,.checker-actions { margin-top:16px; }
+.checker-blockers { margin:16px 0; }
+.checker-blockers summary { cursor:pointer; font-weight:500; }
+.checker-blockers ul { margin:10px 0; padding-left:24px; max-height:260px; overflow:auto; }
+.checker-blockers li { margin:6px 0; }
+.checker-record { padding:16px 0; border-bottom:1px solid var(--border,var(--border-soft)); }
+.checker-record:last-child { border-bottom:0; }
+.checker-record p { white-space:pre-wrap; overflow-wrap:anywhere; }
+.checker-response { margin:12px 0 12px 12px; padding:0 12px; border-left:2px solid var(--border); }
+.checker-response>span { font-size:12px; color:var(--muted); }
+.checker-inbox { list-style:none; padding:0; margin:0; }
+.checker-inbox li { display:flex; justify-content:space-between; gap:16px; padding:10px 0; border-bottom:1px solid var(--border-soft); }
+.checker-dialog-fields { display:grid; grid-template-columns:1fr 1fr; gap:0 16px; }
+.checker-snapshot { max-height:70vh; overflow:auto; }
+.checker-snapshot h3 { font-size:14px; margin:24px 0 12px; }
+@media(max-width:720px){.checker-dialog-fields {grid-template-columns:1fr;}}
+
+.formal-source-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+
+/* The same report workspace hosts maker and checker; only the action area differs. */
+.checker-panel-compact > .section > .section-toolbar { padding: 0 0 16px; }
+.checker-panel-compact > .section > .section-toolbar .section-toolbar-info > strong { font-size: 18px; font-weight: 400; }
+.checker-panel-compact > .section > .section-body { padding: 0; }
+.checker-summary { display: flex; flex-wrap: wrap; gap: 12px 28px; margin: 0 0 16px; }
+.checker-summary > div { display: flex; align-items: baseline; gap: 8px; }
+.checker-summary dt { color: var(--muted); font-size: 13px; }
+.checker-summary dd { margin: 0; }
+.checker-panel-compact .checker-actions .ant-btn { min-height: 44px; height: auto; white-space: normal; }
+.checker-panel-compact .checker-links { font-size: 13px; }
+.checker-supporting { margin-top: 24px; border-top: 1px solid var(--border); }
+.checker-supporting > summary { padding: 16px 0; cursor: pointer; font-weight: 500; }
+.checker-supporting > summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.checker-supporting[open] > summary { border-bottom: 1px solid var(--border); }
+.checker-supporting-overview { padding: 16px 0; }
+.checker-supporting-overview .submission-findings { margin: 12px 0; }
+.checker-panel-compact .checker-supporting .section-toolbar { padding-inline: 0; }
+.checker-panel-compact .checker-supporting .section-body { padding: 16px 0; }
+@media(max-width:640px){.checker-summary { gap: 12px; flex-direction: column; }.checker-panel-compact .checker-actions .ant-btn { max-width: 100%; }}
+
+.checker-panel-compact .round-completion .checker-summary { gap: 8px 20px; margin-bottom: 12px; font-size: 13px; }
+.checker-panel-compact .round-completion .checker-summary .ant-tag { margin-inline-end: 0; }
+.checker-panel .round-completion .submission-findings { margin: 0 0 12px; padding: 0; border: 0; background: transparent; font-size: 13px; }
+.checker-panel .round-completion .submission-findings strong { font-weight: 400; }
+.checker-panel .round-completion .submission-findings > p { display: none; }
+.checker-panel .round-completion .submission-findings details { margin-top: 6px; }
+.checker-reference-links summary { cursor: pointer; color: var(--muted); }
+.checker-reference-links .checker-links { margin-top: 8px; }
+.return-to-maker-reason { display:block; margin-top:var(--space-3); }
+.return-to-maker-reason > span { display:block; margin-bottom:var(--space-2); font-weight:600; }
